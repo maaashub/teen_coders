@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Crusaders - Full 60-Day Lesson Notes</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for dark theme and Inter font */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1a202c; /* Dark background */
+            color: #e2e8f0; /* Light text */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+        .slide-container {
+            width: 90%;
+            max-width: 960px;
+            background-color: #2d3748; /* Slightly lighter dark for content */
+            border-radius: 1.5rem; /* Rounded corners */
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5); /* Darker shadow */
+            padding: 2rem;
+            position: relative;
+            min-height: 500px; /* Ensure enough height for content */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .slide {
+            display: none; /* Hidden by default */
+        }
+
+        .fade__out{
+            animation: fadeOut 0.8s ease-out;
+        }
+
+        .fade__in{
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        .slide.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateX(200px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+          @keyframes fadeOut {
+            from { opacity: 0; transform: translateX(-200px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        .nav-button {
+            background-color: #4a5568;
+            color: #e2e8f0;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.75rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+        .nav-button:hover {
+            background-color: #636b7a;
+            transform: translateY(-2px);
+        }
+        .nav-button:disabled {
+            background-color: #2d3748;
+            color: #a0aec0;
+            cursor: not-allowed;
+            box-shadow: none;
+        }
+        h1, h2, h3 {
+            color: #63b3ed; /* A nice blue for headings */
+            margin-bottom: 1rem;
+        }
+        p, ul, li {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        code {
+            background-color: #4a5568;
+            padding: 0.2rem 0.4rem;
+            border-radius: 0.375rem;
+            font-family: 'Fira Code', 'Cascadia Code', monospace; /* Monospace font for code */
+            color: #a0f0ed; /* Cyan for inline code */
+            word-wrap: break-word;
+        }
+        pre {
+            background-color: #1a202c;
+            padding: 1rem;
+            border-radius: 0.75rem;
+            overflow-x: auto;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            font-family: 'Fira Code', 'Cascadia Code', monospace;
+            color: #a0f0ed;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 0.75rem;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+        }
+        .exercise-box {
+            background-color: #364050;
+            border: 2px solid #63b3ed;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+        .assignment-box {
+            background-color: #364050;
+            border: 2px solid #f6ad55; /* Orange for assignments */
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+        .footer-nav {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <!-- Day 1: Welcome & Setup -->
+        <div class="slide active" id="slide1">
+            <h1 class="text-3xl font-bold mb-4">Day 1: Welcome to Code Crusaders!</h1>
+            <h2 class="text-2xl font-semibold mb-6">Your Journey Begins!</h2>
+            <img src="https://www.360maaas.com/favicon.ico" alt="Code Crusaders Logo" class="w-4/12 mx-auto h-auto mb-4">
+            <p>Hello, Future Web Developers! Welcome to your 60-day adventure into Web Development.</p>
+            <ul class="list-disc list-inside ml-4">
+                <li>Get ready to build amazing things with HTML, CSS, and JavaScript.</li>
+                <li>Our goal: <b>Peer-Learning, Fun, and Creating!</b></li>
+                <li>We'll build a <b>dynamic, interactive personal portfolio website</b> by the end!</li>
+            </ul>
+        </div>
+
+        <div class="slide" id="slide2">
+            <h1 class="text-3xl font-bold mb-4">Why HTML, CSS, and JavaScript?</h1>
+            <h2 class="text-2xl font-semibold mb-6">The Web Development Trio!</h2>
+            <img src="https://www.pngfind.com/pngs/m/683-6834215_html-css-js-icon-hd-png-download.png" alt="HTML CSS JS Icons" class="w-full h-auto mb-4">
+            <ul class="list-disc list-inside ml-4">
+                <li><strong>HTML (HyperText Markup Language):</strong> The <b>structure</b> (like the skeleton of a house).</li>
+                <li><strong>CSS (Cascading Style Sheets):</strong> The <b>style</b> (like the interior design and paint).</li>
+                <li><strong>JavaScript (JS):</strong> The <b>interactivity</b> (like the smart home features).</li>
+            </ul>
+            <p>These three work together to create almost every website you see!</p>
+        </div>
+
+        <div class="slide" id="slide3">
+            <h1 class="text-3xl font-bold mb-4">Your Workspace: VS Code</h1>
+            <h2 class="text-2xl font-semibold mb-6">Your Powerful Code Editor!</h2>
+            <img src="https://code.visualstudio.com/assets/docs/getstarted/getting-started/open-folder.png" alt="VS Code Interface" class="w-full h-auto mb-4">
+            <p>Visual Studio Code (VS Code) is a free, powerful, and popular code editor. It helps you write, organize, and debug your code efficiently.</p>
+            <ul class="list-disc list-inside ml-4">
+                <li><b>Setup:</b> We'll download and install it today.</li>
+                <li><b>Features:</b> Syntax highlighting, auto-completion, extensions, and more!</li>
+            </ul>
+        </div>
+
+        <div class="slide" id="slide4">
+            <h1 class="text-3xl font-bold mb-4">Exercise (Day 1): Setting up VS Code</h1>
+            <div class="exercise-box">
+                <h3 class="text-xl font-semibold mb-4">Get Ready to Code!</h3>
+                <p>Follow these steps to get VS Code installed and ready:</p>
+                <ol class="list-decimal list-inside ml-4">
+                    <li>Open your web browser and go to <a href="https://code.visualstudio.com" target="_blank" class="text-blue-300 underline">code.visualstudio.com</a>.</li>
+                    <li>Download the installer for your operating system (Windows, macOS, Linux).</li>
+                    <li>Run the installer and follow the on-screen instructions (usually clicking "Next" or "Continue").</li>
+                    <li>Once installed, open VS Code.</li>
+                    <li>Go to "File" > "New File". Type "Hello Code Crusaders!"</li>
+                    <li>Go to "File" > "Save As..." and save it as `hello.txt` on your Desktop.</li>
+                </ol>
+                <p class="mt-4"><strong>Peer-Learning Moment:</strong> Help your neighbor if they encounter any issues during installation!</p>
+            </div>
+        </div>
+
+        <div class="slide" id="slide5">
+            <h1 class="text-3xl font-bold mb-4">Assignment (Day 1): Explore VS Code</h1>
+            <div class="assignment-box">
+                <h3 class="text-xl font-semibold mb-4">Your First Exploration!</h3>
+                <p>Spend 15-20 minutes exploring VS Code on your own:</p>
+                <ul class="list-disc list-inside ml-4">
+                    <li>Change the <b>Color Theme:</b> Go to "File" > "Preferences" > "Color Theme" (or "Code" > "Preferences" on Mac). Try a few dark themes!</li>
+                    <li>Explore the <b>Extensions</b> view (the square icon on the left sidebar). Search for "HTML" or "CSS" and see what extensions are available (don't install any yet!).</li>
+                    <li>Try opening the folder where you saved `hello.txt` by going to "File" > "Open Folder...".</li>
+                </ul>
+                <p class="mt-4"><strong>Challenge:</strong> Can you find the "Settings" (gear icon) and change the font size?</p>
+            </div>
+        </div>
+
+        <!-- Day 2: Introduction to HTML -->
+        <div class="slide" id="slide6">
+            <h1 class="text-3xl font-bold mb-4">Day 2: Building Blocks of the Web!</h1>
+            <h2 class="text-2xl font-semibold mb-6">What is HTML?</h2>
+            <img src="https://media.geeksforgeeks.org/wp-content/uploads/20240610121019/Screenshot-(4).png" alt="HTML Structure Concept" class="w-full h-auto mb-4">
+            <p>HTML stands for <strong>H</strong>yper<strong>T</strong>ext <strong>M</strong>arkup <strong>L</strong>anguage.</p>
+            <ul class="list-disc list-inside ml-4">
+                <li>It's NOT a programming language, but a <strong>markup language</strong>.</li>
+                <li>It uses "tags" to define the content and structure of a web page.</li>
+                <li>Think of it as the blueprint or skeleton of your website.</li>
+                <li>Every webpage you visit is built with HTML!</li>
+            </ul>
+        </div>
+
+        <div class="slide" id="slide7">
+            <h1 class="text-3xl font-bold mb-4">HTML Tags: The Building Blocks</h1>
+            <h2 class="text-2xl font-semibold mb-6">Opening and Closing!</h2>
+            <img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*kMVRmph65ha5LWzcutz9ZA.png" alt="HTML Tags Illustration" class="w-full h-auto mb-4">
+            <p>HTML uses "tags" to mark up elements. Most tags come in pairs:</p>
+            <ul class="list-disc list-inside ml-4">
+                <li>An <strong>opening tag</strong>: <code>&lt;tagname&gt;</code></li>
+                <li>A <strong>closing tag</strong>: <code>&lt;/tagname&gt;</code></li>
+                <li>The content goes <strong>between</strong> the tags.</li>
+            </ul>
+            <p>Example:</p>
+            <pre><code>&lt;p&gt;This is a paragraph.&lt;/p&gt;</code></pre>
+            <p>Some tags are "self-closing" or "void tags" (they don't need a closing tag), like <code>&lt;br&gt;</code> for a line break.</p>
+        </div>
+
+        <div class="slide" id="slide8">
+            <h1 class="text-3xl font-bold mb-4">Basic HTML Document Structure</h1>
+            <h2 class="text-2xl font-semibold mb-6">The Essential Blueprint</h2>
+            <img src="https://www.w3schools.com/js/pic_htmltree.gif" alt="HTML Document Flowchart" class="w-full h-auto mb-4">
+            <p>Every HTML page starts with a basic structure:</p>
+            <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;My First Webpage&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- Content goes here --&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+            </code></pre>
+            <ul class="list-disc list-inside ml-4">
+                <li><code>&lt;!DOCTYPE html&gt;</code>: Declares the document type.</li>
+                <li><code>&lt;html&gt;</code>: The root element of an HTML page.</li>
+                <li><code>&lt;head&gt;</code>: Contains meta-information (not visible on the page).</li>
+                <li><code>&lt;body&gt;</code>: Contains all the visible content of the page.</li>
+            </ul>
+        </div>
+
+        <div class="slide" id="slide9">
+            <h1 class="text-3xl font-bold mb-4">Common HTML Elements: Headings & Paragraphs</h1>
+            <h2 class="text-2xl font-semibold mb-6">Organizing Your Text</h2>
+            <img src="https://media.licdn.com/dms/image/v2/D4D12AQGMSvEmt00Wxw/article-cover_image-shrink_423_752/article-cover_image-shrink_423_752/0/1710472277513?e=1757548800&v=beta&t=cbvClLqwUPfOyzvQRPVKw0h0e6t2MSE1eU1C5kD5WW0" alt="Text Elements Illustration" class="w-full h-auto mb-4">
+            <ul class="list-disc list-inside ml-4">
+                <li><strong>Headings (<code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code>):</strong> Define titles and subtitles. <code>&lt;h1&gt;</code> is most important.</li>
+                <pre><code>&lt;h1&gt;Main Title&lt;/h1&gt;&lt;h2&gt;Subtitle&lt;/h2&gt;</code></pre>
+                <li><strong>Paragraphs (<code>&lt;p&gt;</code>):</strong> For blocks of text.</li>
+                <pre><code>&lt;p&gt;This is a sentence.&lt;/p&gt;</code></pre>
+                <li><strong>Line Breaks (<code>&lt;br&gt;</code>):</strong> Inserts a single line break. (Self-closing).</li>
+                <pre><code>Line 1.&lt;br&gt;Line 2.</code></pre>
+            </ul>
+        </div>
+
+        <div class="slide" id="slide10">
+            <h1 class="text-3xl font-bold mb-4">Exercise (Day 2): My First "About Me" Page!</h1>
+            <div class="exercise-box">
+                <h3 class="text-xl font-semibold mb-4">Your Turn!</h3>
+                <p>Let's create your very first HTML page!</p>
+                <ol class="list-decimal list-inside ml-4">
+                    <li>In VS Code, create a <strong>new file</strong> and save it as <code>about-me.html</code>.</li>
+                    <li>Add the <b>basic HTML document structure.</b></li>
+                    <li>Inside <code>&lt;head&gt;</code>, set <code>&lt;title&gt;</code> to "My Awesome About Me Page".</li>
+                    <li>Inside <code>&lt;body&gt;</code>, add:
+                        <ul class="list-disc list-inside ml-8">
+                            <li>An <code>&lt;h1&gt;</code> heading with your name.</li>
+                            <li>A <code>&lt;p&gt;</code> paragraph introducing yourself.</li>
+                            <li>An <code>&lt;h2&gt;</code> heading: "My Hobbies".</li>
+                            <li>A <code>&lt;p&gt;</code> listing hobbies, using <code>&lt;br&gt;</code> for new lines.</li>
+                        </ul>
+                    </li>
+                    <li>Save and open it in your web browser!</li>
+                </ol>
+                <p class="mt-4"><strong>Peer-Learning Moment:</strong> Work with your neighbor! Discuss what each tag does.</p>
+            </div>
+        </div>
+
+        <div class="slide" id="slide11">
+            <h1 class="text-3xl font-bold mb-4">Assignment (Day 2): Expand Your "About Me" Page!</h1>
+            <div class="assignment-box">
+                <h3 class="text-xl font-semibold mb-4">Challenge Yourself!</h3>
+                <p>Continue working on your <code>about-me.html</code> file:</p>
+                <ol class="list-decimal list-inside ml-4">
+                    <li>Add a new <code>&lt;h2&gt;</code> heading: "My Favorite Things".</li>
+                    <li>Underneath it, add a paragraph listing your favorite movie, book, or game.</li>
+                    <li>Experiment with different heading levels (<code>&lt;h3&gt;</code>, <code>&lt;h4&gt;</code>) for sub-sections.</li>
+                    <li>Add another paragraph about what you hope to learn in this camp.</li>
+                    <li>Save your file and check it in the browser after every change!</li>
+                </ol>
+                <p class="mt-4"><strong>Bring your updated <code>about-me.html</code> file tomorrow!</strong></p>
+            </div>
+        </div>
+
+        <!-- Day 3: Lists & Semantic HTML -->
+        <div class="slide" id="slide12">
+            <h1 class="text-3xl font-bold mb-4">Day 3: Organizing Content with Lists!</h1>
+            <h2 class="text-2xl font-semibold mb-6">Unordered and Ordered Lists</h2>
+            <img src="https://img.uxcel.com/practices/nested-html-lists-1615549726590/a-1664528015671-2x.jpg" alt="List Types Illustration" class="w-full h-auto mb-4">
+            <p>Lists are super useful for organizing information:</p>
+            <ul class="list-disc list-inside ml-4">
+                <li><strong>Unordered Lists (<code>&lt;ul&gt;</code>):</strong> For items where order doesn't matter (e.g., shopping list). Each item is a <code>&lt;li&gt;</code>.</li>
+                <pre><code>&lt;ul&gt;&lt;li&gt;Item 1&lt;/li&gt;&lt;li&gt;Item 2&lt;/li&gt;&lt;/ul&gt;</code></pre>
+                <li><strong>Ordered Lists (<code>&lt;ol&gt;</code>):</strong> For items where order matters (e.g., recipe steps). Each item is also a <code>&lt;li&gt;</code>.</li>
+                <pre><code>&lt;ol&gt;&lt;li&gt;Step 1&lt;/li&gt;&lt;li&gt;Step 2&lt;/li&gt;&lt;/ol&gt;</code></pre>
+            </ul>
+        </div>
+
+        <div class="slide" id="slide13">
+            <h1 class="text-3xl font-bold mb-4">Day 3: Semantic HTML</h1>
+            <h2 class="text-2xl font-semibold mb-6">Giving Meaning to Your Code</h2>
+            <img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1632245238780/bS1ysZru4.jpeg?w=1600&h=840&fit=crop&crop=entropy&auto=compress,format&format=webp" alt="Semantic HTML Layout" class="w-full h-auto mb-4">
+            <p>Semantic HTML tags describe the meaning of content, not just how it looks. This helps browsers, search engines, and screen readers.</p>
+            <ul class="list-disc list-inside ml-4">
+                <li><code>&lt;header&gt;</code>: Introduction/navigation.</li>
+                <li><code>&lt;nav&gt;</code>: Navigation links.</li>
+                <li><code>&lt;main&gt;</code>: Dominant content.</li>
+                <li><code>&lt;article&gt;</code>: Independent content (e.g., blog post).</li>
+                <li><code>&lt;section&gt;</code>: Thematic grouping.</li>
+                <li><code>&lt;aside&gt;</code>: Related but separate content (e.g., sidebar).</li>
+                <li><code>&lt;footer&gt;</code>: Copyright, contact info.</li>
+            </ul>
+            <p><strong>Why?</strong> Improves accessibility and SEO!</p>
+        </div>
+
+        <div class="slide" id="slide14">
+            <h1 class="text-3xl font-bold mb-4">Exercise (Day 3): My Daily Schedule</h1>
+            <div class="exercise-box">
+                <h3 class="text-xl font-semibold mb-4">Your Turn!</h3>
+                <p>Create a new HTML file called <code>my-schedule.html</code>.</p>
+                <ol class="list-decimal list-inside ml-4">
+                    <li>Add the basic HTML structure.</li>
+                    <li>Inside <code>&lt;body&gt;</code>:
+                        <ul class="list-disc list-inside ml-8">
+                            <li>An <code>&lt;h1&gt;</code> for "My Daily Schedule".</li>
+                            <li>An <strong>ordered list</strong> for your morning routine.</li>
+                            <li>An <strong>unordered list</strong> for your favorite camp activities.</li>
+                            <li>Wrap your entire schedule content inside a <code>&lt;main&gt;</code> tag.</li>
+                            <li>Add a <code>&lt;footer&gt;</code> tag with "Created by [Your Name]".</li>
+                        </ul>
+                    </li>
+                    <li>Save and view in your browser.</li>
+                </ol>
+                <p class="mt-4"><strong>Peer-Learning Moment:</strong> Show your lists to your partner. Can they tell the difference?</p>
+            </div>
+        </div>
+
+        <div class="slide" id="slide15">
+            <h1 class="text-3xl font-bold mb-4">Assignment (Day 3): Semantic Blog Post</h1>
+            <div class="assignment-box">
+                <h3 class="text-xl font-semibold mb-4">Challenge Yourself!</h3>
+                <p>Create a new HTML file named <code>my-blog-post.html</code>.</p>
+                <ol class="list-decimal list-inside ml-4">
+                    <li>Add the basic HTML structure.</li>
+                    <li>Inside <code>&lt;body&gt;</code>:
+                        <ul class="list-disc list-inside ml-8">
+                            <li>A <code>&lt;header&gt;</code> with an <code>&lt;h1&gt;</code> for your blog title.</li>
+                            <li>An <code>&lt;article&gt;</code> tag with a short paragraph about your day.</li>
+                            <li>Within the <code>&lt;article&gt;</code>, add a <code>&lt;section&gt;</code> for "Things I Learned" (unordered list).</li>
+                            <li>Another <code>&lt;section&gt;</code> for "My Goals" (ordered list).</li>
+                            <li>A <code>&lt;footer&gt;</code> with copyright info.</li>
+                        </ul>
+                    </li>
+                    <li>Save and view.</li>
+                </ol>
+                <p class="mt-4"><strong>Think:</strong> How do these semantic tags help organize your content?</p>
+            </div>
+        </div>
+
+        <!-- Day 4: Links -->
+        <div class="slide" id="slide16">
+            <h1 class="text-3xl font-bold mb-4">Day 4: Connecting the Web with Links!</h1>
+            <h2 class="text-2xl font-semibold mb-6">The Power of the Anchor Tag</h2>
+            <img src="https://www.scientecheasy.com/wp-content/uploads/2024/02/create-link-in-html.png" alt="Link Chain Illustration" class="w-full h-auto mb-4">
+            <p>Links are what make the "web" truly a web! We use the <strong>anchor tag</strong>: <code>&lt;a&gt;</code></p>
+            <ul class="list-disc list-inside ml-4">
+                <li>The <code>href</code> attribute specifies the destination URL.</li>
+                <li>The text between the tags is what the user clicks.</li>
+            </ul>
+            <pre><code>&lt;a href="https://www.google.com"&gt;Go to Google&lt;/a&gt;</code></pre>
+        </div>
+
+        <div class="slide" id="slide17">
+            <h1 class="text-3xl font-bold mb-4">Day 4: Types of Links</h1>
+            <h2 class="text-2xl font-semibold mb-6">External, Internal, and Target Attributes</h2>
+            <img src="https://moz.com/uploads/blog/556f8104e00237.44235477.jpg" alt="Link Types Diagram" class="w-full h-auto mb-4">
+            <ul class="list-disc list-inside ml-4">
+                <li><strong>External Links:</strong> To another website (e.g., <code>https://www.wikipedia.org</code>).</li>
+                <li><strong>Internal Links:</strong> To another page within your own website (e.g., <code>about-me.html</code>).</li>
+                <li><strong>Target Attribute:</strong> Controls where the link opens:
+                    <ul class="list-disc list-inside ml-8">
+                        <li><code>_self</code> (default): Same window/tab.</li>
+                        <li><code>_blank</code>: New window/tab (recommended for external links!).</li>
+                    </ul>
+                </li>
+                <li><strong>Email Links:</strong> <code>&lt;a href="mailto:your.email@example.com"&gt;Email Me&lt;/a&gt;</code></li>
+            </ul>
+        </div>
+
+        <div class="slide" id="slide18">
+            <h1 class="text-3xl font-bold mb-4">Exercise (Day 4): My Favorite Links Page!</h1>
+            <div class="exercise-box">
+                <h3 class="text-xl font-semibold mb-4">Your Turn!</h3>
+                <p>Create a new HTML file called <code>my-links.html</code>.</p>
+                <ol class="list-decimal list-inside ml-4">
+                    <li>Add the basic HTML structure.</li>
+                    <li>Inside <code>&lt;body&gt;</code>:
+                        <ul class="list-disc list-inside ml-8">
+                            <li>An <code>&lt;h1&gt;</code>: "My Favorite Websites".</li>
+                            <li>An unordered list of at least 3 favorite websites (use <code>target="_blank"</code>).</li>
+                            <li>A paragraph with a link back to your <code>about-me.html</code> page.</li>
+                            <li>A link that opens your email client.</li>
+                        </ul>
+                    </li>
+                    <li>Save and test your links in the browser!</li>
+                </ol>
+                <p class="mt-4"><strong>Peer-Learning Moment:</strong> Test your partner's links. Do they open correctly?</p>
+            </div>
+        </div>
+
+        <div class="slide" id="slide19">
+            <h1 class="text-3xl font-bold mb-4">Assignment (Day 4): Navigating Your Portfolio</h1>
+            <div class="assignment-box">
+                <h3 class="text-xl font-semibold mb-4">Challenge Yourself!</h3>
+                <p>Let's start thinking about our final project: a personal portfolio website!</p>
+                <ol class="list-decimal list-inside ml-4">
+                    <li>Open your <code>about-me.html</code> file.</li>
+                    <li>At the top of <code>&lt;main&gt;</code>, add a <code>&lt;nav&gt;</code> tag.</li>
+                    <li>Inside <code>&lt;nav&gt;</code>, create an unordered list of links:
+                        <ul class="list-disc list-inside ml-8">
+                            <li>"Home" (link to <code>index.html</code> - will be created later!)</li>
+                            <li>"About Me" (link to <code>about-me.html</code>)</li>
+                            <li>"My Links" (link to your <code>my-links.html</code>).</li>
+                        </ul>
+                    </li>
+                    <li>Save <code>about-me.html</code>.</li>
+                    <li>Now, open <code>my-links.html</code> and add the same <code>&lt;nav&gt;</code> structure.</li>
+                    <li>Test navigating between your pages.</li>
+                </ol>
+                <p class="mt-4">This is how we start building multi-page websites!</p>
+            </div>
+        </div>
+
+        <!-- Day 5: Images -->
+        <div class="slide" id="slide20">
+            <h1 class="text-3xl font-bold mb-4">Day 5: Bringing Life to Your Page with Images!</h1>
+            <h2 class="text-2xl font-semibold mb-6">The <code>&lt;img&gt;</code> Tag</h2>
+            <img src="https://www.tutorialspoint.com/html/images/html_images.jpg" alt="Image Placeholder" class="w-full h-auto mb-4">
+            <p>The <code>&lt;img&gt;</code> tag embeds images. It's a <strong>self-closing tag</strong>.</p>
+            <ul class="list-disc list-inside ml-4">
+                <li><code>src</code> (source): Path to the image file.</li>
+                <li><code>alt</code> (alternative text): Text description for accessibility and if the image fails to load.</li>
+            </ul>
+            <pre><code>&lt;img src="my-picture.jpg" alt="A photo of me smiling"&gt;</code></pre>
+        </div>
+
+        <div class="slide" id="slide21">
+            <h1 class="text-3xl font-bold mb-4">Day 5: Image Paths and Sizing</h1>
+            <h2 class="text-2xl font-semibold mb-6">Relative vs. Absolute Paths & Dimensions</h2>
+            <img src="https://stuyhsdesign.wordpress.com/wp-content/uploads/2016/02/relative-path.png" alt="File Path Illustration" class="w-full h-auto mb-4">
+            <ul class="list-disc list-inside ml-4">
+                <li><strong>Relative Paths:</strong> For images within your project (e.g., `images/my-pic.png`).</li>
+                <li><strong>Absolute Paths (URLs):</strong> For images on other websites (e.g., `https://www.example.com/logo.png`).</li>
+                <li><strong>Width and Height Attributes:</strong> Can set size in HTML (`width="300"`), but CSS is generally better for responsive design.</li>
+            </ul>
+        </div>
+
+        <div class="slide" id="slide22">
+            <h1 class="text-3xl font-bold mb-4">Exercise (Day 5): Picture Perfect "About Me"</h1>
+            <div class="exercise-box">
+                <h3 class="text-xl font-semibold mb-4">Your Turn!</h3>
+                <p>Let's add an image to your <code>about-me.html</code> page!</p>
+                <ol class="list-decimal list-inside ml-4">
+                    <li>Find a suitable image or use a placeholder URL.</li>
+                    <li>Save it in your project folder (maybe an `images` subfolder).</li>
+                    <li>Add an <code>&lt;img&gt;</code> tag to your <code>about-me.html</code>.</li>
+                    <li>Set the <code>src</code> and <code>alt</code> attributes.</li>
+                    <li>Experiment with `width` and `height` attributes.</li>
+                    <li>Save and view your page.</li>
+                </ol>
+                <p class="mt-4"><strong>Peer-Learning Moment:</strong> Share your image choices! Discuss why `alt` text is important.</p>
+            </div>
+        </div>
+
+        <div class="slide" id="slide23">
+            <h1 class="text-3xl font-bold mb-4">Assignment (Day 5): Image Gallery & Linked Images</h1>
+            <div class="assignment-box">
+                <h3 class="text-xl font-semibold mb-4">Challenge Yourself!</h3>
+                <p>Create a new HTML file called <code>my-gallery.html</code>.</p>
+                <ol class="list-decimal list-inside ml-4">
+                    <li>Add basic HTML structure and title "My Image Gallery".</li>
+                    <li>Inside <code>&lt;body&gt;</code>:
+                        <ul class="list-disc list-inside ml-8">
+                            <li>An <code>&lt;h1&gt;</code>: "My Awesome Image Gallery".</li>
+                            <li>Add at least 3 images.</li>
+                            <li>For at least one image, wrap it in an <code>&lt;a&gt;</code> tag so clicking it takes you to an external website (new tab!).</li>
+                            <li>Add a link back to your <code>about-me.html</code>.</li>
+                            <li>Update navigation in <code>about-me.html</code> and <code>my-links.html</code> to include a link to <code>my-gallery.html</code>.</li>
+                        </ul>
+                    </li>
+                    <li>Save and test all your links and images.</li>
+                </ol>
+                <p class="mt-4">This is how we start building multi-page websites!</p>
+            </div>
+        </div>
+
+        <!-- Day 6: Tables -->
+        <div class="slide" id="slide24">
+            <h1 class="text-3xl font-bold mb-4">Day 6: Organizing Data with Tables!</h1>
+            <h2 class="text-2xl font-semibold mb-6">Rows, Columns, and Cells</h2>
+            <img src="https://learnerszone.home.blog/wp-content/uploads/2019/07/html_table_structure.gif" alt="Table Illustration" class="w-full h-auto mb-4">
+            <p>Tables display tabular data (rows and columns):</p>
+            <ul class="list-disc list-inside ml-4">
+                <li><code>&lt;table&gt;</code>: Container for the table.</li>
+                <li><code>&lt;tr&gt;</code>: Table Row.</li>
+                <li><code>&lt;th&gt;</code>: Table Header (bold, centered).</li>
+                <li><code>&lt;td&gt;</code>: Table Data cell.</li>
+            </ul>
+            <pre><code>
+&lt;table&gt;
+    &lt;tr&gt;&lt;th&gt;Header&lt;/th&gt;&lt;td&gt;Data&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+            </code></pre>
+        </div>
+
+        <div class="slide" id="slide25">
+            <h1 class="text-3xl font-bold mb-4">Day 6: Table Enhancements</h1>
+            <h2 class="text-2xl font-semibold mb-6">Captions, Headers, Bodies, and Footers</h2>
+            <img src="https://www.websysanytime.com/images/web10-table1.png" alt="Advanced Table Illustration" class="w-full h-auto mb-4">
+            <p>For better structure and accessibility:</p>
+            <ul class="list-disc list-inside ml-4">
+                <li><code>&lt;caption&gt;</code>: Table title.</li>
+                <li><code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, <code>&lt;tfoot&gt;</code>: Group table sections.</li>
+                <li><code>colspan</code>: Cell spans multiple columns.</li>
+                <li><code>rowspan</code>: Cell spans multiple rows.</li>
+            </ul>
+            <pre><code>
+&lt;table&gt;
+    &lt;caption&gt;My Table&lt;/caption&gt;
+    &lt;thead&gt;&lt;tr&gt;&lt;th&gt;Col 1&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+    &lt;tbody&gt;&lt;tr&gt;&lt;td&gt;Data&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;
+    &lt;tfoot&gt;&lt;tr&gt;&lt;td colspan="2"&gt;Summary&lt;/td&gt;&lt;/tr&gt;&lt;/tfoot&gt;
+&lt;/table&gt;
+            </code></pre>
+        </div>
+
+        <div class="slide" id="slide26">
+            <h1 class="text-3xl font-bold mb-4">Exercise (Day 6): My Camp Schedule Table</h1>
+            <div class="exercise-box">
+                <h3 class="text-xl font-semibold mb-4">Your Turn!</h3>
+                <p>Create a new HTML file called <code>camp-schedule.html</code>.</p>
+                <ol class="list-decimal list-inside ml-4">
+                    <li>Add basic HTML structure and title "Camp Schedule".</li>
+                    <li>Inside <code>&lt;body&gt;</code>:
+                        <ul class="list-disc list-inside ml-8">
+                            <li>An <code>&lt;h1&gt;</code>: "Code Crusaders Daily Schedule".</li>
+                            <li>Create a table with <code>&lt;caption&gt;</code>, <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, and <code>&lt;tfoot&gt;</code>.</li>
+                            <li>Headers: "Time" and "Activity".</li>
+                            <li>At least 3 rows of activities.</li>
+                            <li>A `tfoot` row spanning both columns with a summary.</li>
+                            <li>Add a link back to your <code>about-me.html</code> page.</li>
+                        </ul>
+                    </li>
+                    <li>Save and view.</li>
+                </ol>
+                <p class="mt-4"><strong>Peer-Learning Moment:</strong> Compare your tables. Did anyone use `rowspan` or `colspan` creatively?</p>
+                <p>you can also visit this website to understand more about tables and it attributes: <a href="https://learnerszone.home.blog/2019/07/18/table-in-html/" rel="noopener" target="_blank">tables samples and explanation</a></p>
+            </div>
+        </div>
+
+        <div class="slide" id="slide27">
+            <h1 class="text-3xl font-bold mb-4">Assignment (Day 6): My Favorite Games/Movies Table</h1>
+            <div class="assignment-box">
+                <h3 class="text-xl font-semibold mb-4">Challenge Yourself!</h3>
+                <p>Create a new HTML file named <code>my-favorites-table.html</code>.</p>
+                <ol class="list-decimal list-inside ml-4">
+                    <li>Add basic HTML structure and title.</li>
+                    <li>Inside <code>&lt;body&gt;</code>:
+                        <ul class="list-disc list-inside ml-8">
+                            <li>An <code>&lt;h1&gt;</code>: "My Top 3 [Games/Movies/Books]".</li>
+                            <li>Create a table with at least three columns (e.g., "Rank", "Title", "Genre", "My Rating").</li>
+                            <li>Populate with data for your favorite items.</li>
+                            <li>Use <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, and <code>&lt;tfoot&gt;</code>.</li>
+                            <li>Try to use `colspan` or `rowspan` somewhere.</li>
+                            <li>Update your navigation to link to this new table page.</li>
+                        </ul>
+                    </li>
+                    <li>Save and view.</li>
+                </ol>
+                <p class="mt-4">This is how we start building multi-page websites!</p>
+            </div>
+        </div>
+
+        <!-- Day 7: HTML Forms - Part 1 -->
+        <div class="slide" id="slide28">
+            <h1 class="text-3xl font-bold mb-4">Day 7: Getting User Input with Forms! (Part 1)</h1>
+            <h2 class="text-2xl font-semibold mb-6">The <code>&lt;form&gt;</code> and <code>&lt;input&gt;</code> Tags</h2>
+            <img src="https://www.w3schools.in/wp-content/uploads/2020/12/HTML-Form-and-Form-Elements.jpg" alt="Form Illustration" class="w-full h-auto mb-4">
+            <p>Forms are essential for collecting information from users (e.g., login, contact forms, surveys).</p>
+            <ul class="list-disc list-inside ml-4">
+                <li><code>&lt;form&gt;</code>: The container for all form elements.</li>
+                <li><code>&lt;label&gt;</code>: Provides a caption for an input element. Crucial for accessibility! Use the `for` attribute to link it to an input's `id`.</li>
+                <li><code>&lt;input&gt;</code>: The most common form element. Its behavior changes based on the `type` attribute.</li>
+            </ul>
+            <pre><code>
+&lt;form&gt;
+    &lt;label for="username"&gt;Username:&lt;/label&gt;
+    &lt;input type="text" id="username" name="username" placeholder="Enter your username"&gt;
+    &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+            </code></pre>
+        </div>
+
+        <div class="slide" id="slide29">
+            <h1 class="text-3xl font-bold mb-4">Day 7: Common Input Types</h1>
+            <h2 class="text-2xl font-semibold mb-6">Text, Password, Email, Number</h2>
+            <img src="https://i.pinimg.com/736x/33/43/04/3343041a10a0b1602d951a013361078c.jpg" alt="Input Types Diagram" class="w-full h-auto mb-4">
+            <ul class="list-disc list-inside ml-4">
+                <li><code>type="text"</code>: Single-line text input.</li>
+                <li><code>type="password"</code>: Text input where characters are masked (e.g., dots or asterisks).</li>
+                <li><code>type="email"</code>: For email addresses. Browsers can validate format.</li>
+                <li><code>type="number"</code>: For numerical input. Often shows up/down arrows.</li>
+                <li><code>placeholder</code> attribute: Provides a hint to the user about what to enter.</li>
+                <li><code>name</code> attribute: Important for identifying the data when the form is submitted.</li>
+            </ul>
+            <pre><code>
+&lt;label for="user_email"&gt;Email:&lt;/label&gt;
+&lt;input type="email" id="user_email" name="user_email" placeholder="you@example.com"&gt;
+            </code></pre>
+        </div>
+
+        <div class="slide" id="slide30">
+            <h1 class="text-3xl font-bold mb-4">Exercise (Day 7): Simple Contact Form</h1>
+            <div class="exercise-box">
+                <h3 class="text-xl font-semibold mb-4">Your Turn!</h3>
+                <p>Create a new HTML file called <code>contact-form.html</code>.</p>
+                <ol class="list-decimal list-inside ml-4">
+                    <li>Add the basic HTML structure and a title "Contact Us".</li>
+                    <li>Inside the <code>&lt;body&gt;</code>:
+                        <ul class="list-disc list-inside ml-8">
+                            <li>An <code>&lt;h1&gt;</code>: "Contact Code Crusaders".</li>
+                            <li>Create a <code>&lt;form&gt;</code> tag.</li>
+                            <li>Inside the form, add labels and inputs for:
+                                <ul class="list-disc list-inside ml-12">
+                                    <li>Your Name (text input)</li>
+                                    <li>Your Email (email input)</li>
+                                    <li>A simple "Message" (for now, use a text input with a placeholder like "Type your message here").</li>
+                                </ul>
+                            </li>
+                            <li>Add a submit button (`&lt;button type="submit"&gt;Send Message&lt;/button&gt;`).</li>
+                        </ul>
+                    </li>
+                    <li>Save and view in your browser. Try typing in the fields.</li>
+                </ol>
+                <p class="mt-4"><strong>Peer-Learning Moment:</strong> Discuss what happens when you click "Send Message" (it just refreshes the page for now, which is normal!).</p>
+            </div>
+        </div>
+
+        <div class="slide" id="slide31">
+            <h1 class="text-3xl font-bold mb-4">Assignment (Day 7): Simple Registration Form</h1>
+            <div class="assignment-box">
+                <h3 class="text-xl font-semibold mb-4">Challenge Yourself!</h3>
+                <p>Create a new HTML file named <code>register.html</code>.</p>
+                <ol class="list-decimal list-inside ml-4">
+                    <li>Add the basic HTML structure and a title "Register".</li>
+                    <li>Inside the <code>&lt;body&gt;</code>:
+                        <ul class="list-disc list-inside ml-8">
+                            <li>An <code>&lt;h1&gt;</code>: "Register for Code Camp".</li>
+                            <li>Create a <code>&lt;form&gt;</code>.</li>
+                            <li>Add labels and inputs for:
+                                <ul class="list-disc list-inside ml-12">
+                                    <li>Full Name (text)</li>
+                                    <li>Choose a Username (text)</li>
+                                    <li>Create Password (password)</li>
+                                    <li>Confirm Password (password)</li>
+                                    <li>Your Age (number)</li>
+                                </ul>
+                            </li>
+                            <li>Include a submit button.</li>
+                            <li>Add a link to this new `register.html` page from your `about-me.html` or `my-links.html` navigation.</li>
+                        </ul>
+                    </li>
+                    <li>Save and test.</li>
+                </ol>
+                <p class="mt-4"><strong>Think:</strong> How do the `type` attributes change the input field's behavior?</p>
+            </div>
+        </div>
+
+        <!-- Day 8: HTML Forms - Part 2 -->
+        <div class="slide" id="slide32">
+            <h1 class="text-3xl font-bold mb-4">Day 8: More Form Elements! (Part 2)</h1>
+            <h2 class="text-2xl font-semibold mb-6">Checkboxes, Radios, Textareas, and Dropdowns</h2>
+            <img src="https://i.pinimg.com/736x/33/43/04/3343041a10a0b1602d951a013361078c.jpg" alt="More Form Elements" class="w-full h-auto mb-4">
+            <ul class="list-disc list-inside ml-4">
+                <li><code>type="checkbox"</code>: Allows users to select zero or more options.</li>
+                <li><code>type="radio"</code>: Allows users to select exactly one option from a group (use the same `name` attribute for a group).</li>
+                <li><code>&lt;textarea&gt;</code>: For multi-line text input (e.g., comments). Has `rows` and `cols` attributes.</li>
+                <li><code>&lt;select&gt;</code> and <code>&lt;option&gt;</code>: Creates a dropdown list.</li>
+                <li><code>required</code> attribute: Makes an input field mandatory before form submission.</li>
+            </ul>
+            <pre><code>
+&lt;input type="checkbox" id="html" name="skill" value="html"&gt;
+&lt;label for="html"&gt;HTML&lt;/label&gt;
+
+&lt;input type="radio" id="male" name="gender" value="male"&gt;
+&lt;label for="male"&gt;Male&lt;/label&gt;
+
+&lt;textarea id="comments" name="comments" rows="4" cols="50"&gt;&lt;/textarea&gt;
+
+&lt;select id="country" name="country"&gt;
+    &lt;option value="usa"&gt;USA&lt;/option&gt;
+    &lt;option value="can"&gt;Canada&lt;/option&gt;
+&lt;/select&gt;
+            </code></pre>
+        </div>
+
+        <div class="slide" id="slide33">
+            <h1 class="text-3xl font-bold mb-4">Day 8: Date, Color, and Range Inputs</h1>
+            <h2 class="text-2xl font-semibold mb-6">Specialized Inputs for Specific Data</h2>
+            <img src="https://i.pinimg.com/736x/33/43/04/3343041a10a0b1602d951a013361078c.jpg" alt="Specialized Inputs" class="w-full h-auto mb-4">
+            <ul class="list-disc list-inside ml-4">
+                <li><code>type="date"</code>: For selecting a date. Often provides a calendar picker.</li>
+                <li><code>type="color"</code>: For selecting a color. Provides a color picker.</li>
+                <li><code>type="range"</code>: For selecting a value from a range (e.g., a slider). Use `min`, `max`, `value`, and `step` attributes.</li>
+            </ul>
+            <pre><code>
+&lt;label for="dob"&gt;Date of Birth:&lt;/label&gt;
+&lt;input type="date" id="dob" name="dob"&gt;
+
+&lt;label for="favcolor"&gt;Favorite Color:&lt;/label&gt;
+&lt;input type="color" id="favcolor" name="favcolor" value="#63b3ed"&gt;
+
+&lt;label for="volume"&gt;Volume:&lt;/label&gt;
+&lt;input type="range" id="volume" name="volume" min="0" max="100" value="50"&gt;
+            </code></pre>
+        </div>
+
+        <div class="slide" id="slide34">
+            <h1 class="text-3xl font-bold mb-4">Exercise (Day 8): Survey Form</h1>
+            <div class="exercise-box">
+                <h3 class="text-xl font-semibold mb-4">Your Turn!</h3>
+                <p>Open your <code>contact-form.html</code> or create a new file named <code>survey.html</code>.</p>
+                <ol class="list-decimal list-inside ml-4">
+                    <li>Add the basic HTML structure and a title "Survey".</li>
+                    <li>Inside the <code>&lt;body&gt;</code>, create a <code>&lt;form&gt;</code>.</li>
+                    <li>Add labels and inputs for:
+                        <ul class="list-disc list-inside ml-8">
+                            <li>Your Name (text, required)</li>
+                            <li>Your Email (email, required)</li>
+                            <li>Favorite Programming Language (radio buttons: HTML, CSS, JavaScript - use the same `name` for the group!)</li>
+                            <li>What you want to learn more about (checkboxes: Animations, Games, Mobile Apps)</li>
+                            <li>Your Feedback (textarea)</li>
+                            <li>Your Birthdate (date)</li>
+                            <li>How much you like coding (range slider from 0-100)</li>
+                        </ul>
+                    </li>
+                    <li>Include a submit button.</li>
+                    <li>Save and test your form. Try submitting without filling required fields.</li>
+                </ol>
+                <p class="mt-4"><strong>Peer-Learning Moment:</strong> Help each other with the `name` attribute for radio buttons!</p>
+            </div>
+        </div>
+
+        <div class="slide" id="slide35">
+            <h1 class="text-3xl font-bold mb-4">Assignment (Day 8): Simple Product Order Form</h1>
+            <div class="assignment-box">
+                <h3 class="text-xl font-semibold mb-4">Challenge Yourself!</h3>
+                <p>Create a new HTML file named <code>order-form.html</code>.</p>
+                <ol class="list-decimal list-inside ml-4">
+                    <li>Add the basic HTML structure and title.</li>
+                    <li>Inside the <code>&lt;body&gt;</code>, create a <code>&lt;form&gt;</code>.</li>
+                    <li>Imagine you're selling a few items (e.g., "Code Crusader T-shirt", "Sticker Pack", "Mug"). Add form elements for:
+                        <ul class="list-disc list-inside ml-8">
+                            <li>Customer Name (text, required)</li>
+                            <li>Delivery Address (textarea)</li>
+                            <li>Choose Product (dropdown: T-shirt, Sticker Pack, Mug)</li>
+                            <li>Quantity (number input, min 1, max 10)</li>
+                            <li>Payment Method (radio buttons: Credit Card, PayPal, Cash on Delivery)</li>
+                            <li>Optional: Preferred Delivery Date (date)</li>
+                        </ul>
+                    </li>
+                    <li>Include a submit button.</li>
+                    <li>Add a link to this form from your navigation.</li>
+                </ol>
+                <p class="mt-4"><strong>Think:</strong> How can you make the form user-friendly?</p>
+            </div>
+        </div>
+
+        <!-- Day 9: HTML Media (Audio & Video) -->
+        <div class="slide" id="slide36">
+            <h1 class="text-3xl font-bold mb-4">Day 9: Bringing Media to Your Page!</h1>
+            <h2 class="text-2xl font-semibold mb-6">Audio and Video Tags</h2>
+            <img src="https://cdn.splessons.com/2016/06/html-examples-splessons.jpg" alt="Media Icons" class="w-full h-auto mb-4">
+            <p>HTML allows you to embed audio and video directly into your webpages!</p>
+            <ul class="list-disc list-inside ml-4">
+                <li><code>&lt;audio&gt;</code>: Embeds sound content.</li>
+                <li><code>&lt;video&gt;</code>: Embeds video content.</li>
+                <li>Both tags use the `src` attribute for the media file path.</li>
+                <li>`controls` attribute: Adds default play/pause, volume, etc.</li>
+                <li>`autoplay`: Starts playing automatically (use with caution!).</li>
+                <li>`loop`: Repeats the media when it ends.</li>
+            </ul>
+            <pre><code>
+&lt;audio src="mysong.mp3" controls loop&gt;
+    Your browser does not support the audio element.
+&lt;/audio&gt;
+
+&lt;video src="myvideo.mp4" controls width="400" height="225" poster="video-thumbnail.jpg"&gt;
+    Your browser does not support the video tag.
+&lt;/video&gt;
+            </code></pre>
+            <p class="text-sm text-gray-400 mt-2">The text inside the tags is fallback content for browsers that don't support the media.</p>
+        </div>
+
+        <div class="slide" id="slide37">
+            <h1 class="text-3xl font-bold mb-4">Day 9: Multiple Media Sources & YouTube Embeds</h1>
+            <h2 class="text-2xl font-semibold mb-6">Ensuring Compatibility & External Content</h2>
+            <!-- <img src="https://placehold.co/600x300/2d3748/e2e8f0?text=YouTube+Embed" alt="YouTube Embed" class="w-full h-auto mb-4"> -->
+            <img src="https://www.helpndoc.com/img/news/how-to-embed-youtube-video-in-chm-help-file-or-html-documentation/share-embed-youtube-movie.png" alt="YouTube Embed" class="w-full h-auto mb-4">
+            <ul class="list-disc list-inside ml-4">
+                <li><strong><code>&lt;source&gt;</code> tag:</strong> Inside `audio` or `video`, allows you to provide multiple file formats for broader browser compatibility. The browser will use the first one it supports.</li>
+                <pre><code>
+&lt;video controls&gt;
+    &lt;source src="video.mp4" type="video/mp4"&gt;
+    &lt;source src="video.webm" type="video/webm"&gt;
+    Your browser does not support the video tag.
+&lt;/video&gt;
+                </code></pre>
+                <li><strong>Embedding YouTube/Vimeo:</strong> For popular video platforms, it's common to use their provided `&lt;iframe&gt;` embed code.</li>
+                <pre><code>
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+    frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+                </code></pre>
+            </ul>
+        </div>
+
+        <div class="slide" id="slide38">
+            <h1 class="text-3xl font-bold mb-4">Exercise (Day 9): Personal Media Player</h1>
+            <div class="exercise-box">
+                <h3 class="text-xl font-semibold mb-4">Your Turn!</h3>
+                <p>Create a new HTML file called <code>my-media.html</code>.</p>
+                <ol class="list-decimal list-inside ml-4">
+                    <li>Add the basic HTML structure and a title "My Media".</li>
+                    <li>Inside the <code>&lt;body&gt;</code>:
+                        <ul class="list-disc list-inside ml-8">
+                            <li>An <code>&lt;h1&gt;</code>: "My Favorite Media".</li>
+                            <li>Find a short audio file online (e.g., from a royalty-free sound site) or a placeholder. Embed it using the <code>&lt;audio&gt;</code> tag with `controls`.</li>
+                            <li>Find a short video file online (or a placeholder). Embed it using the <code>&lt;video&gt;</code> tag with `controls` and set a `width`.</li>
+                            <li>Find a YouTube video you like and embed it using the `&lt;iframe&gt;` embed code (usually found under "Share" > "Embed" on YouTube).</li>
+                            <li>Add a link back to your `about-me.html` page.</li>
+                        </ul>
+                    </li>
+                    <li>Save and view in your browser. Play your media!</li>
+                </ol>
+                <p class="mt-4"><strong>Peer-Learning Moment:</strong> Share your favorite embedded media! Discuss why you might use `&lt;video&gt;` vs. `&lt;iframe&gt;`.</p>
+            </div>
+        </div>
+
+        <div class="slide" id="slide39">
+            <h1 class="text-3xl font-bold mb-4">Assignment (Day 9): Portfolio Media Section</h1>
+            <div class="assignment-box">
+                <h3 class="text-xl font-semibold mb-4">Challenge Yourself!</h3>
+                <p>Open your `index.html` (or `about-me.html` if you haven't started `index.html` yet) and add a new section for media.</p>
+                <ol class="list-decimal list-inside ml-4">
+                    <li>Create a new `&lt;section&gt;` tag with an `&lt;h2&gt;` like "My Creative Corner" or "My Favorite Sounds/Videos".</li>
+                    <li>Inside this section, embed at least one audio clip and one video clip (either direct `&lt;video&gt;` or YouTube `&lt;iframe&gt;`).</li>
+                    <li>Ensure your navigation links are updated to include a link to this section (we'll learn scroll-to-section later, for now just link to the page).</li>
+                    <li>Save and view your portfolio page.</li>
+                </ol>
+                <p class="mt-4">This is how we start building out the content for our final project!</p>
+            </div>
+        </div>
+
+        <!-- Day 10: HTML Review & Project Planning -->
+        <div class="slide" id="slide40">
+            <h1 class="text-3xl font-bold mb-4">Day 10: HTML Review & Project Planning!</h1>
+            <h2 class="text-2xl font-semibold mb-6">Consolidate Your HTML Knowledge</h2>
+            <img src="https://placehold.co/600x300/2d3748/e2e8f0?text=HTML+Review+Checklist" alt="HTML Review Checklist" class="w-full h-auto mb-4">
+            <p>Congratulations! You've learned the fundamental building blocks of the web: HTML!</p>
+            <p>Today is about reviewing what we've learned and planning the HTML structure for our final project: <b>Your Personal Portfolio Website</b>.</p>
+            <ul class="list-disc list-inside ml-4">
+                <li>Basic Document Structure</li>
+                <li>Headings, Paragraphs, Line Breaks</li>
+                <li>Lists (Ordered & Unordered)</li>
+                <li>Semantic HTML (`header`, `nav`, `main`, `article`, `section`, `footer`)</li>
+                <li>Links (`a` tag, `href`, `target`)</li>
+                <li>Images (`img` tag, `src`, `alt`)</li>
+                <li>Tables (`table`, `tr`, `th`, `td`, `thead`, `tbody`, `tfoot`, `caption`)</li>
+                <li>Forms (`form`, `label`, `input` types, `textarea`, `select`, `option`, `button`)</li>
+                <li>Media (`audio`, `video`, `iframe`)</li>
+            </ul>
+        </div>
+
+        <div class="slide" id="slide41">
+            <h1 class="text-3xl font-bold mb-4">Day 10: Your Personal Portfolio Website</h1>
+            <h2 class="text-2xl font-semibold mb-6">The Final Project Begins!</h2>
+            <img src="https://media.geeksforgeeks.org/wp-content/uploads/20250418103700874947/portfolioimg.jpg" alt="Portfolio Website Concept" class="w-full h-auto mb-4">
+            <p>This is your chance to showcase everything you've learned and build something truly your own!</p>
+            <p>Your portfolio website will include:</p>
+            <ul class="list-disc list-inside ml-4">
+                <li><strong>Home Page (`index.html`):</strong> A welcoming introduction.</li>
+                <li><strong>About Me Page (`about.html` or `about-me.html`):</strong> Details about you, your interests, and what you love.</li>
+                <li><strong>Projects Page (`projects.html`):</strong> Where you'll showcase the mini-projects we build and your final project.</li>
+                <li><strong>Contact Page (`contact.html`):</strong> A form for people to reach you.</li>
+                <li><b>Optional:</b> Skills, Blog, Gallery, etc.</li>
+            </ul>
+            <p>Today, we'll focus on planning the HTML structure for these pages.</p>
+        </div>
+
+        <div class="slide" id="slide42">
+            <h1 class="text-3xl font-bold mb-4">Exercise (Day 10): Portfolio HTML Outline</h1>
+            <div class="exercise-box">
+                <h3 class="text-xl font-semibold mb-4">Your Turn!</h3>
+                <p>Let's plan the HTML structure for your portfolio.</p>
+                <ol class="list-decimal list-inside ml-4">
+                    <li>Create a new folder on your computer called `my-portfolio`.</li>
+                    <li>Inside this folder, create three new empty HTML files:
+                        <ul class="list-disc list-inside ml-8">
+                            <li><code>index.html</code></li>
+                            <li><code>about.html</code></li>
+                            <li><code>projects.html</code></li>
+                            <li><code>contact.html</code></li>
+                        </ul>
+                    </li>
+                    <li>For each of these files, add the <b>basic HTML document structure</b> (`<!DOCTYPE html>`, `<html>`, `<body>`, etc.) and a relevant `&lt;title&gt;`.</li>
+                    <li>In `index.html`, add a `&lt;header&gt;` with an `&lt;h1&gt;` for "My Portfolio" and a `&lt;nav&gt;` containing unordered list links to `about.html`, `projects.html`, and `contact.html`.</li>
+                    <li>Copy and paste this `&lt;header&gt;` and `&lt;nav&gt;` into `about.html`, `projects.html`, and `contact.html` so all pages have consistent navigation.</li>
+                    <li>Add a simple `&lt;h2&gt;` to the `&lt;body&gt;` of each page indicating what that page is (e.g., "Welcome to My Home Page!", "About Me", "My Projects", "Contact Me").</li>
+                    <li>Test your navigation by opening `index.html` and clicking through the links.</li>
+                </ol>
+                <p class="mt-4"><strong>Peer-Learning Moment:</strong> Discuss what content you envision for each page with your partner. How will you use the HTML tags you've learned?</p>
+            </div>
+        </div>
+
+        <div class="slide" id="slide43">
+            <h1 class="text-3xl font-bold mb-4">Assignment (Day 10): Populate Initial Portfolio Content</h1>
+            <div class="assignment-box">
+                <h3 class="text-xl font-semibold mb-4">Challenge Yourself!</h3>
+                <p>Start populating your portfolio pages with placeholder content using the HTML tags you've learned.</p>
+                <ul class="list-disc list-inside ml-4">
+                    <li><strong>`about.html` (or `about-me.html` if you prefer):</strong> Copy over the content from your previous "About Me" page. Add an image if you have one.</li>
+                    <li><strong>`projects.html` (placeholder):</strong> Add an `&lt;h2&gt;` for "My Projects" and a paragraph saying "Coming Soon!" or a simple unordered list of project ideas.</li>
+                    <li><strong>`contact.html` (placeholder):</strong> Add an `&lt;h2&gt;` for "Contact Me" and a simple contact form (Name, Email, Message) using `&lt;input type="text"&gt;`, `&lt;input type="email"&gt;`, and `&lt;textarea&gt;`.</li>
+                    <li>Ensure all pages have a `&lt;footer&gt;` with your name and copyright info.</li>
+                </ul>
+                <p class="mt-4">This is the beginning of your professional online presence!</p>
+            </div>
+        </div>
+
+
+        <!-- Navigation Buttons -->
+        <div class="footer-nav">
+            <button id="prevBtn" class="nav-button" disabled>Previous</button>
+            <button id="nextBtn" class="nav-button">Next</button>
+        </div>
+    </div>
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        let currentSlide = 0;
+
+        // Function to show a specific slide
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i === index) {
+                    slide.classList.add('active');
+                }
+            });
+            updateNavButtons();
+        }
+
+        // Function to update the state of navigation buttons
+        function updateNavButtons() {
+            prevBtn.disabled = currentSlide === 0;
+            nextBtn.disabled = currentSlide === slides.length - 1;
+        }
+
+        // Event listener for the "Next" button
+        nextBtn.addEventListener('click', () => {
+            if (currentSlide < slides.length - 1) {
+                currentSlide++;
+                slides[currentSlide].classList.remove('fade__out')
+                slides[currentSlide].classList.add('fade__in')
+                showSlide(currentSlide);
+            }
+        });
+
+        // Event listener for the "Previous" button        
+        prevBtn.addEventListener('click', () => {
+            if (currentSlide > 0) {
+                currentSlide--;
+                slides[currentSlide].classList.remove('fade__in')
+                slides[currentSlide].classList.add('fade__out')
+                showSlide(currentSlide);
+            }
+        });
+
+        // Initialize the first slide and button states
+        showSlide(currentSlide);
+
+        // Adapt arrow keys for touch (swipe gestures for touch-screens)
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        document.querySelector('.slide-container').addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        document.querySelector('.slide-container').addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            if (touchEndX < touchStartX - 50) { // Swiped left
+                if (currentSlide < slides.length - 1) {
+                    currentSlide++;
+                    showSlide(currentSlide);
+                }
+            }
+            if (touchEndX > touchStartX + 50) { // Swiped right
+                if (currentSlide > 0) {
+                    currentSlide--;
+                    showSlide(currentSlide);
+                }
+            }
+        }
+    </script>
+</body>
+</html>
