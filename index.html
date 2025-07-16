@@ -15,7 +15,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
+            height: 100%;
+            min-height: 100dvh;
             margin: 0;
             overflow-x: hidden; /* Prevent horizontal scroll */
         }
@@ -26,7 +27,9 @@
             border-radius: 1.5rem; /* Rounded corners */
             box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5); /* Darker shadow */
             padding: 2rem;
+            overflow: scroll;
             position: relative;
+            height: 100%;
             min-height: 500px; /* Ensure enough height for content */
             display: flex;
             flex-direction: column;
@@ -132,6 +135,37 @@
             justify-content: space-between;
             margin-top: 2rem;
         }
+        .table__list{
+            display: block;
+            position: absolute;
+            /* z-index: 1; */
+            overflow-y: scroll;
+            background: #1a202c;
+            box-shadow: .3px 0px #f6ad55;
+            padding-block: 1rem;
+            top: 0;
+            left: 0;
+            width: 30%;
+            height:100%;
+        }
+        .table__list ul li{
+            color:#1c99f3;
+            font-weight: 500;
+            cursor: pointer;
+            padding-block: 3px;
+            padding-inline: 1.5rem;
+        }
+         .table__list ul li:hover{
+            background-color: #ddd;
+            color: #1c99f3;
+        }
+
+        @media( width < 768px){
+            .table__list{
+                width: 80%;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -973,11 +1007,26 @@
             <button id="nextBtn" class="nav-button">Next</button>
         </div>
     </div>
+    <!-- Table of Contents Button -->
+    <button class="absolute top-0 left-0 nav-button" id="table__content">Table of Contents</button>
+
+    <!-- content naigation -->
+    <!-- <nav class="w-4/12 min-h-dvh bg-[#ddd] shadow-md">
+        <ul>
+            <li>Day 1: Welcome to Code Crusaders!</li>
+             <li>Day 2: Building Blocks of the Web!</li>
+        </ul>
+    </nav> -->
 
     <script>
+         const slide = document.querySelector('.slide_container');
+        const body = document.querySelector('body');
         const slides = document.querySelectorAll('.slide');
         const prevBtn = document.getElementById('prevBtn');
         const nextBtn = document.getElementById('nextBtn');
+        const activity = document.querySelectorAll('h1')
+        const contentBtn = document.getElementById("table__content");
+        const table__list = document.querySelectorAll("nav")
         let currentSlide = 0;
 
         // Function to show a specific slide
@@ -1014,6 +1063,57 @@
                 slides[currentSlide].classList.remove('fade__in')
                 slides[currentSlide].classList.add('fade__out')
                 showSlide(currentSlide);
+            }
+        });
+
+        // populate the table of contents
+        contentBtn.addEventListener("click", () => {
+            // remove existing TOC if it exists
+            const existingTOC = document.querySelector('.table__list');
+            if (existingTOC) {
+                body.removeChild(existingTOC);
+                return;
+            }
+
+            // create new TOC
+            const nav = document.createElement('nav');
+            const ul = document.createElement('ul');
+            nav.append(ul);
+            nav.classList.add('table__list');
+
+            for (let i = 0; i < activity.length; i++) {
+                if (activity[i].textContent.includes("Day") && 
+                !activity[i].textContent.includes("Assignment") && 
+                !activity[i].textContent.includes("Exercise")) {
+                     
+                    const li = document.createElement('li');
+                    li.innerText = activity[i].textContent;
+        
+                    
+                    li.addEventListener('click', () => {
+                     
+                            if(li.innerText === activity[i].innerText){
+                               currentSlide = i
+                                showSlide(currentSlide);
+                                body.removeChild(nav)
+                            }
+                    });
+                    
+                    ul.append(li);
+                }
+            }
+            
+            body.appendChild(nav);
+        });
+
+
+        // remove table of contents
+        body.addEventListener('click', (e) => {
+            const nav = document.querySelector('.table__list');
+            const clickedInsideTOC = nav && nav.contains(e.target);
+            
+            if (nav && !clickedInsideTOC && e.target !== contentBtn) {
+                body.removeChild(nav);
             }
         });
 
