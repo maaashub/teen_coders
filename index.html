@@ -8,33 +8,33 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         /* Custom styles for dark theme and Inter font */
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #1a202c; /* Dark background */
-            color: #e2e8f0; /* Light text */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-            min-height: 100dvh;
-            margin: 0;
-            overflow-x: hidden; /* Prevent horizontal scroll */
-        }
-        .slide-container {
-            width: 90%;
-            max-width: 960px;
-            background-color: #2d3748; /* Slightly lighter dark for content */
-            border-radius: 1.5rem; /* Rounded corners */
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5); /* Darker shadow */
-            padding: 2rem;
-            overflow: scroll;
-            position: relative;
-            height: 100%;
-            min-height: 500px; /* Ensure enough height for content */
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
+     body {
+        font-family: 'Inter', sans-serif;
+        background-color: #1a202c;
+        color: #e2e8f0;
+        display: flex;
+        justify-content: center;
+        align-items: center; /* Changed from center to prevent vertical squeeze */
+        min-height: 100vh; /* Changed from 100% and 100dvh for better compatibility */
+        padding: 1rem;
+        margin: 0;
+}
+
+    .slide-container {
+        width: 90%;
+        max-width: 960px;
+        background-color: #2d3748;
+        border-radius: 1.5rem;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+        padding: 2rem;
+        overflow-y: auto; /* Explicit vertical scroll */
+        height: 0; /* Flexbox will handle actual height */
+        min-height: min(750px, 98vh); /* Minimum of 500px or 90% viewport */
+        flex: 1 1 auto; /* Allows growing/shrinking */ /* Creates scrollable boundary */
+        display: flex;
+        flex-direction: column;
+        margin: 1rem 0; /* Added breathing room */
+    }
 
         .slide {
             display: none; /* Hidden by default */
@@ -150,17 +150,21 @@
         }
         .table__list ul li{
             color:#1c99f3;
-            font-weight: 500;
             cursor: pointer;
-            padding-block: 3px;
+            padding-block: 1rem;
             padding-inline: 1.5rem;
+            transition: all .45s;
         }
          .table__list ul li:hover{
             background-color: #ddd;
+            font-weight: 500;
             color: #1c99f3;
         }
 
         @media( width < 768px){
+              .slide-container {
+                max-height: 80vh;
+            }
             .table__list{
                 width: 80%;
             }
