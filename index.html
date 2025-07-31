@@ -1004,6 +1004,870 @@
             </div>
         </div>
 
+         <!-- Day 11: Introduction to CSS & Inline/Internal Styles -->
+        <div class="slide" id="slide44">
+            <h1 class="text-3xl font-bold mb-4">Day 11: Making it Pretty with CSS! (Part 1)</h1>
+            <h2 class="text-2xl font-semibold mb-6">Introduction to CSS: Styling Your Webpages</h2>
+            <img src="https://cdo-curriculum.s3.amazonaws.com/media/uploads/CS-Discoveries---Semester-1.png" alt="CSS Styling Concept" class="w-full h-auto mb-4 my-auto">
+            <p>Welcome to CSS! If HTML is the structure, CSS (Cascading Style Sheets) is the <b>designer</b> of your webpage. It controls how your HTML elements look.</p>
+            <ul class="list-disc list-inside ml-4">
+                <li>What colors should your text be?</li>
+                <li>How big should your headings be?</li>
+                <li>Where should elements be placed on the page?</li>
+                <li>What fonts should you use?</li>
+            </ul>
+            <p>CSS answers all these questions and more!</p>
+        </div>
+
+        <div class="slide" id="slide45">
+            <h1 class="text-3xl font-bold mb-4">Day 11: CSS Syntax</h1>
+            <h2 class="text-2xl font-semibold mb-6">Selectors, Properties, and Values</h2>
+            <img src="https://www.testkarts.com/assets/images/css-structure-declaration-7def3e0066d83a0e1ce1446488683130.webp" alt="CSS Syntax Diagram" class="w-full h-auto mb-4">
+            <p>A basic CSS rule has three main parts:</p>
+            <pre><code>
+selector {
+    property: value;
+    property: value;
+}
+            </code></pre>
+            <ul class="list-disc list-inside ml-4">
+                <li><strong>Selector:</strong> Points to the HTML element(s) you want to style (e.g., `p`, `h1`, `body`).</li>
+                <li><strong>Declaration:</strong> The `property: value;` pair.
+                    <ul class="list-disc list-inside ml-8">
+                        <li><strong>Property:</strong> The specific style attribute you want to change (e.g., `color`, `font-size`, `background-color`).</li>
+                        <li><strong>Value:</strong> The setting for that property (e.g., `blue`, `16px`, `#333`).</li>
+                    </ul>
+                </li>
+            </ul>
+            <p>Example: `p { color: blue; font-size: 16px; }`</p>
+        </div>
+
+        <div class="slide" id="slide46">
+            <h1 class="text-3xl font-bold mb-4">Day 11: Ways to Add CSS - Inline Styles</h1>
+            <h2 class="text-2xl font-semibold mb-6">Directly on HTML Elements (Not Recommended for Most Cases!)</h2>
+            <img src="https://www.myprograming.com/wp-content/uploads/2021/03/inline-CSS.png" alt="Inline CSS Example" class="w-full h-auto mb-4">
+            <p>Inline styles are added directly to an HTML element using the `style` attribute.</p>
+            <pre><code>
+&lt;h1 style="color: blue; text-align: center;"&gt;Hello World!&lt;/h1&gt;
+&lt;p style="font-size: 18px; background-color: lightgray;"&gt;This paragraph has inline styles.&lt;/p&gt;
+            </code></pre>
+            <p class="text-sm text-gray-400 mt-2"><strong>Pros:</strong> Quick for small, unique changes. <br><strong>Cons:</strong> Hard to manage for large sites, mixes content and style, not reusable.</p>
+        </div>
+
+        <div class="slide" id="slide47">
+            <h1 class="text-3xl font-bold mb-4">Day 11: Ways to Add CSS - Internal Styles</h1>
+            <h2 class="text-2xl font-semibold mb-6">Inside the <code>&lt;head&gt;</code> of Your HTML Document</h2>
+            <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXdluvZ_RBhADuan3ASCMLNEQpPPZPLwj71n9aNx3eo2X_pQwgvVLFkdNEQtyeh9NrsWCHweDC23QYdZEK96JqoU2uX_iQmViobCZtwNWigYb0mDYqNkwZUNpZ2rmUm9HVb7QSowjw?key=f8EaEjSIzxVy9D4zdlitdF3c" alt="Internal CSS Example" class="w-full h-auto mb-4">
+            <p>Internal styles are placed inside a <code>&lt;style&gt;</code> tag within the <code>&lt;head&gt;</code> section of your HTML document.</p>
+            <pre><code>
+&lt;head&gt;
+    &lt;style&gt;
+        body {
+            background-color: #1a202c;
+            color: #e2e8f0;
+        }
+        h1 {
+            color: #63b3ed;
+            text-align: center;
+        }
+        p {
+            font-family: sans-serif;
+            font-size: 1.1rem;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+            </code></pre>
+            <p class="text-sm text-gray-400 mt-2"><strong>Pros:</strong> Styles are in one place for that page. <br><strong>Cons:</strong> Not reusable across multiple pages, can make HTML files very long.</p>
+        </div>
+
+        <div class="slide" id="slide48">
+            <h1 class="text-3xl font-bold mb-4">Exercise (Day 11): Styling Your "About Me" Page</h1>
+            <div class="exercise-box">
+                <h3 class="text-xl font-semibold mb-4">Your Turn!</h3>
+                <p>Open your <code>about-me.html</code> file.</p>
+                <ol class="list-decimal list-inside ml-4">
+                    <li><strong>Inline Styles:</strong>
+                        <ul class="list-disc list-inside ml-8">
+                            <li>Add `style="color: #f6ad55;"` to your `&lt;h1&gt;` tag.</li>
+                            <li>Add `style="font-style: italic;"` to one of your paragraphs.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Internal Styles:</strong>
+                        <ul class="list-disc list-inside ml-8">
+                            <li>In the `&lt;head&gt;` section, add a `&lt;style&gt;` tag.</li>
+                            <li>Inside the `&lt;style&gt;` tag, write CSS rules to:
+                                <ul class="list-disc list-inside ml-12">
+                                    <li>Set the `background-color` of the `body` to a dark gray (`#2d3748`).</li>
+                                    <li>Set the `color` of all paragraphs (`p`) to a light blue (`#a0f0ed`).</li>
+                                    <li>Set the `font-family` of all headings (`h1`, `h2`) to `serif` (or any other generic font family you like).</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Save and view your page. See how the styles change!</li>
+                </ol>
+                <p class="mt-4"><strong>Peer-Learning Moment:</strong> Which style (inline or internal) takes precedence if there's a conflict? Discuss!</p>
+            </div>
+        </div>
+
+        <div class="slide" id="slide49">
+            <h1 class="text-3xl font-bold mb-4">Assignment (Day 11): Styling Your Schedule Page</h1>
+            <div class="assignment-box">
+                <h3 class="text-xl font-semibold mb-4">Challenge Yourself!</h3>
+                <p>Open your <code>my-schedule.html</code> file.</p>
+                <ul class="list-disc list-inside ml-4">
+                    <li>Add internal CSS (inside a `&lt;style&gt;` tag in the `&lt;head&gt;`).</li>
+                    <li>Style the `&lt;h1&gt;` with a `text-align: center;` and a `color` of your choice.</li>
+                    <li>Style the `&lt;ul&gt;` (unordered list) to have a `list-style-type: square;`.</li>
+                    <li>Style the `&lt;ol&gt;` (ordered list) to have a `list-style-type: upper-roman;`.</li>
+                    <li>Give the `&lt;footer&gt;` a `background-color` and `color` that contrasts well with the body.</li>
+                    <li>Save and view your page.</li>
+                </ul>
+                <p class="mt-4">Experiment with different color names (e.g., `red`, `green`, `purple`) or hex codes (e.g., `#FF0000`, `#00FF00`).</p>
+            </div>
+        </div>
+
+        <!-- Day 12: External CSS & CSS Selectors (Part 1) -->
+        <div class="slide" id="slide50">
+            <h1 class="text-3xl font-bold mb-4">Day 12: External CSS & Selectors! (Part 1)</h1>
+            <h2 class="text-2xl font-semibold mb-6">The Best Way to Style: External Style Sheets</h2>
+            <img src="https://img.uxcel.com/cdn-cgi/image/format=auto/practices/external-css-1621258547069/a-1672390170541-2x.jpg" alt="External CSS Concept" class="w-full h-auto mb-4">
+            <p>For larger websites with many pages, the best way to add CSS is using an <b>external stylesheet</b>. This keeps your HTML clean and allows you to apply the same styles across multiple pages easily.</p>
+            <ul class="list-disc list-inside ml-4">
+                <li>Create a separate file with a `.css` extension (e.g., `style.css`).</li>
+                <li>Link it to your HTML document using the `&lt;link&gt;` tag in the `&lt;head&gt;` section.</li>
+            </ul>
+            <pre><code>
+&lt;head&gt;
+    &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+            </code></pre>
+            <p class="text-sm text-gray-400 mt-2"><strong>Pros:</strong> Clean HTML, reusable styles, faster loading (browser caches CSS).</p>
+        </div>
+
+        <div class="slide" id="slide51">
+            <h1 class="text-3xl font-bold mb-4">Day 12: CSS Selectors (Part 1)</h1>
+            <h2 class="text-2xl font-semibold mb-6">Element, Class, and ID Selectors</h2>
+            <img src="https://media.gcflearnfree.org/content/5ebedddc62fd4212b87ca170_05_15_2020/04.png" alt="CSS Selectors Illustration" class="w-full h-auto mb-4">
+            <p>Selectors are how CSS "finds" the HTML elements it needs to style.</p>
+            <ul class="list-disc list-inside ml-4">
+                <li><strong>Element Selector:</strong> Selects all instances of an HTML element.
+                    <pre><code>p { color: green; } /* Styles all &lt;p&gt; tags */</code></pre>
+                </li>
+                <li><strong>Class Selector:</strong> Selects all elements with a specific `class` attribute. Use `.` followed by the class name. An element can have multiple classes.
+                    <pre><code>
+&lt;p class="highlight"&gt;Important text&lt;/p&gt;
+.highlight { background-color: yellow; }
+                    </code></pre>
+                </li>
+                <li><strong>ID Selector:</strong> Selects a single, unique element with a specific `id` attribute. Use `#` followed by the ID name. An ID must be unique per page!
+                    <pre><code>
+&lt;div id="main-header"&gt;Website Title&lt;/div&gt;
+#main-header { font-size: 3em; }
+                    </code></pre>
+                </li>
+            </ul>
+            <p class="text-sm text-gray-400 mt-2"><strong>Remember:</strong> IDs are for unique elements, classes are for reusable styles!</p>
+        </div>
+
+        <div class="slide" id="slide52">
+            <h1 class="text-3xl font-bold mb-4">Exercise (Day 12): External Styles & Selectors</h1>
+            <div class="exercise-box">
+                <h3 class="text-xl font-semibold mb-4">Your Turn!</h3>
+                <p>Let's convert your `about-me.html` to use external CSS and practice selectors.</p>
+                <ol class="list-decimal list-inside ml-4">
+                    <li>In your `my-portfolio` folder, create a new file named `style.css`.</li>
+                    <li>Move all the CSS rules from the `&lt;style&gt;` tag in your `about-me.html` to `style.css`.</li>
+                    <li>In `about-me.html`, remove the `&lt;style&gt;` tag and add the `&lt;link rel="stylesheet" href="style.css"&gt;` tag in the `&lt;head&gt;`.</li>
+                    <li>In `about-me.html`, add `class="section-title"` to your `&lt;h2&gt;` headings (e.g., "My Hobbies", "My Favorite Things").</li>
+                    <li>In `style.css`, add a rule for `.section-title` to give them a `border-bottom: 2px solid #63b3ed;`.</li>
+                    <li>In `about-me.html`, add `id="my-intro"` to your main introductory paragraph.</li>
+                    <li>In `style.css`, add a rule for `#my-intro` to give it a `font-weight: bold;`.</li>
+                    <li>Save both files and view `about-me.html`.</li>
+                </ol>
+                <p class="mt-4"><strong>Peer-Learning Moment:</strong> Did your styles apply correctly? Discuss the difference between a class and an ID.</p>
+            </div>
+        </div>
+
+        <div class="slide" id="slide53">
+            <h1 class="text-3xl font-bold mb-4">Assignment (Day 12): Styling All Portfolio Pages</h1>
+            <div class="assignment-box">
+                <h3 class="text-xl font-semibold mb-4">Challenge Yourself!</h3>
+                <p>Apply your `style.css` to all your portfolio pages and use element, class, and ID selectors.</p>
+                <ul class="list-disc list-inside ml-4">
+                    <li>Link `style.css` to `index.html`, `projects.html`, and `contact.html` (add the `&lt;link&gt;` tag in their `&lt;head&gt;` sections).</li>
+                    <li>In `style.css`, add a rule to style all `&lt;nav&gt;` elements (e.g., `background-color`, `padding`).</li>
+                    <li>Give your main `&lt;h1&gt;` on `index.html` an `id="main-heading"` and style it uniquely in `style.css`.</li>
+                    <li>Add a class `card` to any `&lt;div&gt;` or `&lt;section&gt;` you might use for a project in `projects.html` and give it a `background-color` and `padding`.</li>
+                    <li>Save all files and check consistency across your portfolio.</li>
+                </ul>
+                <p class="mt-4">Notice how a single CSS file can style multiple HTML pages!</p>
+            </div>
+        </div>
+
+        <!-- Day 13: CSS Selectors (Part 2) & Basic Properties -->
+        <div class="slide" id="slide54">
+            <h1 class="text-3xl font-bold mb-4">Day 13: More CSS Selectors & Properties!</h1>
+            <h2 class="text-2xl font-semibold mb-6">Universal, Grouping, and Descendant Selectors</h2>
+            <img src="https://embed.filekitcdn.com/e/xmQ1tdeMJB54tGdFVVZLsf/6tk2ncfcGtCiK87n3qETa5" alt="Advanced Selectors" class="w-full h-auto mb-4">
+            <p>Let's learn more powerful ways to select elements:</p>
+            <ul class="list-disc list-inside ml-4">
+                <li><strong>Universal Selector (`*`):</strong> Selects ALL elements on the page. Use with caution!
+                    <pre><code>* { margin: 0; padding: 0; } /* Resets default browser margins/paddings */</code></pre>
+                </li>
+                <li><strong>Grouping Selector (`,`):</strong> Applies the same styles to multiple selectors.
+                    <pre><code>h1, h2, h3 { color: #63b3ed; font-family: 'Arial', sans-serif; }</code></pre>
+                </li>
+                <li><strong>Descendant Selector (` ` - space):</strong> Selects an element that is *inside* another element.
+                    <pre><code>
+nav a { color: white; text-decoration: none; } /* Styles all &lt;a&gt; tags inside a &lt;nav&gt; */
+                    </code></pre>
+                </li>
+            </ul>
+        </div>
+
+        <div class="slide" id="slide55">
+            <h1 class="text-3xl font-bold mb-4">Day 13: Basic CSS Properties - Text & Color</h1>
+            <h2 class="text-2xl font-semibold mb-6">Making Your Text Look Great!</h2>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQe3_UBLGCA_EP2BDVtxbLW_CjqIwuRrEUxUw&s" alt="Text Styling Examples" class="w-full h-auto mb-4">
+            <ul class="list-disc list-inside ml-4">
+                <li>`color`: Sets the text color. (e.g., `red`, `#FF0000`, `rgb(255,0,0)`)</li>
+                <li>`background-color`: Sets the background color of an element.</li>
+                <li>`font-size`: Sets the size of the text (e.g., `16px`, `1.2em`, `2rem`).</li>
+                <li>`font-family`: Sets the font typeface (e.g., `'Arial', sans-serif`). Always provide a generic fallback!</li>
+                <li>`text-align`: Aligns text (`left`, `right`, `center`, `justify`).</li>
+                <li>`font-weight`: Sets the thickness of the font (`normal`, `bold`, `lighter`, `bolder`, or numbers like `400`, `700`).</li>
+                <li>`text-decoration`: Adds/removes lines (`none`, `underline`, `overline`, `line-through`).</li>
+            </ul>
+            <pre><code>
+body {
+    font-family: 'Verdana', sans-serif;
+    color: #e2e8f0;
+    background-color: #1a202c;
+}
+h1 {
+    text-align: center;
+    font-size: 2.5em;
+}
+a {
+    text-decoration: none; /* Removes underline from links */
+}
+            </code></pre>
+        </div>
+
+        <div class="slide" id="slide56">
+            <h1 class="text-3xl font-bold mb-4">Exercise (Day 13): Styling Your Navigation</h1>
+            <div class="exercise-box">
+                <h3 class="text-xl font-semibold mb-4">Your Turn!</h3>
+                <p>Open your `style.css` and `index.html` (or any portfolio page).</p>
+                <ol class="list-decimal list-inside ml-4">
+                    <li>Use the <b>universal selector</b> (`*`) to set `margin: 0;` and `padding: 0;` for all elements. This removes default browser spacing.</li>
+                    <li>Use the <b>grouping selector</b> to set a common `font-family` and `color` for `h1`, `h2`, and `h3` tags.</li>
+                    <li>Use the <b>descendant selector</b> `nav ul` to style the unordered list inside your navigation (e.g., `list-style-type: none;` to remove bullet points).</li>
+                    <li>Use `nav a` to style the links inside your navigation (e.g., `text-decoration: none;`, `color: #63b3ed;`).</li>
+                    <li>Save and view your portfolio pages.</li>
+                </ol>
+                <p class="mt-4"><strong>Peer-Learning Moment:</strong> Discuss how the universal selector affects your page. Why is removing default margins/paddings a common practice?</p>
+            </div>
+        </div>
+
+        <div class="slide" id="slide57">
+            <h1 class="text-3xl font-bold mb-4">Assignment (Day 13): Text & Color Palette for Portfolio</h1>
+            <div class="assignment-box">
+                <h3 class="text-xl font-semibold mb-4">Challenge Yourself!</h3>
+                <p>Refine the text and color styling across your entire portfolio.</p>
+                <ul class="list-disc list-inside ml-4">
+                    <li>Choose a consistent `font-family` for your `body` (e.g., `'Roboto', sans-serif` or `'Open Sans', sans-serif` if you want to try Google Fonts later).</li>
+                    <li>Set a base `font-size` for your `body` (e.g., `18px` or `1.1em`).</li>
+                    <li>Define a primary and secondary color for your headings and text, and a background color for your `body` and `footer`. Aim for a dark theme!</li>
+                    <li>Apply `text-align: center;` to your main page titles.</li>
+                    <li>Experiment with `font-weight` for different text elements.</li>
+                    <li>Ensure all links have `text-decoration: none;` and a distinct `color`.</li>
+                </ul>
+                <p class="mt-4">Consistency is key for good design!</p>
+            </div>
+        </div>
+
+        <!-- Day 14: Box Model - Content, Padding, Border, Margin -->
+        <div class="slide" id="slide58">
+            <h1 class="text-3xl font-bold mb-4">Day 14: The CSS Box Model!</h1>
+            <h2 class="text-2xl font-semibold mb-6">Content, Padding, Border, Margin</h2>
+            <img src="https://www.csssolid.com/images/box-model/css-box-model.png" alt="Box Model Diagram" class="w-full h-auto mb-4">
+            <p>Every HTML element is treated as a rectangular box by the browser. Understanding the Box Model is crucial for layout and spacing.</p>
+            <ul class="list-disc list-inside ml-4">
+                <li><strong>Content:</strong> The actual content (text, image, video). Controlled by `width` and `height`.</li>
+                <li><strong>Padding:</strong> Space between the content and the border. Pushes content away from the border.</li>
+                <li><strong>Border:</strong> A line that goes around the padding and content.</li>
+                <li><strong>Margin:</strong> Space outside the border. Pushes other elements away from this element.</li>
+            </ul>
+            <pre><code>
+div {
+    width: 200px;
+    height: 100px;
+    padding: 20px; /* Space inside */
+    border: 5px solid red; /* Line around */
+    margin: 30px; /* Space outside */
+}
+            </code></pre>
+        </div>
+
+        <div class="slide" id="slide59">
+            <h1 class="text-3xl font-bold mb-4">Day 14: Padding, Border, Margin - Shorthands</h1>
+            <h2 class="text-2xl font-semibold mb-6">Controlling Each Side & Collapsing Margins</h2>
+            <img src="https://archive.smashing.media/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/0eb754a6-893b-4a48-b8d4-b9b2db0ee650/figurea.gif" alt="Padding Margin Shorthands" class="w-full h-auto mb-4">
+            <ul class="list-disc list-inside ml-4">
+                <li><strong>Individual Sides:</strong> `padding-top`, `padding-right`, `padding-bottom`, `padding-left` (same for `margin`, `border`).</li>
+                <li><strong>Shorthand (1 value):</strong> Applies to all 4 sides.
+                    <pre><code>padding: 20px; /* 20px on all sides */</code></pre>
+                </li>
+                <li><strong>Shorthand (2 values):</strong> Top/Bottom, Left/Right.
+                    <pre><code>padding: 10px 20px; /* 10px top/bottom, 20px left/right */</code></pre>
+                </li>
+                <li><strong>Shorthand (3 values):</strong> Top, Left/Right, Bottom.
+                    <pre><code>padding: 10px 20px 30px; /* 10px top, 20px left/right, 30px bottom */</code></pre>
+                </li>
+                <li><strong>Shorthand (4 values):</strong> Top, Right, Bottom, Left (clockwise from top).
+                    <pre><code>padding: 10px 20px 30px 40px;</code></pre>
+                </li>
+                <li><strong>Border Shorthand:</strong> `border: [width] [style] [color];` (e.g., `border: 2px solid #63b3ed;`)</li>
+                <li><strong>Margin Collapsing:</strong> Vertical margins between block elements sometimes collapse into a single margin.</li>
+            </ul>
+        </div>
+
+        <div class="slide" id="slide60">
+            <h1 class="text-3xl font-bold mb-4">Exercise (Day 14): Building Blocks with Box Model</h1>
+            <div class="exercise-box">
+                <h3 class="text-xl font-semibold mb-4">Your Turn!</h3>
+                <p>Create a new HTML file `box-model-demo.html` and link it to your `style.css`.</p>
+                <ol class="list-decimal list-inside ml-4">
+                    <li>In `box-model-demo.html`, create three `&lt;div&gt;` elements, each with a unique class (e.g., `box1`, `box2`, `box3`). Add some text inside each.</li>
+                    <li>In `style.css`, style each box:
+                        <ul class="list-disc list-inside ml-8">
+                            <li>Give each a `width` and `height` (e.g., `200px` by `150px`).</li>
+                            <li>Give each a different `background-color`.</li>
+                            <li>Apply `padding` to `box1` (e.g., `20px`).</li>
+                            <li>Apply a `border` to `box2` (e.g., `5px dashed green`).</li>
+                            <li>Apply `margin` to `box3` (e.g., `30px`).</li>
+                            <li>Try applying `margin-top: 50px;` to `box2` and observe margin collapsing.</li>
+                        </ul>
+                    </li>
+                    <li>Save and view. Use your browser's developer tools (right-click -> Inspect) to see the box model in action!</li>
+                </ol>
+                <p class="mt-4"><strong>Peer-Learning Moment:</strong> Use the browser's inspector to visualize the content, padding, border, and margin of each box.</p>
+            </div>
+        </div>
+
+        <div class="slide" id="slide61">
+            <h1 class="text-3xl font-bold mb-4">Assignment (Day 14): Portfolio Spacing & Borders</h1>
+            <div class="assignment-box">
+                <h3 class="text-xl font-semibold mb-4">Challenge Yourself!</h3>
+                <p>Apply box model properties to elements in your portfolio pages.</p>
+                <ul class="list-disc list-inside ml-4">
+                    <li>Add `padding` to your `&lt;header&gt;` and `&lt;footer&gt;` elements to give them some breathing room.</li>
+                    <li>Add a `border-bottom` to your `&lt;nav&gt;` or `&lt;header&gt;` to separate it from the main content.</li>
+                    <li>Add `margin-bottom` to your `&lt;h1&gt;` and `&lt;h2&gt;` tags to create space below them.</li>
+                    <li>Apply `padding` to your `&lt;main&gt;` content area to prevent content from touching the edges of the browser.</li>
+                    <li>Consider adding a subtle `border` or `padding` to your form inputs to make them stand out.</li>
+                </ul>
+                <p class="mt-4">Good spacing makes your website much more readable and appealing!</p>
+            </div>
+        </div>
+
+        <!-- Day 15: Display Property (Block, Inline, Inline-Block) -->
+        <div class="slide" id="slide62">
+            <h1 class="text-3xl font-bold mb-4">Day 15: Controlling Element Flow with `display`!</h1>
+            <h2 class="text-2xl font-semibold mb-6">Block, Inline, and Inline-Block</h2>
+            <img src="https://pbs.twimg.com/media/Fz3KtjQWwAALpWn?format=jpg&name=900x900" alt="Display Property Diagram" class="w-full h-auto mb-4">
+            <p>The `display` property is fundamental to how elements behave on a page. Every HTML element has a default `display` value.</p>
+            <ul class="list-disc list-inside ml-4">
+                <li><strong>`display: block;`</strong>
+                    <ul class="list-disc list-inside ml-8">
+                        <li>Takes up the full width available.</li>
+                        <li>Starts on a new line.</li>
+                        <li>Can set `width`, `height`, `padding`, `margin`.</li>
+                        <li>Examples: `&lt;p&gt;`, `&lt;div&gt;`, `&lt;h1&gt;`, `&lt;li&gt;`</li>
+                    </ul>
+                </li>
+                <li><strong>`display: inline;`</strong>
+                    <ul class="list-disc list-inside ml-8">
+                        <li>Takes up only as much width as its content.</li>
+                        <li>Does NOT start on a new line.</li>
+                        <li>Cannot set `width` or `height`. `padding-top`/`bottom` and `margin-top`/`bottom` have no effect.</li>
+                        <li>Examples: `&lt;a&gt;`, `&lt;span&gt;`, `&lt;img&gt;` (by default, but often styled as inline-block)</li>
+                    </ul>
+                </li>
+                <li><strong>`display: inline-block;`</strong>
+                    <ul class="list-disc list-inside ml-8">
+                        <li>Behaves like an inline element (doesn't start new line).</li>
+                        <li>But, you CAN set `width`, `height`, `padding`, and `margin`.</li>
+                        <li>Useful for arranging elements side-by-side while giving them dimensions.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="slide" id="slide63">
+            <h1 class="text-3xl font-bold mb-4">Exercise (Day 15): Display Property Playground</h1>
+            <div class="exercise-box">
+                <h3 class="text-xl font-semibold mb-4">Your Turn!</h3>
+                <p>Create a new HTML file `display-demo.html` and link it to your `style.css`.</p>
+                <ol class="list-decimal list-inside ml-4">
+                    <li>In `display-demo.html`, add:
+                        <ul class="list-disc list-inside ml-8">
+                            <li>Three `&lt;div&gt;` elements with some text.</li>
+                            <li>Three `&lt;span&gt;` elements with some text.</li>
+                            <li>Three `&lt;a&gt;` elements with some text.</li>
+                        </ul>
+                    </li>
+                    <li>In `style.css`:
+                        <ul class="list-disc list-inside ml-8">
+                            <li>Give all `div`s a `background-color` and `border`.</li>
+                            <li>Give all `span`s a `background-color` and `border`.</li>
+                            <li>Give all `a` tags a `background-color` and `border`.</li>
+                            <li>Now, experiment:
+                                <ul class="list-disc list-inside ml-12">
+                                    <li>Try setting `display: inline;` on a `div`.</li>
+                                    <li>Try setting `display: block;` on a `span`.</li>
+                                    <li>Try setting `display: inline-block;` on an `&lt;a&gt;` tag, then give it a `width` and `height`.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Save and observe the changes in your browser.</li>
+                </ol>
+                <p class="mt-4"><strong>Peer-Learning Moment:</strong> Discuss how `display: inline-block` is a powerful tool for layout before we learn Flexbox.</p>
+            </div>
+        </div>
+
+        <div class="slide" id="slide64">
+            <h1 class="text-3xl font-bold mb-4">Assignment (Day 15): Horizontal Navigation</h1>
+            <div class="assignment-box">
+                <h3 class="text-xl font-semibold mb-4">Challenge Yourself!</h3>
+                <p>Make your portfolio's navigation links appear horizontally.</p>
+                <ul class="list-disc list-inside ml-4">
+                    <li>Open your `style.css` and one of your portfolio pages (e.g., `index.html`).</li>
+                    <li>Recall that navigation links are typically `&lt;a&gt;` tags inside `&lt;li&gt;` tags, which are inside a `&lt;ul&gt;`.</li>
+                    <li>Target the `&lt;li&gt;` elements within your `&lt;nav&gt;` (e.g., `nav li`).</li>
+                    <li>Apply `display: inline-block;` to these `nav li` elements.</li>
+                    <li>Add some `padding` or `margin` to the `nav li` elements to space them out nicely.</li>
+                    <li>Remove the default bullet points from the `&lt;ul&gt;` in your `&lt;nav&gt;` using `list-style-type: none;`.</li>
+                    <li>Save and check all your portfolio pages to see the horizontal navigation!</li>
+                </ul>
+                <p class="mt-4">This is a common technique for navigation bars!</p>
+            </div>
+        </div>
+
+        <!-- Day 16: CSS Layout - Flexbox (Part 1) -->
+        <div class="slide" id="slide65">
+            <h1 class="text-3xl font-bold mb-4">Day 16: Powerful Layouts with Flexbox! (Part 1)</h1>
+            <h2 class="text-2xl font-semibold mb-6">Introduction to Flexbox: One-Dimensional Layout</h2>
+            <img src="https://miro.medium.com/v2/resize:fit:720/format:webp/0*YeaUsQyhXSL1TCTH.png" alt="Flexbox Concept" class="w-full h-auto mb-4">
+            <p>Flexbox is a CSS layout module that makes it incredibly easy to arrange items in a single row or column. It's perfect for navigation bars, simple grids, and aligning content.</p>
+            <p>Flexbox works with two main concepts:</p>
+            <ul class="list-disc list-inside ml-4">
+                <li><strong>Flex Container:</strong> The parent element that holds the flex items. You apply `display: flex;` to this.</li>
+                <li><strong>Flex Items:</strong> The direct children of the flex container.</li>
+            </ul>
+            <pre><code>
+&lt;div class="container"&gt;
+    &lt;div class="item"&gt;Item 1&lt;/div&gt;
+    &lt;div class="item"&gt;Item 2&lt;/div&gt;
+    &lt;div class="item"&gt;Item 3&lt;/div&gt;
+&lt;/div&gt;
+
+/* CSS */
+.container {
+    display: flex; /* Makes this a flex container */
+}
+            </code></pre>
+        </div>
+
+        <div class="slide" id="slide66">
+            <h1 class="text-3xl font-bold mb-4">Day 16: Flex Container Properties</h1>
+            <h2 class="text-2xl font-semibold mb-6">Direction and Alignment</h2>
+            <img src="https://dev-to-uploads.s3.amazonaws.com/i/gv3jyh4xt4fbwtq1qejn.png" alt="Flexbox Properties" class="w-full h-auto mb-4">
+            <ul class="list-disc list-inside ml-4">
+                <li>`display: flex;` or `display: inline-flex;` (makes the container itself inline)</li>
+                <li>`flex-direction`: Defines the direction of the main axis (how items are laid out).
+                    <ul class="list-disc list-inside ml-8">
+                        <li>`row` (default): Items arranged horizontally.</li>
+                        <li>`column`: Items arranged vertically.</li>
+                        <li>`row-reverse`, `column-reverse`: Reverses the order.</li>
+                    </ul>
+                </li>
+                <li>`justify-content`: Aligns items along the<b>main axis</b>.
+                    <ul class="list-disc list-inside ml-8">
+                        <li>`flex-start` (default), `flex-end`, `center`, `space-between`, `space-around`, `space-evenly`</li>
+                    </ul>
+                </li>
+                <li>`align-items`: Aligns items along the <b>cross axis</b> (perpendicular to main axis).
+                    <ul class="list-disc list-inside ml-8">
+                        <li>`stretch` (default), `flex-start`, `flex-end`, `center`, `baseline`</li>
+                    </ul>
+                </li>
+            </ul>
+            <a href="https://www.freecodecamp.org/news/css-flexbox-tutorial-with-cheatsheet/" target="_blank">Learn More</a>
+        </div>
+
+        <div class="slide" id="slide67">
+            <h1 class="text-3xl font-bold mb-4">Exercise (Day 16): Building a Flexbox Navigation Bar</h1>
+            <div class="exercise-box">
+                <h3 class="text-xl font-semibold mb-4">Your Turn!</h3>
+                <p>Let's use Flexbox to create a responsive navigation bar.</p>
+                <ol class="list-decimal list-inside ml-4">
+                    <li>Open your `index.html` (or any portfolio page) and your `style.css`.</li>
+                    <li>In `style.css`, target your `&lt;nav&gt;` element.</li>
+                    <li>Apply `display: flex;` to your `nav`.</li>
+                    <li>Apply `justify-content: space-around;` to spread out your navigation links.</li>
+                    <li>Apply `align-items: center;` to vertically center your links (if they have different heights).</li>
+                    <li>Remove any `display: inline-block;` you might have applied to `nav li` from the previous assignment (Flexbox handles this automatically).</li>
+                    <li>Give your `nav` a `background-color` and `padding`.</li>
+                    <li>Save and view your page. Resize your browser window to see how flex items adjust!</li>
+                </ol>
+                <p class="mt-4"><strong>Peer-Learning Moment:</strong> Experiment with different `justify-content` and `align-items` values. What happens?</p>
+            </div>
+        </div>
+
+        <div class="slide" id="slide68">
+            <h1 class="text-3xl font-bold mb-4">Assignment (Day 16): Flexbox Footer Layout</h1>
+            <div class="assignment-box">
+                <h3 class="text-xl font-semibold mb-4">Challenge Yourself!</h3>
+                <p>Use Flexbox to arrange elements in your portfolio's footer.</p>
+                <ul class="list-disc list-inside ml-4">
+                    <li>In your `index.html` (and other portfolio pages), modify your `&lt;footer&gt;` to contain at least two `&lt;div&gt;` elements. For example, one `&lt;div&gt;` for copyright info and another for social media links (just text placeholders for now).</li>
+                    <li>In `style.css`, apply `display: flex;` to your `&lt;footer&gt;`.</li>
+                    <li>Use `justify-content` and `align-items` to arrange these two `&lt;div&gt;`s within the footer (e.g., `space-between` to push them to the ends, `center` to center them).</li>
+                    <li>Give your footer a `background-color` and `padding`.</li>
+                    <li>Save and view.</li>
+                </ul>
+                <p class="mt-4">Flexbox is incredibly versatile!</p>
+            </div>
+        </div>
+
+        <!-- Day 17: CSS Layout - Flexbox (Part 2) -->
+        <div class="slide" id="slide69">
+            <h1 class="text-3xl font-bold mb-4">Day 17: Flexbox Item Properties! (Part 2)</h1>
+            <h2 class="text-2xl font-semibold mb-6">Controlling Individual Flex Items</h2>
+            <img src="https://byteiota.com/wp-content/uploads/2020/12/flex-item-800x400.png" alt="Flex Item Properties" class="w-full h-auto mb-4">
+            <p>While container properties control the overall layout, flex item properties allow you to control individual children:</p>
+            <ul class="list-disc list-inside ml-4">
+                <li>`flex-grow`: Defines the ability of a flex item to grow if necessary. Takes a unitless value (e.g., `1`, `2`). Items with higher `flex-grow` values take up more available space.</li>
+                <li>`flex-shrink`: Defines the ability of a flex item to shrink if necessary.</li>
+                <li>`flex-basis`: Defines the default size of an element before the remaining space is distributed. Can be a length (e.g., `100px`) or a percentage (`50%`).</li>
+                <li>`flex` shorthand: Combines `flex-grow`, `flex-shrink`, and `flex-basis` (e.g., `flex: 1 1 0;`).</li>
+                <li>`align-self`: Overrides the container's `align-items` for a single flex item.</li>
+                <li>`order`: Controls the order in which flex items appear in the flex container. Defaults to `0`.</li>
+            </ul>
+            <pre><code>
+.item-grow { flex-grow: 1; }
+.item-specific-align { align-self: flex-end; }
+.item-first { order: -1; } /* Appears first */
+            </code></pre>
+        </div>
+
+        <div class="slide" id="slide70">
+            <h1 class="text-3xl font-bold mb-4">Day 17: Responsive Considerations with Flexbox</h1>
+            <h2 class="text-2xl font-semibold mb-6">Wrapping and Responsiveness</h2>
+            <img src="https://samanthaming.gumlet.io/flexbox30/10-flex-wrap.jpg.gz?format=auto" alt="Flexbox Wrapping" class="w-full h-auto mb-4">
+            <ul class="list-disc list-inside ml-4">
+                <li>`flex-wrap`: Controls whether flex items are forced onto one line or can wrap onto multiple lines.
+                    <ul class="list-disc list-inside ml-8">
+                        <li>`nowrap` (default): All items stay on one line, potentially overflowing.</li>
+                        <li>`wrap`: Items wrap to the next line when they run out of space.</li>
+                        <li>`wrap-reverse`: Items wrap in reverse order.</li>
+                    </ul>
+                </li>
+                <li>`flex-flow` shorthand: Combines `flex-direction` and `flex-wrap`.</li>
+            </ul>
+            <p>Using `flex-wrap: wrap;` is crucial for creating responsive layouts where items stack or flow differently on smaller screens.</p>
+            <pre><code>
+.responsive-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap to next line */
+    justify-content: space-around;
+}
+.responsive-item {
+    flex-basis: 300px; /* Default width */
+    flex-grow: 1; /* Allows items to grow to fill space */
+    margin: 10px;
+}
+            </code></pre>
+            <a href="https://www.syncfusion.com/blogs/post/css-flex-every-developer-should-know/amp" target="_blank" rel="noopener noreferrer">learn more</a>
+        </div>
+
+        <div class="slide" id="slide71">
+            <h1 class="text-3xl font-bold mb-4">Exercise (Day 17): Flexible Card Layout</h1>
+            <div class="exercise-box">
+                <h3 class="text-xl font-semibold mb-4">Your Turn!</h3>
+                <p>Create a new HTML file `flex-cards.html` and link it to `style.css`.</p>
+                <ol class="list-decimal list-inside ml-4">
+                    <li>In `flex-cards.html`, create a `&lt;div class="card-container"&gt;`.</li>
+                    <li>Inside `card-container`, create three `&lt;div class="card"&gt;` elements. Each card should have an `&lt;h3&gt;` and a `&lt;p&gt;` with some placeholder text.</li>
+                    <li>In `style.css`:
+                        <ul class="list-disc list-inside ml-8">
+                            <li>Style `.card-container` with `display: flex;`, `flex-wrap: wrap;`, and `justify-content: space-around;`.</li>
+                            <li>Style `.card` with a `background-color`, `padding`, `margin: 10px;`, and a `flex-basis: 300px;` (or similar).</li>
+                            <li>Add `flex-grow: 1;` to `.card` to make them expand.</li>
+                            <li>Add a unique class to one card (e.g., `special-card`) and use `align-self` to position it differently (e.g., `align-self: flex-end;`).</li>
+                        </ul>
+                    </li>
+                    <li>Save and view. Resize your browser to see how the cards wrap!</li>
+                </ol>
+                <p class="mt-4"><strong>Peer-Learning Moment:</strong> Explain `flex-grow` and `flex-shrink` to your partner. How do they affect item sizing?</p>
+            </div>
+        </div>
+
+        <div class="slide" id="slide72">
+            <h1 class="text-3xl font-bold mb-4">Assignment (Day 17): Portfolio Projects Section with Flexbox</h1>
+            <div class="assignment-box">
+                <h3 class="text-xl font-semibold mb-4">Challenge Yourself!</h3>
+                <p>Use Flexbox to lay out your projects on `projects.html`.</p>
+                <ul class="list-disc list-inside ml-4">
+                    <li>Open `projects.html` and `style.css`.</li>
+                    <li>In `projects.html`, create a main `&lt;section class="projects-grid"&gt;`.</li>
+                    <li>Inside `projects-grid`, create several `&lt;div class="project-card"&gt;` elements. Each `project-card` should contain an `&lt;h3&gt;` (project title), a `&lt;p&gt;` (description), and a placeholder `&lt;img&gt;`.</li>
+                    <li>In `style.css`:
+                        <ul class="list-disc list-inside ml-8">
+                            <li>Apply `display: flex;`, `flex-wrap: wrap;`, and `justify-content: space-around;` to `.projects-grid`.</li>
+                            <li>Style `.project-card` with a `background-color`, `padding`, `margin`, `border-radius`, and `flex-basis` (e.g., `300px`).</li>
+                            <li>Add `flex-grow: 1;` to `.project-card`.</li>
+                        </ul>
+                    </li>
+                    <li>Save and view. This is the start of a professional project showcase!</li>
+                </ul>
+                <p class="mt-4">This is a core part of your final portfolio project!</p>
+            </div>
+        </div>
+
+        <!-- Day 18: CSS Positioning (Static, Relative, Absolute, Fixed, Sticky) -->
+        <div class="slide" id="slide73">
+            <h1 class="text-3xl font-bold mb-4">Day 18: Mastering Element Positioning!</h1>
+            <h2 class="text-2xl font-semibold mb-6">The `position` Property</h2>
+            <img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*x5xm9DVS6QouWCAeII9w8A.png" alt="CSS Positioning Diagram" class="w-full h-auto mb-4">
+            <p>The `position` property controls how an element is positioned on the page. Combined with `top`, `right`, `bottom`, and `left`, it offers precise control.</p>
+            <ul class="list-disc list-inside ml-4">
+                <li>`position: static;` (Default): Elements are positioned according to the normal flow of the document. `top`, `right`, `bottom`, `left` have no effect.</li>
+                <li>`position: relative;`: Positions the element relative to its normal position. `top`, `right`, `bottom`, `left` values will shift it from where it *would* normally be. Other elements are not affected by this shift.</li>
+                <li>`position: absolute;`: Positions the element relative to its *nearest positioned ancestor* (an ancestor with `position` other than `static`). If no positioned ancestor, it's relative to the `&lt;html&gt;` element. It's removed from the normal document flow.</li>
+                <li>`position: fixed;`: Positions the element relative to the <b>viewport</b>. It stays in the same place even when the page is scrolled. Useful for sticky headers/footers.</li>
+                <li>`position: sticky;`: A mix of `relative` and `fixed`. Behaves relatively until a certain scroll point, then becomes fixed.</li>
+            </ul>
+        </div>
+
+        <div class="slide" id="slide74">
+            <h1 class="text-3xl font-bold mb-4">Day 18: Positioning Properties: `top`, `right`, `bottom`, `left`, `z-index`</h1>
+            <h2 class="text-2xl font-semibold mb-6">Controlling Location and Stacking Order</h2>
+            <img src="https://placehold.co/600x300/2d3748/e2e8f0?text=Z-Index+Concept" alt="Z-Index Concept" class="w-full h-auto mb-4">
+            <ul class="list-disc list-inside ml-4">
+                <li>`top`, `right`, `bottom`, `left`: These properties are used *with* `position` (except `static`) to specify the element's offset from its positioning context.
+                    <pre><code>
+.box {
+    position: relative;
+    top: 20px; /* Moves 20px down from its normal top */
+    left: 10px; /* Moves 10px right from its normal left */
+}
+                    </code></pre>
+                </li>
+                <li>`z-index`: Controls the stacking order of positioned elements. Elements with a higher `z-index` value appear on top of elements with a lower value. Only works on positioned elements (`relative`, `absolute`, `fixed`, `sticky`).
+                    <pre><code>
+.element-on-top {
+    position: absolute;
+    z-index: 10; /* Will appear above elements with z-index less than 10 */
+}
+                    </code></pre>
+                </li>
+            </ul>
+            <a href="https://medium.com/baakademi/css-position-property-69d0596baf3c" target="_blank" rel="noopener noreferrer">Learn More</a>
+        </div>
+
+        <div class="slide" id="slide75">
+            <h1 class="text-3xl font-bold mb-4">Exercise (Day 18): Positioning Playground</h1>
+            <div class="exercise-box">
+                <h3 class="text-xl font-semibold mb-4">Your Turn!</h3>
+                <p>Create a new HTML file `position-demo.html` and link it to `style.css`.</p>
+                <ol class="list-decimal list-inside ml-4">
+                    <li>In `position-demo.html`, create a main `&lt;div class="container"&gt;` and inside it, two `&lt;div class="box"&gt;` elements. Add some text to each box.</li>
+                    <li>In `style.css`:
+                        <ul class="list-disc list-inside ml-8">
+                            <li>Style `.container` with a `width`, `height`, `border`, and `position: relative;`.</li>
+                            <li>Style `.box` with a `width`, `height`, `background-color`, and `border`.</li>
+                            <li>Apply `position: absolute;` to the first `.box`. Use `top: 20px; left: 20px;`.</li>
+                            <li>Apply `position: absolute;` to the second `.box`. Use `bottom: 20px; right: 20px;`.</li>
+                            <li>Experiment with `z-index` to change which box appears on top when they overlap.</li>
+                            <li>Try changing the first `.box` to `position: fixed;` and see what happens when you scroll (you might need more content on the page to scroll).</li>
+                        </ul>
+                    </li>
+                    <li>Save and view.</li>
+                </ol>
+                <p class="mt-4"><strong>Peer-Learning Moment:</strong> Discuss the difference between `position: relative` and `position: absolute` and when you might use each.</p>
+            </div>
+        </div>
+
+        <div class="slide" id="slide76">
+            <h1 class="text-3xl font-bold mb-4">Assignment (Day 18): Sticky Header/Footer for Portfolio</h1>
+            <div class="assignment-box">
+                <h3 class="text-xl font-semibold mb-4">Challenge Yourself!</h3>
+                <p>Make your portfolio's header or footer "sticky" so it stays visible while scrolling.</p>
+                <ul class="list-disc list-inside ml-4">
+                    <li>Open your `index.html` (or any portfolio page) and `style.css`.</li>
+                    <li>In `style.css`, target your `&lt;header&gt;` or `&lt;footer&gt;` element.</li>
+                    <li>Apply `position: fixed;` to it.</li>
+                    <li>If it's the header, add `top: 0; left: 0; width: 100%;`.</li>
+                    <li>If it's the footer, add `bottom: 0; left: 0; width: 100%;`.</li>
+                    <li>Add some `padding` to your `&lt;body&gt;` (e.g., `padding-top: 80px;` if your header is 80px tall) to prevent content from being hidden behind the fixed element.</li>
+                    <li>Save and view. Scroll your page to see the effect!</li>
+                    <li><strong>Bonus:</strong> Research `position: sticky;` and try to implement it instead of `fixed` for your header.</li>
+                </ul>
+                <p class="mt-4">Fixed elements are great for persistent navigation or important info.</p>
+            </div>
+        </div>
+
+        <!-- Day 19: CSS Backgrounds & Borders -->
+        <div class="slide" id="slide77">
+            <h1 class="text-3xl font-bold mb-4">Day 19: Enhancing Visuals with Backgrounds & Borders!</h1>
+            <h2 class="text-2xl font-semibold mb-6">Images, Gradients, and Rounded Corners</h2>
+            <img src="https://www.htmlgoodies.com/wp-content/uploads/2021/04/07c109d6e2633d70be58a2763be929af.png" alt="Background Border Effects" class="w-full h-auto mb-4">
+            <p>CSS offers powerful ways to style backgrounds and borders, adding depth and visual interest.</p>
+            <ul class="list-disc list-inside ml-4">
+                <li>`background-image`: Sets an image as the background.
+                    <pre><code>background-image: url('path/to/image.png');</code></pre>
+                </li>
+                <li>`background-repeat`: Controls if/how a background image repeats (`no-repeat`, `repeat-x`, `repeat-y`, `repeat`).</li>
+                <li>`background-position`: Positions the background image (`center`, `top right`, `50% 50%`).</li>
+                <li>`background-size`: Sizes the background image (`auto`, `cover`, `contain`, `100% 100%`).</li>
+                <li>`background` shorthand: Combines all background properties (`background: color image repeat position / size;`).</li>
+                <li>`border-radius`: Creates rounded corners. Can be a single value (all corners) or multiple (top-left, top-right, bottom-right, bottom-left).
+                    <pre><code>border-radius: 10px;</code></pre>
+                </li>
+                <li>`box-shadow`: Adds a shadow effect to an element.
+                    <pre><code>box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); /* horizontal-offset vertical-offset blur-radius spread-radius color */</code></pre>
+                </li>
+            </ul>
+        </div>
+
+        <div class="slide" id="slide78">
+            <h1 class="text-3xl font-bold mb-4">Day 19: Linear Gradients & Opacity</h1>
+            <h2 class="text-2xl font-semibold mb-6">Smooth Color Transitions & Transparency</h2>
+            <img src="https://gosnippets.com/blog/wp-content/uploads/2022/11/Screenshot_20221104_121249.png" alt="Gradient Opacity Example" class="w-full h-auto mb-4">
+            <ul class="list-disc list-inside ml-4">
+                <li>`linear-gradient()`: Creates a linear color transition as a background image.
+                    <pre><code>background-image: linear-gradient(to right, #63b3ed, #a0f0ed);</code></pre>
+                    <p class="text-sm text-gray-400 mt-2">You can specify direction (`to right`, `to bottom`, `45deg`) and multiple colors.</p>
+                </li>
+                <li>`opacity`: Sets the transparency level of an element (0.0 fully transparent to 1.0 fully opaque). Affects the entire element, including its content.
+                    <pre><code>opacity: 0.7;</code></pre>
+                </li>
+                <li>`rgba()` colors: Allows you to specify colors with an alpha (transparency) channel.
+                    <pre><code>background-color: rgba(99, 179, 237, 0.5); /* Blue with 50% transparency */</code></pre>
+                </li>
+            </ul>
+            <a href="https://medium.com/design-bootcamp/use-css-gradients-for-background-gradient-images-dc98c2b7848a" target="_blank" rel="noopener noreferrer">Learn More</a>
+        </div>
+
+        <div class="slide" id="slide79">
+            <h1 class="text-3xl font-bold mb-4">Exercise (Day 19): Styling Cards with Backgrounds & Shadows</h1>
+            <div class="exercise-box">
+                <h3 class="text-xl font-semibold mb-4">Your Turn!</h3>
+                <p>Open your `flex-cards.html` (or `projects.html` if you're using project cards) and `style.css`.</p>
+                <ol class="list-decimal list-inside ml-4">
+                    <li>In `style.css`, target your `.card` or `.project-card` class.</li>
+                    <li>Give them a `background-color` (e.g., `#364050`).</li>
+                    <li>Add `border-radius: 1rem;` to give them nice rounded corners.</li>
+                    <li>Apply a `box-shadow` (e.g., `box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);`).</li>
+                    <li>Try setting a `background-image` with a `linear-gradient` on the container or individual cards.</li>
+                    <li>Save and view.</li>
+                </ol>
+                <p class="mt-4"><strong>Peer-Learning Moment:</strong> Experiment with different `box-shadow` values. How do they change the shadow's appearance?</p>
+            </div>
+        </div>
+
+        <div class="slide" id="slide80">
+            <h1 class="text-3xl font-bold mb-4">Assignment (Day 19): Portfolio Visual Polish</h1>
+            <div class="assignment-box">
+                <h3 class="text-xl font-semibold mb-4">Challenge Yourself!</h3>
+                <p>Apply background images, gradients, rounded corners, and shadows to your portfolio pages.</p>
+                <ul class="list-disc list-inside ml-4">
+                    <li>Add a subtle `background-image` to your `&lt;body&gt;` (you can use a pattern or a very large, low-opacity image). Experiment with `background-repeat` and `background-size`.</li>
+                    <li>Apply a `linear-gradient` to your `&lt;header&gt;` or `&lt;footer&gt;` for a modern look.</li>
+                    <li>Give all your buttons (e.g., submit button on contact form) `border-radius` and a `box-shadow`.</li>
+                    <li>Consider adding a `border-radius` to images in your gallery.</li>
+                    <li>Use `rgba()` colors for backgrounds or borders to add a touch of transparency.</li>
+                </ul>
+                <p class="mt-4">These details make a huge difference in how professional your site looks!</p>
+            </div>
+        </div>
+
+        <!-- Day 20: CSS Review & Portfolio Styling Checkpoint -->
+        <div class="slide" id="slide81">
+            <h1 class="text-3xl font-bold mb-4">Day 20: CSS Review & Portfolio Styling Checkpoint!</h1>
+            <h2 class="text-2xl font-semibold mb-6">Consolidate Your CSS Knowledge</h2>
+            <img src="https://placehold.co/600x300/2d3748/e2e8f0?text=CSS+Review+Checklist" alt="CSS Review Checklist" class="w-full h-auto mb-4">
+            <p>You've learned so much CSS in the past 10 days! Today is dedicated to reviewing these concepts and applying them to make your personal portfolio website truly shine.</p>
+            <ul class="list-disc list-inside ml-4">
+                <li>CSS Syntax (Selectors, Properties, Values)</li>
+                <li>Ways to Add CSS (Inline, Internal, External - best practice!)</li>
+                <li>CSS Selectors (Element, Class, ID, Universal, Grouping, Descendant)</li>
+                <li>Basic Properties (Color, Background-color, Font-size, Font-family, Text-align, Font-weight, Text-decoration)</li>
+                <li>The Box Model (Content, Padding, Border, Margin)</li>
+                <li>Display Property (`block`, `inline`, `inline-block`)</li>
+                <li>Flexbox (Container properties: `display`, `flex-direction`, `justify-content`, `align-items`; Item properties: `flex-grow`, `flex-shrink`, `flex-basis`, `flex-wrap`)</li>
+                <li>Positioning (`static`, `relative`, `absolute`, `fixed`, `sticky`, `top`, `right`, `bottom`, `left`, `z-index`)</li>
+                <li>Backgrounds (`background-image`, `background-repeat`, `background-position`, `background-size`, `linear-gradient`)</li>
+                <li>Borders (`border-radius`, `box-shadow`)</li>
+                <li>Opacity and `rgba()` colors</li>
+            </ul>
+        </div>
+
+        <div class="slide" id="slide82">
+            <h1 class="text-3xl font-bold mb-4">Day 20: Portfolio Styling Checkpoint</h1>
+            <h2 class="text-2xl font-semibold mb-6">Make Your Portfolio Visually Stunning!</h2>
+            <img src="https://scrimba.com/articles/content/images/2022/06/delba-de-oliveria.gifs" alt="Portfolio Styling Goals" class="w-full h-auto mb-4">
+            <p>Your main task today is to apply all the CSS techniques you've learned to your personal portfolio website. Focus on:</p>
+            <ul class="list-disc list-inside ml-4">
+                <li><b>Consistency:</b> Use a consistent color palette, font choices, and spacing across all pages.</li>
+                <li><b>Readability:</b> Ensure text is easy to read against backgrounds.</li>
+                <li><b>Layout:</b> Use Flexbox to arrange your navigation, main content sections, and footer effectively.</li>
+                <li><b>Visual Appel:</b> Add rounded corners, shadows, and subtle backgrounds/gradients to make elements pop.</li>
+                <li><b>Responsiveness:</b> Test your site by resizing the browser window. Does it still look good on smaller sizes?</li>
+            </ul>
+        </div>
+
+        <div class="slide" id="slide83">
+            <h1 class="text-3xl font-bold mb-4">Exercise (Day 20): Peer Review & Debugging</h1>
+            <div class="exercise-box">
+                <h3 class="text-xl font-semibold mb-4">Your Turn!</h3>
+                <p>Time to show off your work and help each other out!</p>
+                <ol class="list-decimal list-inside ml-4">
+                    <li><b>Pair Up:</b> Get with a partner.</li>
+                    <li><b>Showcase:</b> Each person takes 5-7 minutes to show their portfolio website and explain some of the CSS choices they made.</li>
+                    <li><b>Feedback:</b> The partner provides constructive feedback:
+                        <ul class="list-disc list-inside ml-8">
+                            <li>What looks great?</li>
+                            <li>What could be improved (e.g., spacing, color contrast, alignment)?</li>
+                            <li>Are there any visual bugs or unexpected behaviors?</li>
+                        </ul>
+                    </li>
+                    <li> <b>Debugging</b> Work together to fix any CSS issues identified during the review. Use your browser's developer tools (Elements and Styles tabs are your best friends!).</li>
+                </ol>
+                <p class="mt-4">This is a crucial step in becoming a professional developer!</p>
+            </div>
+        </div>
+
+        <div class="slide" id="slide84">
+            <h1 class="text-3xl font-bold mb-4">Assignment (Day 20): Finalize CSS for Portfolio Core Pages</h1>
+            <div class="assignment-box">
+                <h3 class="text-xl font-semibold mb-4">Challenge Yourself!</h3>
+                <p>Based on today's review and your own observations, make final CSS adjustments to your core portfolio pages (`index.html`, `about.html`, `projects.html`, `contact.html`).</p>
+                <ul class="list-disc list-inside ml-4">
+                    <li>Ensure all HTML elements you've added so far have appropriate styling.</li>
+                    <li>Pay attention to details like hover effects on links/buttons (we'll cover pseudo-classes soon, but you can try `a:hover { color: red; }`).</li>
+                    <li>Make sure your navigation is perfectly aligned and spaced.</li>
+                    <li>Prepare your portfolio to be ready for JavaScript interactivity next week!</li>
+                </ul>
+                <p class="mt-4">Your portfolio is starting to look like a real website!</p>
+            </div>
+        </div>
+
 
         <!-- Navigation Buttons -->
         <div class="footer-nav">
