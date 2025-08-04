@@ -18,7 +18,7 @@
         min-height: 100vh; /* Changed from 100% and 100dvh for better compatibility */
         padding: 1rem;
         margin: 0;
-}
+        }
 
     .slide-container {
         width: 90%;
@@ -57,7 +57,7 @@
             to { opacity: 1; transform: translateX(0); }
         }
 
-          @keyframes fadeOut {
+        @keyframes fadeOut {
             from { opacity: 0; transform: translateX(-200px); }
             to { opacity: 1; transform: translateX(0); }
         }
@@ -155,10 +155,14 @@
             padding-inline: 1.5rem;
             transition: all .45s;
         }
-         .table__list ul li:hover{
+        .table__list ul li:hover{
             background-color: #ddd;
             font-weight: 500;
             color: #1c99f3;
+        }
+        a, div a {
+            color: #1c99f3;
+            font-weight: 600;
         }
 
         @media( width < 768px){
@@ -1868,6 +1872,1142 @@ div {
             </div>
         </div>
 
+         <!-- Day 21: Introduction to JavaScript -->
+        <div class="slide active" id="slide86">
+            <h1 class="text-3xl font-bold mb-4">Day 21: Your First Steps with JavaScript!</h1>
+            <h2 class="text-2xl font-semibold mb-6">Bringing Your Websites to Life</h2>
+            <img src="https://placehold.co/600x300/2d3748/e2e8f0?text=JavaScript+Intro" alt="JavaScript Introduction Concept" class="w-full h-auto mb-4">
+            <p>Welcome to JavaScript, the programming language that makes websites interactive and dynamic! While HTML provides structure and CSS provides style, JavaScript adds behavior.</p>
+            <ul class="list-disc list-inside ml-4">
+                <li>**What is JavaScript?** It's a scripting language that enables you to create dynamically updating content, control multimedia, animate images, and pretty much everything else.</li>
+                <li>**Where does JavaScript run?** Primarily in the web browser (client-side), but also on servers (Node.js) and other environments.</li>
+                <li>**Adding JavaScript to HTML:**
+                    <ul class="list-disc list-inside ml-8">
+                        <li>**Inline:** Directly in an HTML tag (generally avoided for clean code).
+                            <pre><code>&lt;button onclick="alert('Hello!');"&gt;Click Me&lt;/button&gt;</code></pre>
+                        </li>
+                        <li>**Internal:** Inside `&lt;script&gt;&lt;/script&gt;` tags within your HTML file.
+                            <pre><code>
+&lt;body&gt;
+    &lt;h1&gt;My Page&lt;/h1&gt;
+    &lt;script&gt;
+        console.log("Hello from internal JS!");
+    &lt;/script&gt;
+&lt;/body&gt;
+                            </code></pre>
+                        </li>
+                        <li>**External (Recommended):** In a separate `.js` file, linked using the `src` attribute of the `&lt;script&gt;` tag.
+                            <pre><code>&lt;script src="script.js"&gt;&lt;/script&gt;</code></pre>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <p class="text-sm text-gray-400 mt-2">Always place your `&lt;script&gt;` tags just before the closing `&lt;/body&gt;` tag. This ensures HTML loads first.</p>
+        </div>
+
+        <div class="slide" id="slide87">
+            <h1 class="text-3xl font-bold mb-4">Day 21: Your Best Friend: The Console!</h1>
+            <h2 class="text-2xl font-semibold mb-6">`console.log()` for Debugging</h2>
+            <img src="https://placehold.co/600x300/2d3748/e2e8f0?text=Console+Log" alt="Console Log Concept" class="w-full h-auto mb-4">
+            <p>The browser's developer console is an incredibly powerful tool for debugging and understanding your JavaScript code. You can open it by right-clicking on your webpage and selecting "Inspect" (or "Inspect Element"), then navigating to the "Console" tab.</p>
+            <ul class="list-disc list-inside ml-4">
+                <li>**`console.log()`:** This function is used to output messages, variables, or objects to the console. It's your primary tool for seeing what your code is doing.
+                    <pre><code>
+console.log("This is a message in the console.");
+console.log(123);
+const greeting = "Hello, world!";
+console.log(greeting);
+                    </code></pre>
+                </li>
+                <li>**Comments in JavaScript:** Use comments to explain your code. They are ignored by the browser.
+                    <ul class="list-disc list-inside ml-8">
+                        <li>Single-line comments: `// This is a single-line comment`</li>
+                        <li>Multi-line comments:
+                            <pre><code>
+/*
+This is a
+multi-line comment.
+*/
+                            </code></pre>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <p class="text-sm text-gray-400 mt-2">Get comfortable with the console; you'll be using it constantly!</p>
+        </div>
+
+        <div class="slide" id="slide88">
+            <h1 class="text-3xl font-bold mb-4">Exercise (Day 21): Console Fun</h1>
+            <div class="exercise-box">
+                <h3 class="text-xl font-semibold mb-4">Your Turn!</h3>
+                <p>Create a new HTML file named `day21.html` and a JavaScript file named `script.js` in your `my-portfolio` folder. Link `script.js` to `day21.html`.</p>
+                <ol class="list-decimal list-inside ml-4">
+                    <li>In `day21.html`, add a simple `&lt;h1&gt;` tag.</li>
+                    <li>In `script.js`, add a `console.log()` statement that says "JavaScript is awesome!".</li>
+                    <li>Add another `console.log()` that outputs the result of `5 + 7`.</li>
+                    <li>Add a multi-line comment explaining what `console.log()` does.</li>
+                    <li>Open `day21.html` in your browser and open the developer console. See your messages!</li>
+                </ol>
+                <p class="mt-4"><strong>Peer-Learning Moment:</strong> Discuss how `console.log()` can help you understand the flow of your code.</p>
+            </div>
+        </div>
+
+        <div class="slide" id="slide89">
+            <h1 class="text-3xl font-bold mb-4">Assignment (Day 21): Portfolio Console Greeting</h1>
+            <div class="assignment-box">
+                <h3 class="text-xl font-semibold mb-4">Challenge Yourself!</h3>
+                <p>Add a JavaScript file to your main portfolio `index.html` and make it greet you in the console.</p>
+                <ul class="list-disc list-inside ml-4">
+                    <li>If you don't have one, create a `script.js` file in your `my-portfolio` folder.</li>
+                    <li>Link this `script.js` file to your `index.html` just before the closing `&lt;/body&gt;` tag.</li>
+                    <li>In `script.js`, add a `console.log()` statement that says "Welcome to my portfolio, Code Crusader!"</li>
+                    <li>Open `index.html` in your browser and check the console.</li>
+                    <li>**Bonus:** Add a `console.log()` that displays the current year.</li>
+                </ul>
+                <p class="mt-4">This is your first step in making your portfolio interactive!</p>
+            </div>
+        </div>
+
+        <!-- Day 22: Variables & Data Types -->
+        <div class="slide" id="slide90">
+            <h1 class="text-3xl font-bold mb-4">Day 22: Storing Information with Variables!</h1>
+            <h2 class="text-2xl font-semibold mb-6">`let`, `const`, and `var`</h2>
+            <img src="https://placehold.co/600x300/2d3748/e2e8f0?text=Variables+Concept" alt="Variables Concept" class="w-full h-auto mb-4">
+            <p>Variables are like containers that hold data values. You can name them and store different types of information in them.</p>
+            <ul class="list-disc list-inside ml-4">
+                <li>**`let` (Modern & Recommended):** Declares a block-scoped, mutable variable. You can reassign its value.
+                    <pre><code>
+let score = 100;
+score = 150; // Value can be changed
+console.log(score); // Output: 150
+                    </code></pre>
+                </li>
+                <li>**`const` (Modern & Recommended):** Declares a block-scoped, immutable variable (constant). You cannot reassign its value after initialization.
+                    <pre><code>
+const PI = 3.14159;
+// PI = 3.14; // This would cause an error!
+console.log(PI); // Output: 3.14159
+                    </code></pre>
+                </li>
+                <li>**`var` (Older, Generally Avoided):** Declares a function-scoped variable. Has some quirks that make `let` and `const` preferable for most modern JavaScript.</li>
+            </ul>
+            <p class="text-sm text-gray-400 mt-2">**Rule of thumb:** Use `const` by default. If you know the variable's value will change, use `let`.</p>
+        </div>
+
+        <div class="slide" id="slide91">
+            <h1 class="text-3xl font-bold mb-4">Day 22: Types of Data (Data Types)</h1>
+            <h2 class="text-2xl font-semibold mb-6">Numbers, Strings, Booleans, and More</h2>
+            <img src="https://placehold.co/600x300/2d3748/e2e8f0?text=Data+Types+Concept" alt="Data Types Concept" class="w-full h-auto mb-4">
+            <p>JavaScript variables can hold different types of data:</p>
+            <ul class="list-disc list-inside ml-4">
+                <li>**Number:** For numerical values (integers and decimals).
+                    <pre><code>let age = 30; let price = 19.99;</code></pre>
+                </li>
+                <li>**String:** For text. Enclosed in single quotes (`''`), double quotes (`""`), or backticks (`` ` ``).
+                    <pre><code>let name = "Alice"; let message = 'Hello!';</code></pre>
+                </li>
+                <li>**Boolean:** For true/false values.
+                    <pre><code>let isActive = true; let hasPermission = false;</code></pre>
+                </li>
+                <li>**Undefined:** A variable that has been declared but not yet assigned a value.
+                    <pre><code>let city; // city is undefined</code></pre>
+                </li>
+                <li>**Null:** Represents the intentional absence of any object value.
+                    <pre><code>let selectedUser = null;</code></pre>
+                </li>
+                <li>**Symbol (ES6+):** Unique and immutable values, often used for object property keys.</li>
+                <li>**BigInt (ES2020):** For very large integer numbers.</li>
+                <li>**Object:** For more complex data structures (we'll cover these later!).</li>
+            </ul>
+            <p class="text-sm text-gray-400 mt-2">You can check a variable's type with the `typeof` operator: `console.log(typeof age);`</p>
+        </div>
+
+        <div class="slide" id="slide92">
+            <h1 class="text-3xl font-bold mb-4">Exercise (Day 22): Variable Explorer</h1>
+            <div class="exercise-box">
+                <h3 class="text-xl font-semibold mb-4">Your Turn!</h3>
+                <p>Open your `script.js` file (or create a new `day22.js` and link it) and practice with variables.</p>
+                <ol class="list-decimal list-inside ml-4">
+                    <li>Declare a `const` variable `myName` and assign your name to it as a string. Log `myName`.</li>
+                    <li>Declare a `let` variable `myAge` and assign your age as a number. Log `myAge`. Then, increment `myAge` by 1 and log it again.</li>
+                    <li>Declare a `const` boolean variable `isLearningJS` and set it to `true`. Log `isLearningJS`.</li>
+                    <li>Declare a `let` variable `favoriteColor` but don't assign it a value. Log `favoriteColor` (it should be `undefined`). Then assign a color string to it and log it again.</li>
+                    <li>Use `console.log(typeof myName);` and `console.log(typeof myAge);` to see their data types.</li>
+                </ol>
+                <p class="mt-4"><strong>Peer-Learning Moment:</strong> Discuss why `const` is generally preferred over `let` when the value won't change.</p>
+            </div>
+        </div>
+
+        <div class="slide" id="slide93">
+            <h1 class="text-3xl font-bold mb-4">Assignment (Day 22): Portfolio Personal Info</h1>
+            <div class="assignment-box">
+                <h3 class="text-xl font-semibold mb-4">Challenge Yourself!</h3>
+                <p>Use JavaScript variables to store your personal information for your portfolio's "About Me" page.</p>
+                <ul class="list-disc list-inside ml-4">
+                    <li>In `script.js`, declare `const` variables for your `fullName`, `currentOccupation`, and `city`.</li>
+                    <li>Declare a `let` variable `yearsOfExperience` and set it to `0`.</li>
+                    <li>In your `about.html` file, add empty paragraph tags (or `&lt;span&gt;`) with unique IDs where you want to display this information (e.g., `&lt;p&gt;Name: &lt;span id="full-name"&gt;&lt;/span&gt;&lt;/p&gt;`).</li>
+                    <li>For now, just use `console.log()` to output these variables. We'll learn how to put them on the page tomorrow!</li>
+                </ul>
+                <p class="mt-4">This prepares your portfolio for dynamic content!</p>
+            </div>
+        </div>
+
+        <!-- Day 23: Operators -->
+        <div class="slide" id="slide94">
+            <h1 class="text-3xl font-bold mb-4">Day 23: Performing Actions with Operators!</h1>
+            <h2 class="text-2xl font-semibold mb-6">Arithmetic, Assignment, Comparison, Logical</h2>
+            <img src="https://placehold.co/600x300/2d3748/e2e8f0?text=Operators+Concept" alt="Operators Concept" class="w-full h-auto mb-4">
+            <p>Operators are special symbols that perform operations on values and variables.</p>
+            <ul class="list-disc list-inside ml-4">
+                <li>**Arithmetic Operators:** Perform mathematical calculations.
+                    <ul class="list-disc list-inside ml-8">
+                        <li>`+` (addition), `-` (subtraction), `*` (multiplication), `/` (division)</li>
+                        <li>`%` (modulus - remainder of division)</li>
+                        <li>`**` (exponentiation - ES6+)</li>
+                        <li>`++` (increment), `--` (decrement)</li>
+                    </ul>
+                    <pre><code>
+let x = 10;
+let y = 3;
+console.log(x + y);  // 13
+console.log(x % y);  // 1
+x++;                 // x is now 11
+                    </code></pre>
+                </li>
+                <li>**Assignment Operators:** Assign values to variables.
+                    <ul class="list-disc list-inside ml-8">
+                        <li>`=` (assigns value)</li>
+                        <li>`+=`, `-=`, `*=`, `/=`, etc. (shorthand for `x = x + y`)</li>
+                    </ul>
+                    <pre><code>
+let a = 5;
+a += 3; // Same as a = a + 3; (a is now 8)
+                    </code></pre>
+                </li>
+            </ul>
+        </div>
+
+        <div class="slide" id="slide95">
+            <h1 class="text-3xl font-bold mb-4">Day 23: Comparison & Logical Operators</h1>
+            <h2 class="text-2xl font-semibold mb-6">Making Decisions in Your Code</h2>
+            <img src="https://placehold.co/600x300/2d3748/e2e8f0?text=Comparison+Logical" alt="Comparison Logical Operators Concept" class="w-full h-auto mb-4">
+            <ul class="list-disc list-inside ml-4">
+                <li>**Comparison Operators:** Compare two values and return a `boolean` (`true` or `false`).
+                    <ul class="list-disc list-inside ml-8">
+                        <li>`==` (equal value, loose comparison - **avoids** type checking)</li>
+                        <li>`===` (equal value AND equal type, strict comparison - **recommended**)</li>
+                        <li>`!=` (not equal value, loose)</li>
+                        <li>`!==` (not equal value OR not equal type, strict - **recommended**)</li>
+                        <li>`>` (greater than), `<` (less than), `>=` (greater than or equal to), `<=` (less than or equal to)</li>
+                    </ul>
+                    <pre><code>
+console.log(5 == '5');  // true (loose)
+console.log(5 === '5'); // false (strict)
+console.log(10 > 5);    // true
+                    </code></pre>
+                </li>
+                <li>**Logical Operators:** Combine or modify boolean expressions.
+                    <ul class="list-disc list-inside ml-8">
+                        <li>`&&` (AND): Returns `true` if both operands are `true`.</li>
+                        <li>`||` (OR): Returns `true` if at least one operand is `true`.</li>
+                        <li>`!` (NOT): Reverses the boolean value.</li>
+                    </ul>
+                    <pre><code>
+let isSunny = true;
+let isWarm = false;
+console.log(isSunny && isWarm); // false
+console.log(isSunny || isWarm); // true
+console.log(!isSunny);          // false
+                    </code></pre>
+                </li>
+            </ul>
+        </div>
+
+        <div class="slide" id="slide96">
+            <h1 class="text-3xl font-bold mb-4">Exercise (Day 23): Operator Challenge</h1>
+            <div class="exercise-box">
+                <h3 class="text-xl font-semibold mb-4">Your Turn!</h3>
+                <p>Open your `script.js` file and experiment with operators.</p>
+                <ol class="list-decimal list-inside ml-4">
+                    <li>Declare two numbers: `let num1 = 20;` and `let num2 = 7;`.
+                        <ul class="list-disc list-inside ml-8">
+                            <li>Log the result of `num1` divided by `num2`.</li>
+                            <li>Log the remainder when `num1` is divided by `num2`.</li>
+                            <li>Use an assignment operator to add 5 to `num1`. Log `num1`.</li>
+                        </ul>
+                    </li>
+                    <li>Declare a string `let myString = "JavaScript";` and a number `let myNumber = 10;`.
+                        <ul class="list-disc list-inside ml-8">
+                            <li>Log the result of `myString == "JavaScript"`.</li>
+                            <li>Log the result of `myNumber === "10"`.</li>
+                            <li>Log the result of `myNumber !== 20`.</li>
+                        </ul>
+                    </li>
+                    <li>Declare two booleans: `let hasLicense = true;` and `let hasCar = false;`.
+                        <ul class="list-disc list-inside ml-8">
+                            <li>Log the result of `hasLicense && hasCar`.</li>
+                            <li>Log the result of `hasLicense || hasCar`.</li>
+                            <li>Log the result of `!hasCar`.</li>
+                        </ul>
+                    </li>
+                </ol>
+                <p class="mt-4"><strong>Peer-Learning Moment:</strong> Explain the difference between `==` and `===` and why `===` is generally preferred.</p>
+            </div>
+        </div>
+
+        <div class="slide" id="slide97">
+            <h1 class="text-3xl font-bold mb-4">Assignment (Day 23): Portfolio Age Check</h1>
+            <div class="assignment-box">
+                <h3 class="text-xl font-semibold mb-4">Challenge Yourself!</h3>
+                <p>Use operators to perform a simple age check for your portfolio.</p>
+                <ul class="list-disc list-inside ml-4">
+                    <li>In `script.js`, declare a `const` variable `myBirthYear` (e.g., `1995`).</li>
+                    <li>Declare a `const` variable `currentYear` (e.g., `2025`).</li>
+                    <li>Calculate your `age` using the subtraction operator. Log your age.</li>
+                    <li>Declare a `const` variable `minimumAge` (e.g., `18`).</li>
+                    <li>Use a comparison operator to check if `age` is greater than or equal to `minimumAge`. Store the boolean result in a variable `isAdult`. Log `isAdult`.</li>
+                    <li>**Bonus:** Use a logical operator to check if `isAdult` is `true` AND your `age` is less than `40`. Log the result.</li>
+                </ul>
+                <p class="mt-4">You're building logic into your portfolio!</p>
+            </div>
+        </div>
+
+        <!-- Day 24: Conditionals (if/else) -->
+        <div class="slide" id="slide98">
+            <h1 class="text-3xl font-bold mb-4">Day 24: Making Decisions with Conditionals!</h1>
+            <h2 class="text-2xl font-semibold mb-6">`if`, `else if`, `else` Statements</h2>
+            <img src="https://placehold.co/600x300/2d3748/e2e8f0?text=If+Else+Concept" alt="If Else Concept" class="w-full h-auto mb-4">
+            <p>Conditional statements allow your code to execute different blocks of code based on whether a condition is `true` or `false`. This is fundamental for creating dynamic and responsive programs.</p>
+            <ul class="list-disc list-inside ml-4">
+                <li>**`if` statement:** Executes a block of code if a specified condition is `true`.
+                    <pre><code>
+let temperature = 25;
+if (temperature > 20) {
+    console.log("It's a warm day!");
+}
+                    </code></pre>
+                </li>
+                <li>**`else` statement:** Executes a block of code if the `if` condition is `false`.
+                    <pre><code>
+let hour = 10;
+if (hour < 12) {
+    console.log("Good morning!");
+} else {
+    console.log("Good afternoon!");
+}
+                    </code></pre>
+                </li>
+                <li>**`else if` statement:** Allows you to specify a new condition if the first `if` condition is `false`. You can have multiple `else if` blocks.
+                    <pre><code>
+let grade = 75;
+if (grade >= 90) {
+    console.log("Excellent!");
+} else if (grade >= 70) {
+    console.log("Good job!");
+} else {
+    console.log("Keep practicing!");
+}
+                    </code></pre>
+                </li>
+            </ul>
+        </div>
+
+        <div class="slide" id="slide99">
+            <h1 class="text-3xl font-bold mb-4">Day 24: Nested Conditionals & Ternary Operator</h1>
+            <h2 class="text-2xl font-semibold mb-6">More Complex Logic & Shorthand</h2>
+            <img src="https://placehold.co/600x300/2d3748/e2e8f0?text=Nested+Ternary" alt="Nested Ternary Concept" class="w-full h-auto mb-4">
+            <ul class="list-disc list-inside ml-4">
+                <li>**Nested Conditionals:** You can place `if/else` statements inside other `if/else` statements for more complex decision-making.
+                    <pre><code>
+let isLoggedIn = true;
+let isAdmin = false;
+
+if (isLoggedIn) {
+    console.log("Welcome, user!");
+    if (isAdmin) {
+        console.log("You have admin privileges.");
+    } else {
+        console.log("You are a regular user.");
+    }
+} else {
+    console.log("Please log in.");
+}
+                    </code></pre>
+                </li>
+                <li>**Ternary Operator (Conditional Operator):** A shorthand for simple `if...else` statements.
+                    <pre><code>
+condition ? expressionIfTrue : expressionIfFalse;
+
+let age = 20;
+let status = (age >= 18) ? "Adult" : "Minor";
+console.log(status); // Output: "Adult"
+                    </code></pre>
+                </li>
+            </ul>
+            <p class="text-sm text-gray-400 mt-2">Use curly braces `{}` even for single-line `if` blocks for better readability and to avoid potential errors.</p>
+        </div>
+
+        <div class="slide" id="slide100">
+            <h1 class="text-3xl font-bold mb-4">Exercise (Day 24): Weather Advisor</h1>
+            <div class="exercise-box">
+                <h3 class="text-xl font-semibold mb-4">Your Turn!</h3>
+                <p>Open your `script.js` file and create a simple weather advisor.</p>
+                <ol class="list-decimal list-inside ml-4">
+                    <li>Declare a `let` variable `currentTemperature` and set it to a number (e.g., `15`).</li>
+                    <li>Declare a `let` variable `isRaining` and set it to a boolean (e.g., `true`).</li>
+                    <li>Use `if`, `else if`, `else` to log weather advice:
+                        <ul class="list-disc list-inside ml-8">
+                            <li>If `currentTemperature` is greater than 25, log "It's hot! Wear light clothes."</li>
+                            <li>Else if `currentTemperature` is between 15 and 25 (inclusive), log "It's pleasant. A light jacket might be nice."</li>
+                            <li>Else (if `currentTemperature` is less than 15), log "It's cold! Bundle up."</li>
+                        </ul>
+                    </li>
+                    <li>**Nested Conditional:** Inside the `if (currentTemperature > 20)` block, add another `if` statement: if `isRaining` is `true`, log "Don't forget your umbrella!".</li>
+                    <li>**Ternary Operator:** Use the ternary operator to set a variable `weatherEmoji` to "☀️" if `currentTemperature > 20` and "☁️" otherwise. Log `weatherEmoji`.</li>
+                </ol>
+                <p class="mt-4"><strong>Peer-Learning Moment:</strong> Discuss how to combine conditions using `&&` and `||` within `if` statements.</p>
+            </div>
+        </div>
+
+        <div class="slide" id="slide101">
+            <h1 class="text-3xl font-bold mb-4">Assignment (Day 24): Portfolio Dynamic Welcome Message</h1>
+            <div class="assignment-box">
+                <h3 class="text-xl font-semibold mb-4">Challenge Yourself!</h3>
+                <p>Make your portfolio's welcome message change based on the time of day.</p>
+                <ul class="list-disc list-inside ml-4">
+                    <li>In your `index.html`, add an empty paragraph with `id="welcome-message"` (e.g., `&lt;p id="welcome-message"&gt;&lt;/p&gt;`).</li>
+                    <li>In `script.js`:
+                        <ul class="list-disc list-inside ml-8">
+                            <li>Get the current hour using `const currentHour = new Date().getHours();`.</li>
+                            <li>Declare a `let` variable `greeting`.</li>
+                            <li>Use `if`, `else if`, `else` statements to set the `greeting` variable:
+                                <ul class="list-disc list-inside ml-12">
+                                    <li>If `currentHour` is less than 12, `greeting = "Good morning!";`</li>
+                                    <li>Else if `currentHour` is less than 18, `greeting = "Good afternoon!";`</li>
+                                    <li>Else, `greeting = "Good evening!";`</li>
+                                </ul>
+                            </li>
+                            <li>Finally, use `document.getElementById('welcome-message').textContent = greeting;` to display the greeting on your page.</li>
+                        </ul>
+                    </li>
+                    <li>Save and view `index.html`. The greeting should change throughout the day!</li>
+                </ul>
+                <p class="mt-4">This is your first step in making your portfolio truly dynamic!</p>
+            </div>
+        </div>
+
+        <!-- Day 25: Loops (for) -->
+        <div class="slide" id="slide102">
+            <h1 class="text-3xl font-bold mb-4">Day 25: Repeating Actions with Loops! (Part 1)</h1>
+            <h2 class="text-2xl font-semibold mb-6">The `for` Loop</h2>
+            <img src="https://placehold.co/600x300/2d3748/e2e8f0?text=For+Loop+Concept" alt="For Loop Concept" class="w-full h-auto mb-4">
+            <p>Loops are used to execute a block of code repeatedly as long as a certain condition is met. They are essential for tasks that involve iterating over collections of data or performing actions a fixed number of times.</p>
+            <ul class="list-disc list-inside ml-4">
+                <li>**The `for` loop:** The most common type of loop, ideal when you know how many times you want to repeat an action.
+                    <pre><code>
+for (initialization; condition; afterthought) {
+    // Code to be executed repeatedly
+}
+                    </code></pre>
+                    <ul class="list-disc list-inside ml-8">
+                        <li>`initialization`: Executed once before the loop starts (e.g., `let i = 0;`).</li>
+                        <li>`condition`: Evaluated before each iteration. If `true`, the loop continues; if `false`, the loop stops.</li>
+                        <li>`afterthought`: Executed after each iteration (e.g., `i++` to increment the counter).</li>
+                    </ul>
+                    <pre><code>
+for (let i = 0; i < 5; i++) {
+    console.log("Iteration number: " + i);
+}
+/* Output:
+Iteration number: 0
+Iteration number: 1
+Iteration number: 2
+Iteration number: 3
+Iteration number: 4
+*/
+                    </code></pre>
+                </li>
+            </ul>
+        </div>
+
+        <div class="slide" id="slide103">
+            <h1 class="text-3xl font-bold mb-4">Day 25: Loop Control: `break` and `continue`</h1>
+            <h2 class="text-2xl font-semibold mb-6">Modifying Loop Behavior</h2>
+            <img src="https://placehold.co/600x300/2d3748/e2e8f0?text=Break+Continue" alt="Break Continue Concept" class="w-full h-auto mb-4">
+            <ul class="list-disc list-inside ml-4">
+                <li>**`break` statement:** Immediately terminates the current loop and transfers control to the statement following the loop.
+                    <pre><code>
+for (let i = 1; i <= 10; i++) {
+    if (i === 5) {
+        console.log("Found 5! Breaking loop.");
+        break; // Loop stops here
+    }
+    console.log(i);
+}
+/* Output:
+1
+2
+3
+4
+Found 5! Breaking loop.
+*/
+                    </code></pre>
+                </li>
+                <li>**`continue` statement:** Skips the current iteration of a loop and continues with the next iteration.
+                    <pre><code>
+for (let i = 1; i <= 5; i++) {
+    if (i === 3) {
+        console.log("Skipping 3.");
+        continue; // Skips the rest of this iteration for i=3
+    }
+    console.log(i);
+}
+/* Output:
+1
+2
+Skipping 3.
+4
+5
+*/
+                    </code></pre>
+                </li>
+            </ul>
+        </div>
+
+        <div class="slide" id="slide104">
+            <h1 class="text-3xl font-bold mb-4">Exercise (Day 25): Counting & Skipping</h1>
+            <div class="exercise-box">
+                <h3 class="text-xl font-semibold mb-4">Your Turn!</h3>
+                <p>Open your `script.js` file and practice with `for` loops.</p>
+                <ol class="list-decimal list-inside ml-4">
+                    <li>Use a `for` loop to log numbers from 1 to 10.</li>
+                    <li>Use another `for` loop to log only even numbers from 2 to 20 (hint: use the modulus operator `%`).</li>
+                    <li>Use a `for` loop that counts from 1 to 10, but uses `break` to stop the loop when the counter reaches 7. Log a message when it breaks.</li>
+                    <li>Use a `for` loop that counts from 1 to 10, but uses `continue` to skip logging the number 5.</li>
+                </ol>
+                <p class="mt-4"><strong>Peer-Learning Moment:</strong> Discuss how loops can automate repetitive tasks in programming.</p>
+            </div>
+        </div>
+
+        <div class="slide" id="slide105">
+            <h1 class="text-3xl font-bold mb-4">Assignment (Day 25): Portfolio Dynamic List</h1>
+            <div class="assignment-box">
+                <h3 class="text-xl font-semibold mb-4">Challenge Yourself!</h3>
+                <p>Use a `for` loop to dynamically add items to a list on your portfolio.</p>
+                <ul class="list-disc list-inside ml-4">
+                    <li>In your `about.html` (or `index.html`), add an empty `&lt;ul id="my-list"&gt;&lt;/ul&gt;`.</li>
+                    <li>In `script.js`:
+                        <ul class="list-disc list-inside ml-8">
+                            <li>Select the `&lt;ul&gt;` element by its ID.</li>
+                            <li>Use a `for` loop that runs 5 times.</li>
+                            <li>Inside the loop, create a string like `const listItemText = "My dynamic item " + (i + 1);`.</li>
+                            <li>For now, just `console.log(listItemText);`. (Tomorrow, we'll learn how to actually add these to the HTML!)</li>
+                        </ul>
+                    </li>
+                    <li>Save and view your page, checking the console for the output.</li>
+                </ul>
+                <p class="mt-4">This is a stepping stone to building dynamic content sections!</p>
+            </div>
+        </div>
+
+        <!-- Day 26: Loops (while/do-while) & Switch -->
+        <div class="slide" id="slide106">
+            <h1 class="text-3xl font-bold mb-4">Day 26: More Loops & Multi-Way Decisions!</h1>
+            <h2 class="text-2xl font-semibold mb-6">`while` and `do...while` Loops, `switch` Statement</h2>
+            <img src="https://placehold.co/600x300/2d3748/e2e8f0?text=While+Switch+Concept" alt="While Switch Concept" class="w-full h-auto mb-4">
+            <ul class="list-disc list-inside ml-4">
+                <li>**`while` loop:** Repeats a block of code as long as a specified condition is `true`. The condition is checked *before* each iteration.
+                    <pre><code>
+let count = 0;
+while (count < 5) {
+    console.log("Count is: " + count);
+    count++; // Important: increment to avoid infinite loop!
+}
+/* Output:
+Count is: 0
+Count is: 1
+Count is: 2
+Count is: 3
+Count is: 4
+*/
+                    </code></pre>
+                </li>
+                <li>**`do...while` loop:** Similar to `while`, but the block of code is executed at least once, *then* the condition is checked.
+                    <pre><code>
+let i = 0;
+do {
+    console.log("Do-while count: " + i);
+    i++;
+} while (i < 3);
+/* Output:
+Do-while count: 0
+Do-while count: 1
+Do-while count: 2
+*/
+                    </code></pre>
+                </li>
+                <li>**`switch` statement:** A more efficient way to handle multiple `else if` conditions, especially when checking a single variable against many possible values.
+                    <pre><code>
+let day = "Tuesday";
+switch (day) {
+    case "Monday":
+        console.log("Start of the week.");
+        break; // Important: exits the switch block
+    case "Tuesday":
+    case "Wednesday": // Fall-through: if Tuesday or Wednesday, execute this
+        console.log("Mid-week grind.");
+        break;
+    default: // If no case matches
+        console.log("Weekend or unknown day.");
+}
+                    </code></pre>
+                </li>
+            </ul>
+        </div>
+
+        <div class="slide" id="slide107">
+            <h1 class="text-3xl font-bold mb-4">Day 26: When to Use Which Loop?</h1>
+            <h2 class="text-2xl font-semibold mb-6">Choosing the Right Tool for the Job</h2>
+            <img src="https://placehold.co/600x300/2d3748/e2e8f0?text=Loop+Choice" alt="Loop Choice Concept" class="w-full h-auto mb-4">
+            <ul class="list-disc list-inside ml-4">
+                <li>**`for` loop:**
+                    <ul class="list-disc list-inside ml-8">
+                        <li>When you know the exact number of iterations.</li>
+                        <li>When iterating over a sequence (e.g., numbers from 1 to 10).</li>
+                    </ul>
+                </li>
+                <li>**`while` loop:**
+                    <ul class="list-disc list-inside ml-8">
+                        <li>When the number of iterations is unknown, and the loop continues as long as a condition is true (e.g., reading data until the end of a file, or until a user enters valid input).</li>
+                    </ul>
+                </li>
+                <li>**`do...while` loop:**
+                    <ul class="list-disc list-inside ml-8">
+                        <li>When you need the loop body to execute at least once, regardless of the initial condition (e.g., prompting a user for input at least once).</li>
+                    </ul>
+                </li>
+                <li>**`switch` statement:**
+                    <ul class="list-disc list-inside ml-8">
+                        <li>When you have a single expression that you want to compare against multiple distinct values.</li>
+                        <li>Often more readable than a long `if...else if...else` chain for specific value checks.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="slide" id="slide108">
+            <h1 class="text-3xl font-bold mb-4">Exercise (Day 26): Loop & Switch Practice</h1>
+            <div class="exercise-box">
+                <h3 class="text-xl font-semibold mb-4">Your Turn!</h3>
+                <p>Open your `script.js` file and practice with `while`, `do...while`, and `switch`.</p>
+                <ol class="list-decimal list-inside ml-4">
+                    <li>Use a `while` loop to count down from 5 to 1. Log each number.</li>
+                    <li>Use a `do...while` loop to log "Hello!" at least once, then continue logging "Hello!" as long as a counter variable is less than 3.</li>
+                    <li>Declare a `let` variable `fruit = "Apple";`. Use a `switch` statement to log:
+                        <ul class="list-disc list-inside ml-8">
+                            <li>"It's a red fruit." if `fruit` is "Apple" or "Cherry".</li>
+                            <li>"It's a yellow fruit." if `fruit` is "Banana" or "Lemon".</li>
+                            <li>"Unknown fruit." for any other fruit.</li>
+                        </ul>
+                    </li>
+                </ol>
+                <p class="mt-4"><strong>Peer-Learning Moment:</strong> Explain how `break` is vital in `switch` statements.</p>
+            </div>
+        </div>
+
+        <div class="slide" id="slide109">
+            <h1 class="text-3xl font-bold mb-4">Assignment (Day 26): Portfolio Navigation Highlight</h1>
+            <div class="assignment-box">
+                <h3 class="text-xl font-semibold mb-4">Challenge Yourself!</h3>
+                <p>Use a `switch` statement to highlight the active page in your portfolio's navigation.</p>
+                <ul class="list-disc list-inside ml-4">
+                    <li>In `index.html` (and other pages), ensure your navigation links have unique IDs (e.g., `&lt;a id="nav-home" href="index.html"&gt;Home&lt;/a&gt;`).</li>
+                    <li>In your `style.css`, create a class like `.active-nav { color: #63b3ed; font-weight: bold; }`.</li>
+                    <li>In `script.js`:
+                        <ul class="list-disc list-inside ml-8">
+                            <li>Get the current page's filename (e.g., `const currentPage = window.location.pathname.split('/').pop();`).</li>
+                            <li>Use a `switch` statement on `currentPage`.</li>
+                            <li>For each `case` (e.g., `"index.html"`, `"about.html"`), select the corresponding navigation link by its ID and add the `active-nav` class to it using `classList.add()`.</li>
+                            <li>Remember `break;` for each case.</li>
+                        </ul>
+                    </li>
+                    <li>Save and test. When you navigate between pages, the current page's link should be highlighted!</li>
+                </ul>
+                <p class="mt-4">This adds a professional touch to your portfolio's user experience!</p>
+            </div>
+        </div>
+
+        <!-- Day 27: Functions -->
+        <div class="slide" id="slide110">
+            <h1 class="text-3xl font-bold mb-4">Day 27: Reusable Code with Functions!</h1>
+            <h2 class="text-2xl font-semibold mb-6">Defining, Calling, Parameters, Return Values</h2>
+            <img src="https://placehold.co/600x300/2d3748/e2e8f0?text=Functions+Concept" alt="Functions Concept" class="w-full h-auto mb-4">
+            <p>Functions are blocks of code designed to perform a particular task. They allow you to write reusable code, making your programs more organized, efficient, and easier to debug.</p>
+            <ul class="list-disc list-inside ml-4">
+                <li>**Defining a Function:**
+                    <pre><code>
+function greetUser() { // Function declaration
+    console.log("Hello, Code Crusader!");
+}
+                    </code></pre>
+                </li>
+                <li>**Calling (Invoking) a Function:** To run the code inside a function, you call it by its name followed by parentheses.
+                    <pre><code>greetUser(); // Executes the code inside greetUser()</code></pre>
+                </li>
+                <li>**Parameters:** Variables listed inside the parentheses `()` in the function definition. They act as placeholders for values that will be passed into the function when it's called.
+                    <pre><code>
+function greetName(name) { // 'name' is a parameter
+    console.log("Hello, " + name + "!");
+}
+greetName("Alice"); // "Alice" is an argument
+greetName("Bob");
+                    </code></pre>
+                </li>
+                <li>**Return Values:** Functions can send a value back to the code that called them using the `return` keyword.
+                    <pre><code>
+function addNumbers(a, b) {
+    let sum = a + b;
+    return sum; // Returns the sum
+}
+let result = addNumbers(5, 3); // result will be 8
+console.log(result);
+                    </code></pre>
+                </li>
+            </ul>
+        </div>
+
+        <div class="slide" id="slide111">
+            <h1 class="text-3xl font-bold mb-4">Day 27: Function Expressions & Arrow Functions</h1>
+            <h2 class="text-2xl font-semibold mb-6">Alternative Ways to Define Functions</h2>
+            <img src="https://placehold.co/600x300/2d3748/e2e8f0?text=Arrow+Functions" alt="Arrow Functions Concept" class="w-full h-auto mb-4">
+            <ul class="list-disc list-inside ml-4">
+                <li>**Function Expression:** Defining a function as part of an expression, often assigned to a variable.
+                    <pre><code>
+const sayGoodbye = function() {
+    console.log("Goodbye!");
+};
+sayGoodbye();
+                    </code></pre>
+                </li>
+                <li>**Arrow Functions (ES6+):** A more concise syntax for writing function expressions, especially useful for short, single-expression functions.
+                    <ul class="list-disc list-inside ml-8">
+                        <li>Implicit return for single expressions:
+                            <pre><code>
+const multiply = (a, b) => a * b;
+console.log(multiply(4, 2)); // Output: 8
+                            </code></pre>
+                        </li>
+                        <li>With curly braces (for multiple statements or explicit return):
+                            <pre><code>
+const calculateArea = (length, width) => {
+    const area = length * width;
+    return area;
+};
+                            </code></pre>
+                        </li>
+                        <li>No parameters: `() => { ... }`</li>
+                        <li>Single parameter (no parentheses needed): `param => { ... }`</li>
+                    </ul>
+                </li>
+            </ul>
+            <p class="text-sm text-gray-400 mt-2">Arrow functions are widely used in modern JavaScript!</p>
+        </div>
+
+        <div class="slide" id="slide112">
+            <h1 class="text-3xl font-bold mb-4">Exercise (Day 27): Function Builder</h1>
+            <div class="exercise-box">
+                <h3 class="text-xl font-semibold mb-4">Your Turn!</h3>
+                <p>Open your `script.js` file and create some functions.</p>
+                <ol class="list-decimal list-inside ml-4">
+                    <li>Define a function `displayMessage()` that logs "This is my first function!" Call it.</li>
+                    <li>Define a function `calculateRectangleArea(length, width)` that takes two parameters, calculates the area, and returns it. Call it with some numbers and log the returned value.</li>
+                    <li>Convert `calculateRectangleArea` into an arrow function. Test it again.</li>
+                    <li>Define an arrow function `isEven(number)` that returns `true` if the number is even, `false` otherwise. Test with `isEven(4)` and `isEven(7)`.</li>
+                </ol>
+                <p class="mt-4"><strong>Peer-Learning Moment:</strong> Discuss the benefits of using functions (reusability, organization).</p>
+            </div>
+        </div>
+
+        <div class="slide" id="slide113">
+            <h1 class="text-3xl font-bold mb-4">Assignment (Day 27): Portfolio Greeting Function</h1>
+            <div class="assignment-box">
+                <h3 class="text-xl font-semibold mb-4">Challenge Yourself!</h3>
+                <p>Refactor your dynamic welcome message (from Day 24) into a reusable function.</p>
+                <ul class="list-disc list-inside ml-4">
+                    <li>In `script.js`, create a new function `getGreeting()` (or `getGreeting(hour)` if you want to pass the hour).</li>
+                    <li>Move the `if/else if/else` logic that determines the greeting based on `currentHour` into this `getGreeting()` function.</li>
+                    <li>Make `getGreeting()` `return` the appropriate greeting string.</li>
+                    <li>In your main script, call `const greetingMessage = getGreeting();` (or `getGreeting(new Date().getHours());`) and then use `document.getElementById('welcome-message').textContent = greetingMessage;`.</li>
+                    <li>**Bonus:** Modify the `getGreeting` function to take a `name` parameter and include the name in the greeting (e.g., "Good morning, Alice!").</li>
+                </ul>
+                <p class="mt-4">This makes your code cleaner and easier to manage!</p>
+            </div>
+        </div>
+
+        <!-- Day 28: DOM Manipulation - Selecting Elements -->
+        <div class="slide" id="slide114">
+            <h1 class="text-3xl font-bold mb-4">Day 28: Interacting with HTML (DOM)! (Part 1)</h1>
+            <h2 class="text-2xl font-semibold mb-6">Selecting Elements: `getElementById`, `querySelector`, `querySelectorAll`</h2>
+            <img src="https://placehold.co/600x300/2d3748/e2e8f0?text=DOM+Selection" alt="DOM Selection Concept" class="w-full h-auto mb-4">
+            <p>The **DOM (Document Object Model)** is a programming interface for web documents. It represents the page structure so that programs can change the document structure, style, and content. JavaScript uses the DOM to interact with HTML elements.</p>
+            <ul class="list-disc list-inside ml-4">
+                <li>**`document.getElementById('idName')`:** Selects a single HTML element by its unique `id` attribute. Returns `null` if not found.
+                    <pre><code>
+&lt;p id="my-paragraph"&gt;Hello.&lt;/p&gt;
+const myParagraph = document.getElementById('my-paragraph');
+console.log(myParagraph); // Logs the &lt;p&gt; element
+                    </code></pre>
+                </li>
+                <li>**`document.querySelector('CSS-selector')`:** Selects the *first* HTML element that matches a specified CSS selector.
+                    <pre><code>
+&lt;div class="container"&gt;
+    &lt;p class="text"&gt;First text.&lt;/p&gt;
+    &lt;p class="text"&gt;Second text.&lt;/p&gt;
+&lt;/div&gt;
+const firstText = document.querySelector('.text'); // Selects the first &lt;p class="text"&gt;
+const containerDiv = document.querySelector('#my-container'); // Can use ID too
+                    </code></pre>
+                </li>
+                <li>**`document.querySelectorAll('CSS-selector')`:** Selects *all* HTML elements that match a specified CSS selector. Returns a `NodeList` (which is like an array).
+                    <pre><code>
+const allTexts = document.querySelectorAll('.text'); // Selects both &lt;p class="text"&gt;
+console.log(allTexts); // NodeList of two &lt;p&gt; elements
+                    </code></pre>
+                </li>
+            </ul>
+        </div>
+
+        <div class="slide" id="slide115">
+            <h1 class="text-3xl font-bold mb-4">Day 28: Accessing Element Properties</h1>
+            <h2 class="text-2xl font-semibold mb-6">Getting and Setting Content</h2>
+            <img src="https://placehold.co/600x300/2d3748/e2e8f0?text=Element+Properties" alt="Element Properties Concept" class="w-full h-auto mb-4">
+            <p>Once you've selected an HTML element, you can access and modify its properties.</p>
+            <ul class="list-disc list-inside ml-4">
+                <li>**`.textContent`:** Gets or sets the text content of an element, *excluding* HTML tags. Safer for just text.
+                    <pre><code>
+&lt;p id="greeting"&gt;Hello &lt;strong&gt;World&lt;/strong&gt;&lt;/p&gt;
+const greetingElement = document.getElementById('greeting');
+console.log(greetingElement.textContent); // Output: "Hello World"
+greetingElement.textContent = "New simple text.";
+                    </code></pre>
+                </li>
+                <li>**`.innerHTML`:** Gets or sets the HTML content (including tags) inside an element. Use with caution to avoid security risks (XSS).
+                    <pre><code>
+console.log(greetingElement.innerHTML); // Output: "Hello &lt;strong&gt;World&lt;/strong&gt;"
+greetingElement.innerHTML = "New &lt;em&gt;rich&lt;/em&gt; text.";
+                    </code></pre>
+                </li>
+                <li>**`.value`:** Used for form input elements (`&lt;input&gt;`, `&lt;textarea&gt;`, `&lt;select&gt;`) to get or set their current value.
+                    <pre><code>
+&lt;input type="text" id="username-input" value="default"&gt;
+const usernameInput = document.getElementById('username-input');
+console.log(usernameInput.value); // Output: "default"
+usernameInput.value = "new_user";
+                    </code></pre>
+                </li>
+            </ul>
+        </div>
+
+        <div class="slide" id="slide116">
+            <h1 class="text-3xl font-bold mb-4">Exercise (Day 28): DOM Selector Practice</h1>
+            <div class="exercise-box">
+                <h3 class="text-xl font-semibold mb-4">Your Turn!</h3>
+                <p>Create a new HTML file `dom-practice.html` and link it to `script.js`.</p>
+                <ol class="list-decimal list-inside ml-4">
+                    <li>In `dom-practice.html`:
+                        <ul class="list-disc list-inside ml-8">
+                            <li>Add an `&lt;h1 id="main-title"&gt;DOM Practice&lt;/h1&gt;`.</li>
+                            <li>Add three paragraphs with the class `info-text`.</li>
+                            <li>Add an `&lt;input type="text" id="my-input" value="Initial Value"&gt;`.</li>
+                        </ul>
+                    </li>
+                    <li>In `script.js`:
+                        <ul class="list-disc list-inside ml-8">
+                            <li>Select `#main-title` using `getElementById` and change its `textContent` to "Welcome to the DOM!".</li>
+                            <li>Select the first `.info-text` using `querySelector` and change its `textContent` to "This is the first info."</li>
+                            <li>Select all `.info-text` elements using `querySelectorAll`. Use a `for` loop to log the `textContent` of each.</li>
+                            <li>Select `#my-input` and log its `value`. Then change its `value` to "New Input Text".</li>
+                        </ul>
+                    </li>
+                    <li>Save and test.</li>
+                </ol>
+                <p class="mt-4"><strong>Peer-Learning Moment:</strong> Discuss when you would use `getElementById` versus `querySelector`.</p>
+            </div>
+        </div>
+
+        <div class="slide" id="slide117">
+            <h1 class="text-3xl font-bold mb-4">Assignment (Day 28): Portfolio Dynamic Info Display</h1>
+            <div class="assignment-box">
+                <h3 class="text-xl font-semibold mb-4">Challenge Yourself!</h3>
+                <p>Display your personal information (from Day 22's assignment) on your `about.html` page using JavaScript.</p>
+                <ul class="list-disc list-inside ml-4">
+                    <li>Recall your `fullName`, `currentOccupation`, `city`, and `yearsOfExperience` variables in `script.js`.</li>
+                    <li>Recall the empty `&lt;span&gt;` or `&lt;p&gt;` elements with IDs in your `about.html`.</li>
+                    <li>In `script.js`, after declaring your variables:
+                        <ul class="list-disc list-inside ml-8">
+                            <li>Select each HTML element by its ID.</li>
+                            <li>Set the `textContent` of each selected element to the value of its corresponding JavaScript variable.</li>
+                            <li>Example: `document.getElementById('full-name').textContent = fullName;`</li>
+                        </ul>
+                    </li>
+                    <li>Save and view `about.html`. Your personal information should now appear dynamically!</li>
+                </ul>
+                <p class="mt-4">Your portfolio is truly coming to life!</p>
+            </div>
+        </div>
+
+        <!-- Day 29: DOM Manipulation - Attributes & Styles -->
+        <div class="slide" id="slide118">
+            <h1 class="text-3xl font-bold mb-4">Day 29: Changing Attributes & Styles with DOM!</h1>
+            <h2 class="text-2xl font-semibold mb-6">`setAttribute`, `removeAttribute`, `classList`, `style`</h2>
+            <img src="https://placehold.co/600x300/2d3748/e2e8f0?text=DOM+Attributes+Styles" alt="DOM Attributes Styles Concept" class="w-full h-auto mb-4">
+            <p>Beyond changing text, JavaScript can modify HTML attributes (like `src` for images, `href` for links) and CSS styles directly.</p>
+            <ul class="list-disc list-inside ml-4">
+                <li>**Attributes:**
+                    <ul class="list-disc list-inside ml-8">
+                        <li>`element.setAttribute('attributeName', 'value')`: Sets the value of an attribute.
+                            <pre><code>
+&lt;img id="my-image" src="old.jpg"&gt;
+const myImage = document.getElementById('my-image');
+myImage.setAttribute('src', 'new.jpg');
+myImage.setAttribute('alt', 'A new image');
+                            </code></pre>
+                        </li>
+                        <li>`element.getAttribute('attributeName')`: Gets the current value of an attribute.</li>
+                        <li>`element.removeAttribute('attributeName')`: Removes an attribute.</li>
+                    </ul>
+                </li>
+                <li>**Inline Styles:** Directly manipulate an element's CSS properties using its `.style` property.
+                    <pre><code>
+const myDiv = document.getElementById('my-div');
+myDiv.style.backgroundColor = 'blue'; // CSS property names become camelCase
+myDiv.style.padding = '20px';
+myDiv.style.fontSize = '18px';
+                    </code></pre>
+                    <p class="text-sm text-gray-400 mt-2">This applies inline styles, which have high specificity. Often, using `classList` is preferred.</p>
+                </li>
+            </ul>
+        </div>
+
+        <div class="slide" id="slide119">
+            <h1 class="text-3xl font-bold mb-4">Day 29: Managing CSS Classes with `classList`</h1>
+            <h2 class="text-2xl font-semibold mb-6">The Best Way to Toggle Styles</h2>
+            <img src="https://placehold.co/600x300/2d3748/e2e8f0?text=ClassList+Concept" alt="ClassList Concept" class="w-full h-auto mb-4">
+            <p>The `classList` property is the most powerful and recommended way to add, remove, or toggle CSS classes on an element.</p>
+            <ul class="list-disc list-inside ml-4">
+                <li>**`element.classList.add('className')`:** Adds one or more classes to an element.
+                    <pre><code>myElement.classList.add('highlight', 'active');</code></pre>
+                </li>
+                <li>**`element.classList.remove('className')`:** Removes one or more classes.
+                    <pre><code>myElement.classList.remove('highlight');</code></pre>
+                </li>
+                <li>**`element.classList.toggle('className')`:** Adds the class if it's not present, removes it if it is present. Very useful for toggling states (e.g., show/hide, active/inactive).
+                    <pre><code>myElement.classList.toggle('hidden');</code></pre>
+                </li>
+                <li>**`element.classList.contains('className')`:** Checks if an element has a specific class. Returns `true` or `false`.</li>
+            </ul>
+            <pre><code>
+&lt;!-- In your CSS --&gt;
+.red-background {
+    background-color: red;
+    color: white;
+}
+.big-text {
+    font-size: 24px;
+}
+
+&lt;!-- In your JavaScript --&gt;
+const myDiv = document.getElementById('my-div');
+myDiv.classList.add('red-background'); // Adds the class
+myDiv.classList.toggle('big-text');    // Adds big-text
+myDiv.classList.toggle('big-text');    // Removes big-text
+                    </code></pre>
+        </div>
+
+        <div class="slide" id="slide120">
+            <h1 class="text-3xl font-bold mb-4">Exercise (Day 29): Image & Style Changer</h1>
+            <div class="exercise-box">
+                <h3 class="text-xl font-semibold mb-4">Your Turn!</h3>
+                <p>Open your `dom-practice.html` (from Day 28) and `script.js`.</p>
+                <ol class="list-decimal list-inside ml-4">
+                    <li>In `dom-practice.html`, add an `&lt;img id="dynamic-image" src="https://placehold.co/200x200?text=Original" alt="Original Image"&gt;`.</li>
+                    <li>In `style.css`, add a class: `.highlight { border: 2px solid yellow; }`.</li>
+                    <li>In `script.js`:
+                        <ul class="list-disc list-inside ml-8">
+                            <li>Select `#dynamic-image`. Change its `src` attribute to `https://placehold.co/200x200/FF0000/FFFFFF?text=New+Image` and its `alt` attribute to "New Red Image".</li>
+                            <li>Select `#main-title`. Change its `color` style to `green` and its `fontSize` style to `36px`.</li>
+                            <li>Select the first `.info-text` paragraph. Add the `highlight` class to it.</li>
+                            <li>Select the second `.info-text` paragraph. Use `classList.toggle('highlight');` twice. What happens?</li>
+                        </ul>
+                    </li>
+                    <li>Save and test.</li>
+                </ol>
+                <p class="mt-4"><strong>Peer-Learning Moment:</strong> Discuss why `classList` is often preferred over directly manipulating `style` properties.</p>
+            </div>
+        </div>
+
+        <div class="slide" id="slide121">
+            <h1 class="text-3xl font-bold mb-4">Assignment (Day 29): Portfolio Project Image & Styling</h1>
+            <div class="assignment-box">
+                <h3 class="text-xl font-semibold mb-4">Challenge Yourself!</h3>
+                <p>Add a placeholder image to your portfolio's `projects.html` and dynamically change its appearance.</p>
+                <ul class="list-disc list-inside ml-4">
+                    <li>In `projects.html`, add an `&lt;img id="project-placeholder" src="https://placehold.co/300x200?text=Project+Image" alt="Placeholder project image"&gt;`.</li>
+                    <li>In `style.css`, create a class `.featured-project { border: 5px solid #63b3ed; border-radius: 1rem; box-shadow: 0 0 15px rgba(99, 179, 237, 0.5); }`.</li>
+                    <li>In `script.js`:
+                        <ul class="list-disc list-inside ml-8">
+                            <li>Select `#project-placeholder`.</li>
+                            <li>Change its `src` attribute to a different placeholder image URL.</li>
+                            <li>Add the `featured-project` class to it using `classList.add()`.</li>
+                            <li>Change its `width` style property to `80%` (using `style.width`).</li>
+                        </ul>
+                    </li>
+                    <li>Save and view `projects.html`. Your placeholder image should now be styled dynamically!</li>
+                </ul>
+                <p class="mt-4">You're making your portfolio visually engaging!</p>
+            </div>
+        </div>
+
+        <!-- Day 30: Event Handling -->
+        <div class="slide" id="slide122">
+            <h1 class="text-3xl font-bold mb-4">Day 30: Responding to User Actions (Events)!</h1>
+            <h2 class="text-2xl font-semibold mb-6">`addEventListener` and Common Events</h2>
+            <img src="https://placehold.co/600x300/2d3748/e2e8f0?text=Event+Handling+Concept" alt="Event Handling Concept" class="w-full h-auto mb-4">
+            <p>Websites become truly interactive when they respond to what users do (clicks, typing, mouse movements). These user actions are called **events**, and JavaScript allows you to "listen" for them and execute code when they occur.</p>
+            <ul class="list-disc list-inside ml-4">
+                <li>**`element.addEventListener('eventName', functionName)`:** The most common and flexible way to handle events.
+                    <ul class="list-disc list-inside ml-8">
+                        <li>`eventName`: A string representing the type of event (e.g., `'click'`, `'mouseover'`, `'keydown'`).</li>
+                        <li>`functionName` (or an anonymous function): The function that will be executed when the event occurs. This is called the **event handler** or **callback function**.</li>
+                    </ul>
+                    <pre><code>
+&lt;button id="my-button"&gt;Click Me&lt;/button&gt;
+const myButton = document.getElementById('my-button');
+
+myButton.addEventListener('click', function() {
+    console.log("Button clicked!");
+});
+
+// Or with an arrow function:
+myButton.addEventListener('mouseover', () => {
+    console.log("Mouse is over the button!");
+});
+                    </code></pre>
+                </li>
+                <li>**The `event` Object:** The event handler function automatically receives an `event` object as its first argument. This object contains useful information about the event that occurred.
+                    <pre><code>
+myButton.addEventListener('click', function(event) {
+    console.log("Event type:", event.type); // 'click'
+    console.log("Target element:", event.target); // The button element
+});
+                    </code></pre>
+                </li>
+            </ul>
+        </div>
+
+        <div class="slide" id="slide123">
+            <h1 class="text-3xl font-bold mb-4">Day 30: Common Event Types</h1>
+            <h2 class="text-2xl font-semibold mb-6">Interacting with Your Users</h2>
+            <img src="https://placehold.co/600x300/2d3748/e2e8f0?text=Common+Events" alt="Common Events Concept" class="w-full h-auto mb-4">
+            <p>Here are some of the most frequently used event types:</p>
+            <ul class="list-disc list-inside ml-4">
+                <li>**Mouse Events:**
+                    <ul class="list-disc list-inside ml-8">
+                        <li>`'click'`: When an element is clicked.</li>
+                        <li>`'dblclick'`: When an element is double-clicked.</li>
+                        <li>`'mouseover'`: When the mouse pointer enters an element.</li>
+                        <li>`'mouseout'`: When the mouse pointer leaves an element.</li>
+                        <li>`'mousedown'`, `'mouseup'`: When a mouse button is pressed/released over an element.</li>
+                    </ul>
+                </li>
+                <li>**Keyboard Events:**
+                    <ul class="list-disc list-inside ml-8">
+                        <li>`'keydown'`: When a key is pressed down.</li>
+                        <li>`'keyup'`: When a key is released.</li>
+                        <li>`'keypress'`: When a key is pressed and held down (less common now).</li>
+                    </ul>
+                </li>
+                <li>**Form Events:**
+                    <ul class="list-disc list-inside ml-8">
+                        <li>`'submit'`: When a form is submitted.</li>
+                        <li>`'input'`: When the value of an `&lt;input&gt;` or `&lt;textarea&gt;` element changes.</li>
+                        <li>`'change'`: When the value of an `&lt;input&gt;`, `&lt;select&gt;`, or `&lt;textarea&gt;` element changes and the element loses focus.</li>
+                    </ul>
+                </li>
+                <li>**Window/Document Events:**
+                    <ul class="list-disc list-inside ml-8">
+                        <li>`'load'`: When the entire page (including all resources like images) has loaded.</li>
+                        <li>`'DOMContentLoaded'`: When the HTML document has been completely loaded and parsed, without waiting for stylesheets, images, and subframes to finish loading. (Often preferred over `'load'`).</li>
+                        <li>`'resize'`: When the browser window is resized.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="slide" id="slide124">
+            <h1 class="text-3xl font-bold mb-4">Exercise (Day 30): Interactive Buttons & Text</h1>
+            <div class="exercise-box">
+                <h3 class="text-xl font-semibold mb-4">Your Turn!</h3>
+                <p>Open your `dom-practice.html` (from Day 28/29) and `script.js`.</p>
+                <ol class="list-decimal list-inside ml-4">
+                    <li>In `dom-practice.html`, add a `&lt;button id="color-btn"&gt;Change Color&lt;/button&gt;` and a `&lt;p id="hover-text"&gt;Hover over me!&lt;/p&gt;`.</li>
+                    <li>In `style.css`, add a class: `.blue-bg { background-color: blue; color: white; }`.</li>
+                    <li>In `script.js`:
+                        <ul class="list-disc list-inside ml-8">
+                            <li>Select `#color-btn` and `#hover-text`.</li>
+                            <li>Add a `click` event listener to `#color-btn`. Inside the handler, toggle the `blue-bg` class on `#main-title` (from Day 28).</li>
+                            <li>Add a `mouseover` event listener to `#hover-text`. Inside the handler, change its `textContent` to "You're hovering!".</li>
+                            <li>Add a `mouseout` event listener to `#hover-text`. Inside the handler, change its `textContent` back to "Hover over me!".</li>
+                        </ul>
+                    </li>
+                    <li>Save and test.</li>
+                </ol>
+                <p class="mt-4"><strong>Peer-Learning Moment:</strong> Discuss how events make your website dynamic and user-friendly.</p>
+            </div>
+        </div>
+
+        <div class="slide" id="slide125">
+            <h1 class="text-3xl font-bold mb-4">Assignment (Day 30): Portfolio Interactive Buttons</h1>
+            <div class="assignment-box">
+                <h3 class="text-xl font-semibold mb-4">Challenge Yourself!</h3>
+                <p>Add interactive buttons to your portfolio's `index.html` and `projects.html`.</p>
+                <ul class="list-disc list-inside ml-4">
+                    <li>In `index.html`, add a "Learn More About Me" button (`&lt;button id="about-btn"&gt;`).</li>
+                    <li>In `script.js`, add a `click` event listener to `#about-btn`. When clicked, use `window.location.href = 'about.html';` to navigate to your About Me page.</li>
+                    <li>In `projects.html`, add a "Highlight First Project" button (`&lt;button id="highlight-btn"&gt;`).</li>
+                    <li>In `script.js`, add a `click` event listener to `#highlight-btn`. When clicked, select the first project card (you might need to add a class like `project-card` to your project divs) and toggle a `highlight` class on it (define this class in `style.css` with a border or shadow).</li>
+                    <li>Save and test both pages.</li>
+                </ul>
+                <p class="mt-4">You're now building truly interactive web pages!</p>
+            </div>
+        </div>
+
+        <!-- Day 31: Arrays -->
+        <div class="slide active" id="slide126">
+            <h1 class="text-3xl font-bold mb-4">Day 31: Organizing Data with Arrays!</h1>
+            <h2 class="text-2xl font-semibold mb-6">What are Arrays? Ordered Collections!</h2>
+            <img src="https://placehold.co/600x300/2d3748/e2e8f0?text=Array+Concept" alt="Array Concept" class="w-full h-auto mb-4">
+            <p>An **array** is a special type of variable that can hold more than one value at a time. Think of it as a list or a collection of items.</p>
+            <ul class="list-disc list-inside ml-4">
+                <li>Arrays are ordered, meaning each item has a specific position (index).</li>
+                <li>Items in an array are separated by commas and enclosed in square brackets `[]`.</li>
+                <li>Array **indexes** start from `0`.</li>
+            </ul>
+            <pre><code>
+// Creating an array
+const fruits = ["Apple", "Banana", "Cherry"];
+const numbers = [10, 20, 30, 40, 50];
+const mixedData = ["Hello", 123, true];
+
+// Accessing elements (using index)
+console.log(fruits[0]); // Output: "Apple"
+console.log(numbers[2]); // Output: 30
+
+// Getting the length of an array
+console.log(fruits.length); // Output: 3
+            </code></pre>
+        </div>
 
         <!-- Navigation Buttons -->
         <div class="footer-nav">
