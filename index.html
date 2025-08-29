@@ -2984,7 +2984,7 @@ myButton.addEventListener('click', function(event) {
         </div>
 
         <!-- Day 31: Arrays -->
-        <!-- <div class="slide active" id="slide126">
+        <div class="slide active" id="slide126">
             <h1 class="text-3xl font-bold mb-4">Day 31: Organizing Data with Arrays!</h1>
             <h2 class="text-2xl font-semibold mb-6">What are Arrays? Ordered Collections!</h2>
             <img src="https://placehold.co/600x300/2d3748/e2e8f0?text=Array+Concept" alt="Array Concept" class="w-full h-auto mb-4">
@@ -3007,7 +3007,1034 @@ console.log(numbers[2]); // Output: 30
 // Getting the length of an array
 console.log(fruits.length); // Output: 3
             </code></pre>
-        </div> -->
+        </div>
+
+        <div class="slide" id="slide127">
+            <h1 class="text-3xl font-bold mb-4">Day 31: Modifying Arrays & Common Methods</h1>
+            <h2 class="text-2xl font-semibold mb-6">Adding, Removing, and Updating Elements</h2>
+            <img src="https://placehold.co/600x300/2d3748/e2e8f0?text=Array+Methods" alt="Array Methods" class="w-full h-auto mb-4">
+            <p>Arrays are dynamic; you can change their contents after they're created (even if declared with `const` for the array itself!).</p>
+            <ul class="list-disc list-inside ml-4">
+                <li><strong>Updating elements:</strong>
+                    <pre><code>
+const colors = ["red", "green", "blue"];
+colors[1] = "yellow"; // Changes "green" to "yellow"
+console.log(colors); // Output: ["red", "yellow", "blue"]
+                    </code></pre>
+                </li>
+                <li><strong>`push()`:</strong> Adds one or more elements to the end of an array.
+                    <pre><code>
+fruits.push("Orange");
+console.log(fruits); // Output: ["Apple", "Banana", "Cherry", "Orange"]
+                    </code></pre>
+                </li>
+                <li><strong>`pop()`:</strong> Removes the last element from an array and returns it.
+                    <pre><code>
+let lastFruit = fruits.pop(); // lastFruit is "Orange"
+console.log(fruits); // Output: ["Apple", "Banana", "Cherry"]
+                    </code></pre>
+                </li>
+                <li><strong>`unshift()`:</strong> Adds one or more elements to the beginning of an array.</li>
+                <li><strong>`shift()`:</strong> Removes the first element from an array and returns it.</li>
+            </ul>
+        </div>
+
+        <div class="slide" id="slide128">
+            <h1 class="text-3xl font-bold mb-4">Exercise (Day 31): Array Explorer</h1>
+            <div class="exercise-box">
+                <h3 class="text-xl font-semibold mb-4">Your Turn!</h3>
+                <p>Open your `script.js` file and practice working with arrays.</p>
+                <ol class="list-decimal list-inside ml-4">
+                    <li>Declare a `const` array named `myHobbies` containing at least 3 of your hobbies as strings. Log the entire array.</li>
+                    <li>Access and log your first hobby (index 0).</li>
+                    <li>Access and log your last hobby (using `myHobbies.length - 1`).</li>
+                    <li>Use `push()` to add a new hobby to the end of `myHobbies`. Log the array again.</li>
+                    <li>Use `pop()` to remove the last hobby. Log the array and the removed hobby.</li>
+                    <li>Update the second hobby in your array to something new. Log the array.</li>
+                </ol>
+                <p class="mt-4"><strong>Peer-Learning Moment:</strong> Discuss how arrays are useful for storing related pieces of information.</p>
+            </div>
+        </div>
+
+        <div class="slide" id="slide129">
+            <h1 class="text-3xl font-bold mb-4">Assignment (Day 31): Portfolio Skills List</h1>
+            <div class="assignment-box">
+                <h3 class="text-xl font-semibold mb-4">Challenge Yourself!</h3>
+                <p>Use an array to manage your skills for your portfolio's "About Me" page.</p>
+                <ul class="list-disc list-inside ml-4">
+                    <li>In `script.js`, declare a `const` array called `mySkills` and populate it with strings like "HTML", "CSS", "JavaScript Basics".</li>
+                    <li>In your `about.html` (or `index.html`), add an empty unordered list with `id="skills-list"`.</li>
+                    <li>In `script.js`, select this `&lt;ul&gt;` element.</li>
+                    <li>Use a `for` loop to iterate through your `mySkills` array. Inside the loop, create a new `&lt;li&gt;` element for each skill and append it to the `skills-list` `&lt;ul&gt;`.
+                        <pre><code>
+// Example (will cover createElement/appendChild more tomorrow, but try this!)
+const skillsList = document.getElementById('skills-list');
+for (let i = 0; i &lt; mySkills.length; i++) {
+    const listItem = document.createElement('li'); // Creates a new &lt;li&gt; tag
+    listItem.textContent = mySkills[i];          // Sets its text
+    skillsList.appendChild(listItem);            // Adds it to the &lt;ul&gt;
+}
+                        </code></pre>
+                    </li>
+                    <li>Save and view your `about.html` page. Your skills should now appear dynamically!</li>
+                </ul>
+                <p class="mt-4">This is a practical application of arrays and DOM manipulation!</p>
+            </div>
+        </div>
+
+        <!-- Day 32: Objects -->
+        <div class="slide" id="slide130">
+            <h1 class="text-3xl font-bold mb-4">Day 32: Representing Real-World Data with Objects!</h1>
+            <h2 class="text-2xl font-semibold mb-6">Key-Value Pairs: Properties and Values</h2>
+            <img src="https://placehold.co/600x300/2d3748/e2e8f0?text=Object+Concept" alt="Object Concept" class="w-full h-auto mb-4">
+            <p>While arrays are great for ordered lists, **objects** are perfect for storing data that has properties and values, like characteristics of a person or an item.</p>
+            <ul class="list-disc list-inside ml-4">
+                <li>Objects store data in **key-value pairs**.</li>
+                <li>Keys (also called property names) are strings (or symbols) and values can be any data type (strings, numbers, booleans, arrays, even other objects!).</li>
+                <li>Key-value pairs are separated by commas and enclosed in curly braces `{}`.</li>
+            </ul>
+            <pre><code>
+// Creating an object
+const person = {
+    firstName: "John",
+    lastName: "Doe",
+    age: 30,
+    isStudent: false,
+    hobbies: ["coding", "reading", "hiking"]
+};
+
+// Accessing properties (Dot Notation or Bracket Notation)
+console.log(person.firstName);    // Output: "John"
+console.log(person["age"]);       // Output: 30
+console.log(person.hobbies[0]);   // Accessing an array within an object
+
+// Modifying properties
+person.age = 31;
+person.isStudent = true;
+console.log(person.age); // Output: 31
+            </code></pre>
+        </div>
+
+        <div class="slide" id="slide131">
+            <h1 class="text-3xl font-bold mb-4">Day 32: Adding/Deleting Properties & Nested Objects</h1>
+            <h2 class="text-2xl font-semibold mb-6">Structuring Complex Data</h2>
+            <img src="https://placehold.co/600x300/2d3748/e2e8f0?text=Nested+Objects" alt="Nested Objects" class="w-full h-auto mb-4">
+            <ul class="list-disc list-inside ml-4">
+                <li><strong>Adding new properties:</strong>
+                    <pre><code>
+person.email = "john.doe@example.com";
+console.log(person.email); // Output: "john.doe@example.com"
+                    </code></pre>
+                </li>
+                <li><strong>Deleting properties:</strong> Use the `delete` keyword.
+                    <pre><code>
+delete person.isStudent;
+console.log(person.isStudent); // Output: undefined
+                    </code></pre>
+                </li>
+                <li><strong>Nested Objects:</strong> Objects can contain other objects as values, allowing for complex data structures.
+                    <pre><code>
+const car = {
+    make: "Toyota",
+    model: "Camry",
+    year: 2020,
+    engine: {
+        cylinders: 4,
+        horsepower: 203
+    },
+    features: ["AC", "Bluetooth", "Backup Camera"]
+};
+
+console.log(car.engine.horsepower); // Output: 203
+                    </code></pre>
+                </li>
+            </ul>
+        </div>
+
+        <div class="slide" id="slide132">
+            <h1 class="text-3xl font-bold mb-4">Exercise (Day 32): Object Creator</h1>
+            <div class="exercise-box">
+                <h3 class="text-xl font-semibold mb-4">Your Turn!</h3>
+                <p>Open `script.js` and create some objects.</p>
+                <ol class="list-decimal list-inside ml-4">
+                    <li>Declare a `const` object named `myBook` with properties: `title` (string), `author` (string), `pages` (number), `isRead` (boolean). Log the entire object.</li>
+                    <li>Access and log the `title` and `author` of `myBook`.</li>
+                    <li>Update the `isRead` property to `true`. Log the updated object.</li>
+                    <li>Add a new property `genre` (string) to `myBook`. Log the object again.</li>
+                    <li>Declare a `const` object named `laptop` with properties: `brand` (string), `model` (string), and a nested object `specs` with properties `ram` (string) and `storage` (string). Log `laptop.specs.ram`.</li>
+                </ol>
+                <p class="mt-4"><strong>Peer-Learning Moment:</strong> Discuss when it's better to use an array versus an object for storing data.</p>
+            </div>
+        </div>
+
+        <div class="slide" id="slide133">
+            <h1 class="text-3xl font-bold mb-4">Assignment (Day 32): Portfolio Project Data</h1>
+            <div class="assignment-box">
+                <h3 class="text-xl font-semibold mb-4">Challenge Yourself!</h3>
+                <p>Use objects to represent your projects on your portfolio's "Projects" page.</p>
+                <ul class="list-disc list-inside ml-4">
+                    <li>In `script.js`, create a `const` object named `project1` with properties:
+                        <ul class="list-disc list-inside ml-8">
+                            <li>`title` (e.g., "Interactive Calculator")</li>
+                            <li>`description` (a short paragraph)</li>
+                            <li>`technologies` (an array of strings, e.g., `["HTML", "CSS", "JavaScript"]`)</li>
+                            <li>`imageUrl` (a placeholder image URL)</li>
+                        </ul>
+                    </li>
+                    <li>Create at least two more project objects (`project2`, `project3`) with similar structures.</li>
+                    <li>Declare a `const` array named `myProjects` and add `project1`, `project2`, `project3` to it.</li>
+                    <li>In your `projects.html`, add an empty `&lt;div id="projects-container"&gt;&lt;/div&gt;`.</li>
+                    <li>In `script.js`, select `projects-container`.</li>
+                    <li>Use a loop (we'll iterate arrays of objects more efficiently tomorrow, but for now, just try to log the title of each project from `myProjects`).</li>
+                </ul>
+                <p class="mt-4">Structuring your data this way makes it easy to display dynamically!</p>
+            </div>
+        </div>
+
+        <!-- Day 33: Iterating Arrays & Objects -->
+        <div class="slide" id="slide134">
+            <h1 class="text-3xl font-bold mb-4">Day 33: Looping Through Arrays and Objects!</h1>
+            <h2 class="text-2xl font-semibold mb-6">`for...of`, `for...in`, `forEach`, `map`</h2>
+            <img src="https://placehold.co/600x300/2d3748/e2e8f0?text=Iteration+Methods" alt="Iteration Methods" class="w-full h-auto mb-4">
+            <p>Now that we know arrays and objects, let's learn how to efficiently loop through their contents.</p>
+            <ul class="list-disc list-inside ml-4">
+                <li><strong>`for...of` loop (for Arrays):</strong> Iterates over the *values* of an iterable object (like an array).
+                    <pre><code>
+const fruits = ["Apple", "Banana", "Cherry"];
+for (const fruit of fruits) {
+    console.log(fruit);
+}
+/* Output:
+Apple
+Banana
+Cherry
+*/
+                    </code></pre>
+                </li>
+                <li><strong>`for...in` loop (for Objects):</strong> Iterates over the *keys* (property names) of an object.
+                    <pre><code>
+const person = { name: "Alice", age: 25 };
+for (const key in person) {
+    console.log(`${key}: ${person[key]}`); // Using template literals (backticks)
+}
+/* Output:
+name: Alice
+age: 25
+*/
+                    </code></pre>
+                </li>
+            </ul>
+        </div>
+
+        <div class="slide" id="slide135">
+            <h1 class="text-3xl font-bold mb-4">Day 33: Array Methods for Iteration</h1>
+            <h2 class="text-2xl font-semibold mb-6">`forEach()` and `map()`</h2>
+            <img src="https://placehold.co/600x300/2d3748/e2e8f0?text=Array+Iteration+Methods" alt="Array Iteration Methods" class="w-full h-auto mb-4">
+            <p>JavaScript arrays have built-in methods that make iteration even easier and more powerful:</p>
+            <ul class="list-disc list-inside ml-4">
+                <li><strong>`forEach()`:</strong> Executes a provided function once for each array element. It does not return a new array.
+                    <pre><code>
+const numbers = [1, 2, 3];
+numbers.forEach(function(number, index) {
+    console.log(`Index ${index}: ${number}`);
+});
+/* Output:
+Index 0: 1
+Index 1: 2
+Index 2: 3
+*/
+                    </code></pre>
+                </li>
+                <li><strong>`map()`:</strong> Creates a *new array* by calling a provided function on every element in the calling array.
+                    <pre><code>
+const numbers = [1, 2, 3];
+const doubledNumbers = numbers.map(number => number * 2);
+console.log(doubledNumbers); // Output: [2, 4, 6]
+                    </code></pre>
+                </li>
+            </ul>
+            <p class="text-sm text-gray-400 mt-2">`map()` is great when you want to transform an array into a new array of the same length.</p>
+        </div>
+
+        <div class="slide" id="slide136">
+            <h1 class="text-3xl font-bold mb-4">Exercise (Day 33): Iteration Practice</h1>
+            <div class="exercise-box">
+                <h3 class="text-xl font-semibold mb-4">Your Turn!</h3>
+                <p>Open `script.js` and practice iterating.</p>
+                <ol class="list-decimal list-inside ml-4">
+                    <li>Declare an array `colors = ["red", "green", "blue", "yellow"]`. Use a `for...of` loop to log each color.</li>
+                    <li>Declare an object `product = { name: "Laptop", price: 1200, inStock: true }`. Use a `for...in` loop to log each property and its value.</li>
+                    <li>Use `colors.forEach()` to log each color along with its index (e.g., "Color at index 0 is red").</li>
+                    <li>Use `numbers = [10, 20, 30]`. Use `map()` to create a new array `discountedNumbers` where each number is reduced by 5. Log `discountedNumbers`.</li>
+                </ol>
+                <p class="mt-4"><strong>Peer-Learning Moment:</strong> When would you choose `forEach` over `map`?</p>
+            </div>
+        </div>
+
+        <div class="slide" id="slide137">
+            <h1 class="text-3xl font-bold mb-4">Assignment (Day 33): Dynamic Project Cards</h1>
+            <div class="assignment-box">
+                <h3 class="text-xl font-semibold mb-4">Challenge Yourself!</h3>
+                <p>Use iteration to dynamically display all your project cards on `projects.html`.</p>
+                <ul class="list-disc list-inside ml-4">
+                    <li>Recall your `myProjects` array (from Day 32) containing project objects.</li>
+                    <li>In `script.js`, select your `&lt;div id="projects-container"&gt;` element.</li>
+                    <li>Use `myProjects.forEach()` to loop through each project object.</li>
+                    <li>Inside the `forEach` loop, for each `project` object:
+                        <ul class="list-disc list-inside ml-8">
+                            <li>Create a new `&lt;div&gt;` element for the project card. Give it a class like `project-card`.</li>
+                            <li>Set its `innerHTML` to include an `&lt;h3&gt;` for `project.title`, a `&lt;p&gt;` for `project.description`, and an `&lt;img&gt;` with `src` set to `project.imageUrl` and `alt` to `project.title`.</li>
+                            <li>Append this new project card `&lt;div&gt;` to the `projects-container`.</li>
+                        </ul>
+                    </li>
+                    <li>Save and view `projects.html`. Your projects should now appear!</li>
+                </ul>
+                <p class="mt-4">This is a core feature of your portfolio, making it easy to add new projects!</p>
+            </div>
+        </div>
+
+        <!-- Day 34: DOM Manipulation - Creating & Removing Elements -->
+        <div class="slide" id="slide138">
+            <h1 class="text-3xl font-bold mb-4">Day 34: Dynamic HTML: Creating & Removing Elements!</h1>
+            <h2 class="text-2xl font-semibold mb-6">`createElement`, `appendChild`, `removeChild`, `remove`</h2>
+            <img src="https://placehold.co/600x300/2d3748/e2e8f0?text=DOM+Add+Remove" alt="DOM Add Remove" class="w-full h-auto mb-4">
+            <p>Beyond just changing existing content, JavaScript can create brand new HTML elements and add them to the page, or remove existing ones.</p>
+            <ul class="list-disc list-inside ml-4">
+                <li><strong>`document.createElement('tagName')`:</strong> Creates a new HTML element node. It's just in memory at this point, not on the page.
+                    <pre><code>const newParagraph = document.createElement('p');</code></pre>
+                </li>
+                <li><strong>`parentElement.appendChild(childElement)`:</strong> Adds a new child element to a parent element. This puts the element onto the page.
+                    <pre><code>
+newParagraph.textContent = "I'm a new paragraph!";
+document.body.appendChild(newParagraph); // Adds it to the end of the body
+                    </code></pre>
+                </li>
+                <li><strong>`parentElement.removeChild(childElement)`:</strong> Removes a specified child element from its parent.
+                    <pre><code>
+const myDiv = document.getElementById('my-div');
+const childToRemove = document.getElementById('child-para');
+myDiv.removeChild(childToRemove);
+                    </code></pre>
+                </li>
+                <li><strong>`childElement.remove()`:</strong> A simpler way to remove an element from the DOM (supported in modern browsers).
+                    <pre><code>
+const elementToDelete = document.getElementById('old-item');
+elementToDelete.remove();
+                    </code></pre>
+                </li>
+            </ul>
+        </div>
+
+        <div class="slide" id="slide139">
+            <h1 class="text-3xl font-bold mb-4">Day 34: Inserting Elements & Cloning</h1>
+            <h2 class="text-2xl font-semibold mb-6">More Control Over Placement</h2>
+            <img src="https://placehold.co/600x300/2d3748/e2e8f0?text=DOM+Insert+Clone" alt="DOM Insert Clone" class="w-full h-auto mb-4">
+            <ul class="list-disc list-inside ml-4">
+                <li><strong>`parentElement.insertBefore(newElement, referenceElement)`:</strong> Inserts `newElement` before `referenceElement` as a child of `parentElement`.
+                    <pre><code>
+const container = document.getElementById('container');
+const firstChild = container.firstElementChild; // Get the first child
+const newHeading = document.createElement('h2');
+newHeading.textContent = "New Section";
+container.insertBefore(newHeading, firstChild);
+                    </code></pre>
+                </li>
+                <li><strong>`element.cloneNode(deep)`:</strong> Creates a copy of an element.
+                    <ul class="list-disc list-inside ml-8">
+                        <li>`deep = true`: Clones the element and all its descendants.</li>
+                        <li>`deep = false` (default): Clones only the element itself, without children.</li>
+                    </ul>
+                    <pre><code>
+const originalDiv = document.getElementById('original');
+const clonedDiv = originalDiv.cloneNode(true); // Clones with all content
+document.body.appendChild(clonedDiv);
+                    </code></pre>
+                </li>
+            </ul>
+        </div>
+
+        <div class="slide" id="slide140">
+            <h1 class="text-3xl font-bold mb-4">Exercise (Day 34): Dynamic List with Add/Remove</h1>
+            <div class="exercise-box">
+                <h3 class="text-xl font-semibold mb-4">Your Turn!</h3>
+                <p>Create a new HTML file `dynamic-list.html` and link it to `script.js` and `style.css`.</p>
+                <ol class="list-decimal list-inside ml-4">
+                    <li>In `dynamic-list.html`:
+                        <ul class="list-disc list-inside ml-8">
+                            <li>Add an `&lt;input type="text" id="item-input" placeholder="New item"&gt;`.</li>
+                            <li>Add a `&lt;button id="add-btn"&gt;Add Item&lt;/button&gt;`.</li>
+                            <li>Add an empty `&lt;ul id="my-dynamic-list"&gt;&lt;/ul&gt;`.</li>
+                        </ul>
+                    </li>
+                    <li>In `script.js`:
+                        <ul class="list-disc list-inside ml-8">
+                            <li>Select the input, button, and the `&lt;ul&gt;`.</li>
+                            <li>Add a `click` event listener to the "Add Item" button. Inside the handler:
+                                <ul class="list-disc list-inside ml-12">
+                                    <li>Get the value from the input field.</li>
+                                    <li>Create a new `&lt;li&gt;` element.</li>
+                                    <li>Set its `textContent` to the input value.</li>
+                                    <li>Append this `&lt;li&gt;` to `my-dynamic-list`.</li>
+                                    <li>Clear the input field.</li>
+                                </ul>
+                            </li>
+                            <li>**Bonus:** Modify the `&lt;li&gt;` creation to also add a "Remove" button next to each item. Add a `click` listener to *each* "Remove" button that removes its parent `&lt;li&gt;`.</li>
+                        </ul>
+                    </li>
+                    <li>Save and test.</li>
+                </ol>
+                <p class="mt-4"><strong>Peer-Learning Moment:</strong> Discuss how to efficiently add event listeners to dynamically created elements.</p>
+            </div>
+        </div>
+
+        <div class="slide" id="slide141">
+            <h1 class="text-3xl font-bold mb-4">Assignment (Day 34): Portfolio Project Adder</h1>
+            <div class="assignment-box">
+                <h3 class="text-xl font-semibold mb-4">Challenge Yourself!</h3>
+                <p>Create a simple form on your `projects.html` to add new projects dynamically.</p>
+                <ul class="list-disc list-inside ml-4">
+                    <li>In `projects.html`, above your `projects-container`, add a simple form with inputs for `Project Title` and `Project Description`, and an "Add Project" button. Give them appropriate IDs.</li>
+                    <li>In `script.js`:
+                        <ul class="list-disc list-inside ml-8">
+                            <li>Select the input fields, the button, and the `projects-container`.</li>
+                            <li>Add a `click` event listener to the "Add Project" button.</li>
+                            <li>Inside the handler:
+                                <ul class="list-disc list-inside ml-12">
+                                    <li>Get the values from the title and description inputs.</li>
+                                    <li>Create a new `&lt;div class="project-card"&gt;` element.</li>
+                                    <li>Set its `innerHTML` using the input values (and a placeholder image for now).</li>
+                                    <li>Append this new card to the `projects-container`.</li>
+                                    <li>Clear the input fields.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Save and test. You can now "add" projects to your portfolio!</li>
+                </ul>
+                <p class="mt-4">This simulates how a content management system might work!</p>
+            </div>
+        </div>
+
+        <!-- Day 35: Forms & Input Handling -->
+        <div class="slide" id="slide142">
+            <h1 class="text-3xl font-bold mb-4">Day 35: Handling Forms and User Input!</h1>
+            <h2 class="text-2xl font-semibold mb-6">Getting Values, `change` Event, `submit` Event</h2>
+            <img src="https://placehold.co/600x300/2d3748/e2e8f0?text=Form+Handling+Concept" alt="Form Handling Concept" class="w-full h-auto mb-4">
+            <p>Forms are crucial for user interaction. JavaScript allows you to read what users type, select, or click in forms, and respond accordingly.</p>
+            <ul class="list-disc list-inside ml-4">
+                <li><strong>Getting Input Values:</strong> Use the `.value` property of an input element.
+                    <pre><code>
+const usernameInput = document.getElementById('username');
+const username = usernameInput.value; // Gets the text currently in the input field
+console.log(username);
+                    </code></pre>
+                </li>
+                <li><strong>`'change'` event:</strong> Fires when the value of an input element changes (and the element loses focus, or for checkboxes/radios, immediately).
+                    <pre><code>
+const selectBox = document.getElementById('my-select');
+selectBox.addEventListener('change', function() {
+    console.log("Selected value: " + this.value); // 'this' refers to the element
+});
+                    </code></pre>
+                </li>
+                <li><strong>`'input'` event:</strong> Fires immediately when the value of an input element changes (as the user types).</li>
+                <li><strong>`'submit'` event on Forms:</strong> Fires when a form is submitted (e.g., by clicking a submit button or pressing Enter in an input field).
+                    <pre><code>
+const myForm = document.getElementById('contact-form');
+myForm.addEventListener('submit', function(event) {
+    event.preventDefault(); // IMPORTANT: Prevents the default form submission (page reload)
+    console.log("Form submitted!");
+    // Now you can process the form data with JavaScript
+});
+                    </code></pre>
+                </li>
+            </ul>
+        </div>
+
+        <div class="slide" id="slide143">
+            <h1 class="text-3xl font-bold mb-4">Day 35: Basic Form Validation</h1>
+            <h2 class="text-2xl font-semibold mb-6">Ensuring Valid User Input</h2>
+            <img src="https://placehold.co/600x300/2d3748/e2e8f0?text=Form+Validation+Concept" alt="Form Validation Concept" class="w-full h-auto mb-4">
+            <p>Validation ensures that users provide correct and complete information before submitting a form. JavaScript is often used for client-side (browser-side) validation.</p>
+            <ul class="list-disc list-inside ml-4">
+                <li><strong>Checking for empty fields:</strong>
+                    <pre><code>
+const emailInput = document.getElementById('email');
+if (emailInput.value === "") {
+    alert("Email field cannot be empty!"); // Use a custom modal in real apps!
+    return; // Stop function execution
+}
+                    </code></pre>
+                </li>
+                <li><strong>Checking length:</strong>
+                    <pre><code>
+const passwordInput = document.getElementById('password');
+if (passwordInput.value.length &lt; 6) {
+    alert("Password must be at least 6 characters long.");
+    return;
+}
+                    </code></pre>
+                </li>
+                <li><strong>Checking number ranges:</strong>
+                    <pre><code>
+const ageInput = document.getElementById('age');
+const age = parseInt(ageInput.value); // Convert string to number
+if (isNaN(age) || age &lt; 18 || age > 99) {
+    alert("Please enter a valid age between 18 and 99.");
+    return;
+}
+                    </code></pre>
+                </li>
+            </ul>
+            <p class="text-sm text-gray-400 mt-2">Remember: Client-side validation is for user experience; server-side validation is for security!</p>
+        </div>
+
+        <div class="slide" id="slide144">
+            <h1 class="text-3xl font-bold mb-4">Exercise (Day 35): Interactive Registration Form</h1>
+            <div class="exercise-box">
+                <h3 class="text-xl font-semibold mb-4">Your Turn!</h3>
+                <p>Open your `register.html` (from Day 7 assignment) and `script.js`.</p>
+                <ol class="list-decimal list-inside ml-4">
+                    <li>In `register.html`, ensure your form has an `id="registration-form"`. Give your username, password, and email inputs appropriate IDs.</li>
+                    <li>In `script.js`:
+                        <ul class="list-disc list-inside ml-8">
+                            <li>Select the `registration-form` by its ID.</li>
+                            <li>Add a `submit` event listener to the form.</li>
+                            <li>Inside the event handler function:
+                                <ul class="list-disc list-inside ml-12">
+                                    <li>Call `event.preventDefault();` at the beginning.</li>
+                                    <li>Get the values from the username, password, and email input fields.</li>
+                                    <li>Implement basic validation:
+                                        <ul class="list-disc list-inside ml-16">
+                                            <li>If username is empty, `console.log("Username cannot be empty.")`.</li>
+                                            <li>If password is less than 8 characters, `console.log("Password must be at least 8 characters.")`.</li>
+                                            <li>If email does not contain "@" and ".", `console.log("Please enter a valid email.")`.</li>
+                                            <li>If all valid, `console.log("Registration successful!")`.</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Save and test your form. Try submitting with invalid data and observe the console.</li>
+                </ol>
+                <p class="mt-4"><strong>Peer-Learning Moment:</strong> Discuss how `event.preventDefault()` is essential for custom form handling.</p>
+            </div>
+        </div>
+
+        <div class="slide" id="slide145">
+            <h1 class="text-3xl font-bold mb-4">Assignment (Day 35): Portfolio Contact Form Validation</h1>
+            <div class="assignment-box">
+                <h3 class="text-xl font-semibold mb-4">Challenge Yourself!</h3>
+                <p>Add validation to your portfolio's `contact.html` form.</p>
+                <ul class="list-disc list-inside ml-4">
+                    <li>Open `contact.html` and `script.js`.</li>
+                    <li>Ensure your contact form has an `id="contact-form"`. Give your name, email, and message inputs appropriate IDs.</li>
+                    <li>In `script.js`, add a `submit` event listener to the `contact-form`.</li>
+                    <li>Inside the event handler:
+                        <ul class="list-disc list-inside ml-8">
+                            <li>`event.preventDefault();`</li>
+                            <li>Get the values of the name, email, and message fields.</li>
+                            <li>Implement validation:
+                                <ul class="list-disc list-inside ml-12">
+                                    <li>Name and Message fields should not be empty.</li>
+                                    <li>Email field should contain "@" and ".".</li>
+                                    <li>If any validation fails, `console.log()` an error message.</li>
+                                    <li>If all inputs are valid, `console.log("Message sent successfully!")` and optionally clear the form fields.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Save and test.</li>
+                </ul>
+                <p class="mt-4">Robust forms are a sign of a professional website!</p>
+            </div>
+        </div>
+
+        <!-- Day 36: Timers -->
+        <div class="slide" id="slide146">
+            <h1 class="text-3xl font-bold mb-4">Day 36: Time-Based Actions with Timers!</h1>
+            <h2 class="text-2xl font-semibold mb-6">`setTimeout`, `setInterval`, `clearInterval`</h2>
+            <img src="https://placehold.co/600x300/2d3748/e2e8f0?text=Timer+Concept" alt="Timer Concept" class="w-full h-auto mb-4">
+            <p>JavaScript allows you to schedule code to run after a certain delay or repeatedly at intervals. This is essential for animations, notifications, and dynamic content updates.</p>
+            <ul class="list-disc list-inside ml-4">
+                <li><strong>`setTimeout(function, delay)`:</strong> Executes a function once after a specified delay (in milliseconds).
+                    <pre><code>
+setTimeout(function() {
+    console.log("This message appears after 2 seconds.");
+}, 2000); // 2000 milliseconds = 2 seconds
+                    </code></pre>
+                </li>
+                <li><strong>`setInterval(function, delay)`:</strong> Executes a function repeatedly, with a fixed time delay between each call.
+                    <pre><code>
+let counter = 0;
+const intervalId = setInterval(function() {
+    console.log("Counting: " + counter++);
+    if (counter > 5) {
+        clearInterval(intervalId); // Stop the interval
+        console.log("Stopped counting.");
+    }
+}, 1000); // Every 1 second
+                    </code></pre>
+                </li>
+                <li><strong>`clearInterval(intervalId)`:</strong> Stops a `setInterval` that was previously started. You need to store the ID returned by `setInterval`.</li>
+                <li><strong>`clearTimeout(timeoutId)`:</strong> Stops a `setTimeout` before it executes.</li>
+            </ul>
+        </div>
+
+        <div class="slide" id="slide147">
+            <h1 class="text-3xl font-bold mb-4">Day 36: Creating Simple Animations with Timers</h1>
+            <h2 class="text-2xl font-semibold mb-6">Basic Visual Effects</h2>
+            <img src="https://placehold.co/600x300/2d3748/e2e8f0?text=Simple+Animation" alt="Simple Animation" class="w-full h-auto mb-4">
+            <p>Timers can be used to create simple animations by repeatedly changing an element's style or position.</p>
+            <pre><code>
+const box = document.getElementById('animated-box');
+let position = 0;
+let direction = 1; // 1 for right, -1 for left
+
+const moveBox = setInterval(() => {
+    position += 5 * direction; // Move 5px
+
+    if (position >= 200 || position &lt;= 0) {
+        direction *= -1; // Reverse direction
+    }
+    box.style.left = position + 'px';
+}, 50); // Update every 50ms (20 times per second)
+
+// You'd also need CSS:
+/*
+#animated-box {
+    position: relative; // Important for 'left' to work
+    width: 50px;
+    height: 50px;
+    background-color: orange;
+}
+*/
+            </code></pre>
+            <p class="text-sm text-gray-400 mt-2">For smoother, more complex animations, CSS transitions/animations or `requestAnimationFrame` are often preferred, but timers are a good starting point.</p>
+        </div>
+
+        <div class="slide" id="slide148">
+            <h1 class="text-3xl font-bold mb-4">Exercise (Day 36): Countdown Timer</h1>
+            <div class="exercise-box">
+                <h3 class="text-xl font-semibold mb-4">Your Turn!</h3>
+                <p>Create a new HTML file `countdown.html` and link it to `script.js`.</p>
+                <ol class="list-decimal list-inside ml-4">
+                    <li>In `countdown.html`, add a `&lt;p id="timer"&gt;10&lt;/p&gt;`.</li>
+                    <li>In `script.js`:
+                        <ul class="list-disc list-inside ml-8">
+                            <li>Select the `timer` paragraph.</li>
+                            <li>Declare a `let count = 10;`.</li>
+                            <li>Use `setInterval` to decrease `count` by 1 every second.</li>
+                            <li>Inside the interval function, update the `textContent` of the `timer` paragraph with the current `count`.</li>
+                            <li>When `count` reaches 0, clear the interval and change the `timer` text to "Time's Up!".</li>
+                        </ul>
+                    </li>
+                    <li>Save and test.</li>
+                </ol>
+                <p class="mt-4"><strong>Peer-Learning Moment:</strong> Discuss how `clearInterval` is crucial to prevent timers from running forever.</p>
+            </div>
+        </div>
+
+        <div class="slide" id="slide149">
+            <h1 class="text-3xl font-bold mb-4">Assignment (Day 36): Portfolio Image Carousel (Simple)</h1>
+            <div class="assignment-box">
+                <h3 class="text-xl font-semibold mb-4">Challenge Yourself!</h3>
+                <p>Create a simple automatic image carousel on your `index.html` or `gallery.html` using `setInterval`.</p>
+                <ul class="list-disc list-inside ml-4">
+                    <li>In your chosen HTML file, add an `&lt;img id="carousel-image" src="image1.jpg" alt="Carousel Image"&gt;`.</li>
+                    <li>In `script.js`:
+                        <ul class="list-disc list-inside ml-8">
+                            <li>Declare an array of image URLs (e.g., placeholder images).</li>
+                            <li>Select the `carousel-image` element.</li>
+                            <li>Declare a `let currentIndex = 0;`.</li>
+                            <li>Use `setInterval` to change the `src` attribute of `carousel-image` every 3-5 seconds.</li>
+                            <li>Increment `currentIndex` and reset it to 0 when it reaches the end of the image array (`currentIndex = (currentIndex + 1) % images.length;`).</li>
+                        </ul>
+                    </li>
+                    <li>Save and test.</li>
+                </ul>
+                <p class="mt-4">This adds a professional touch to your portfolio's visual elements!</p>
+            </div>
+        </div>
+
+        <!-- Day 37: Error Handling -->
+        <div class="slide" id="slide150">
+            <h1 class="text-3xl font-bold mb-4">Day 37: Handling Errors Gracefully!</h1>
+            <h2 class="text-2xl font-semibold mb-6">`try...catch` and Common Errors</h2>
+            <img src="https://placehold.co/600x300/2d3748/e2e8f0?text=Error+Handling+Concept" alt="Error Handling Concept" class="w-full h-auto mb-4">
+            <p>Even the best code can encounter unexpected issues (errors). JavaScript provides mechanisms to "catch" these errors and prevent your entire script from crashing, leading to a better user experience.</p>
+            <ul class="list-disc list-inside ml-4">
+                <li><strong>`try...catch` statement:</strong>
+                    <ul class="list-disc list-inside ml-8">
+                        <li>The `try` block contains code that might throw an error.</li>
+                        <li>If an error occurs in the `try` block, execution jumps to the `catch` block.</li>
+                        <li>The `catch` block receives an `error` object as an argument, which contains information about the error.</li>
+                    </ul>
+                    <pre><code>
+try {
+    // Code that might cause an error
+    let result = nonExistentVariable / 2; // This will cause a ReferenceError
+    console.log(result);
+} catch (error) {
+    console.error("An error occurred:", error.message);
+    // You could also display a user-friendly message on the page
+} finally {
+    console.log("This always runs, regardless of error.");
+}
+                    </code></pre>
+                </li>
+                <li><strong>`finally` block (Optional):</strong> Contains code that will always execute, regardless of whether an error occurred or was caught.</li>
+            </ul>
+        </div>
+
+        <div class="slide" id="slide151">
+            <h1 class="text-3xl font-bold mb-4">Day 37: Common JavaScript Errors</h1>
+            <h2 class="text-2xl font-semibold mb-6">Understanding What Goes Wrong</h2>
+            <img src="https://placehold.co/600x300/2d3748/e2e8f0?text=Common+Errors" alt="Common Errors" class="w-full h-auto mb-4">
+            <p>Familiarize yourself with common error types you'll see in the console:</p>
+            <ul class="list-disc list-inside ml-4">
+                <li><strong>`ReferenceError`:</strong> Trying to use a variable or function that hasn't been declared.
+                    <pre><code>console.log(myVar); // myVar is not defined</code></pre>
+                </li>
+                <li><strong>`TypeError`:</strong> An operation is performed on a value that is not of the expected type (e.g., calling a method on `null` or `undefined`).
+                    <pre><code>
+const element = document.getElementById('non-existent');
+element.textContent = "Hello"; // element is null, so .textContent causes TypeError
+                    </code></pre>
+                </li>
+                <li><strong>`SyntaxError`:</strong> Invalid JavaScript code syntax (e.g., missing a parenthesis, curly brace, or semicolon). These often prevent the script from running at all.
+                    <pre><code>let x = ; // Missing value</code></pre>
+                </li>
+                <li><strong>`RangeError`:</strong> A number is outside its allowed range (e.g., `toFixed()` with too many decimal places).</li>
+                <li><strong>`URIError`:</strong> Occurs when `encodeURI()` or `decodeURI()` are used with malformed URIs.</li>
+            </ul>
+            <p class="text-sm text-gray-400 mt-2">The browser console is your best friend for identifying and understanding errors!</p>
+        </div>
+
+        <div class="slide" id="slide152">
+            <h1 class="text-3xl font-bold mb-4">Exercise (Day 37): Error Catching Practice</h1>
+            <div class="exercise-box">
+                <h3 class="text-xl font-semibold mb-4">Your Turn!</h3>
+                <p>Open `script.js` and practice `try...catch`.</p>
+                <ol class="list-decimal list-inside ml-4">
+                    <li>Write a `try...catch` block. Inside `try`:
+                        <ul class="list-disc list-inside ml-8">
+                            <li>Try to access a variable that you haven't declared (e.g., `console.log(undefinedVar);`).</li>
+                            <li>In the `catch` block, `console.error()` the `error.name` and `error.message`.</li>
+                        </ul>
+                    </li>
+                    <li>Write another `try...catch` block. Inside `try`:
+                        <ul class="list-disc list-inside ml-8">
+                            <li>Try to call a method on `null` (e.g., `null.someMethod();`).</li>
+                            <li>In the `catch` block, `console.error()` the `error.name` and `error.message`.</li>
+                        </ul>
+                    </li>
+                    <li>Add a `finally` block to one of your `try...catch` statements and log a message inside it.</li>
+                </ol>
+                <p class="mt-4"><strong>Peer-Learning Moment:</strong> Discuss why it's important to use `try...catch` for code that might fail, especially when dealing with user input or external data.</p>
+            </div>
+        </div>
+
+        <div class="slide" id="slide153">
+            <h1 class="text-3xl font-bold mb-4">Assignment (Day 37): Robust Form Validation with Error Handling</h1>
+            <div class="assignment-box">
+                <h3 class="text-xl font-semibold mb-4">Challenge Yourself!</h3>
+                <p>Improve your `contact.html` form validation by using `try...catch` and displaying user-friendly error messages on the page.</p>
+                <ul class="list-disc list-inside ml-4">
+                    <li>In `contact.html`, add an empty `&lt;p id="error-message" style="color: red;"&gt;&lt;/p&gt;` below your form.</li>
+                    <li>In `script.js`, modify your `contact-form`'s `submit` event listener:
+                        <ul class="list-disc list-inside ml-8">
+                            <li>Wrap your validation logic inside a `try` block.</li>
+                            <li>If any validation fails (e.g., empty name, invalid email), instead of `console.log()`, `throw new Error("Specific error message here.");`.</li>
+                            <li>In the `catch(error)` block:
+                                <ul class="list-disc list-inside ml-12">
+                                    <li>Select the `error-message` paragraph.</li>
+                                    <li>Set its `textContent` to `error.message`.</li>
+                                    <li>Optionally, add `finally` to clear the error message after a few seconds using `setTimeout`.</li>
+                                </ul>
+                            </li>
+                            <li>If validation passes, clear any existing error message and `console.log("Message sent successfully!")`.</li>
+                        </ul>
+                    </li>
+                    <li>Save and test.</li>
+                </ul>
+                <p class="mt-4">Providing clear feedback to users is a mark of good UX!</p>
+            </div>
+        </div>
+
+        <!-- Day 38: Asynchronous JavaScript (Introduction) -->
+        <div class="slide" id="slide154">
+            <h1 class="text-3xl font-bold mb-4">Day 38: Understanding Asynchronous JavaScript!</h1>
+            <h2 class="text-2xl font-semibold mb-6">Non-Blocking Code & Callbacks</h2>
+            <img src="https://placehold.co/600x300/2d3748/e2e8f0?text=Async+JS+Concept" alt="Async JS Concept" class="w-full h-auto mb-4">
+            <p>So far, your JavaScript has been **synchronous**: code executes line by line, and each line must finish before the next one starts. But what if you need to fetch data from the internet, which takes time?</p>
+            <p>**Asynchronous JavaScript** allows certain operations to run in the background without blocking the main execution thread. This means your website remains responsive while waiting for long-running tasks to complete.</p>
+            <ul class="list-disc list-inside ml-4">
+                <li><strong>Blocking vs. Non-Blocking:</strong>
+                    <ul class="list-disc list-inside ml-8">
+                        <li>**Blocking (Synchronous):** Code runs sequentially. If one task takes a long time, the entire program "freezes" until it's done.</li>
+                        <li>**Non-Blocking (Asynchronous):** Long-running tasks are initiated, and then the program continues executing other code. When the long task finishes, it signals that it's done and its result is handled.</li>
+                    </ul>
+                </li>
+                <li><strong>Callbacks:</strong> A function that is passed as an argument to another function and is executed later, often after an asynchronous operation completes. `setTimeout` is a great example!</li>
+            </ul>
+            <pre><code>
+console.log("Start");
+
+setTimeout(() => {
+    console.log("This runs after 1 second (asynchronously)");
+}, 1000);
+
+console.log("End (This runs immediately after Start)");
+
+/* Output:
+Start
+End (This runs immediately after Start)
+This runs after 1 second (asynchronously)
+*/
+            </code></pre>
+        </div>
+
+        <div class="slide" id="slide155">
+            <h1 class="text-3xl font-bold mb-4">Day 38: Why Asynchronous JS is Important</h1>
+            <h2 class="text-2xl font-semibold mb-6">Keeping Your User Interface Responsive</h2>
+            <img src="https://placehold.co/600x300/2d3748/e2e8f0?text=Responsive+UI" alt="Responsive UI" class="w-full h-auto mb-4">
+            <p>Imagine if your website froze every time it needed to load an image or fetch data from a server! Asynchronous JavaScript prevents this, ensuring a smooth user experience.</p>
+            <ul class="list-disc list-inside ml-4">
+                <li>**Network Requests:** Fetching data from APIs (Application Programming Interfaces) is a prime example of an asynchronous operation.</li>
+                <li>**File I/O:** Reading or writing files (in Node.js environments).</li>
+                <li>**Timers:** `setTimeout` and `setInterval` are asynchronous.</li>
+                <li>**User Interactions:** Event listeners are asynchronous; the code in the event handler runs only when the event occurs.</li>
+            </ul>
+            <p>Understanding asynchronous patterns is critical for building modern web applications. We'll start with callbacks today and move to more modern approaches (`Promises`, `async/await`) later in the camp.</p>
+        </div>
+
+        <div class="slide" id="slide156">
+            <h1 class="text-3xl font-bold mb-4">Exercise (Day 38): Simulating a Data Fetch</h1>
+            <div class="exercise-box">
+                <h3 class="text-xl font-semibold mb-4">Your Turn!</h3>
+                <p>Open `script.js` and simulate an asynchronous data fetch.</p>
+                <ol class="list-decimal list-inside ml-4">
+                    <li>Write a function `fetchData(callback)` that takes a `callback` function as an argument.</li>
+                    <li>Inside `fetchData`, use `setTimeout` to simulate a network delay (e.g., 2 seconds).</li>
+                    <li>After the delay, inside the `setTimeout`'s callback, create some dummy data (e.g., `const data = { message: "Data fetched successfully!" };`).</li>
+                    <li>Then, call the `callback` function, passing the `data` to it.</li>
+                    <li>Call `fetchData()` from your main script, providing a callback function that logs the fetched data.</li>
+                    <pre><code>
+function fetchData(callback) {
+    console.log("Fetching data...");
+    setTimeout(() => {
+        const data = { message: "Hello from the server!" };
+        callback(data); // Call the provided callback with the data
+    }, 2000);
+}
+
+// Call fetchData and provide a function to handle the data once it's ready
+fetchData(function(response) {
+    console.log("Received data:", response.message);
+});
+
+console.log("Request sent. Continuing with other tasks...");
+                    </code></pre>
+                    <li>Observe the order of console logs.</li>
+                </ol>
+                <p class="mt-4"><strong>Peer-Learning Moment:</strong> Explain how `fetchData` doesn't block the `console.log("Request sent...")` line.</p>
+            </div>
+        </div>
+
+        <div class="slide" id="slide157">
+            <h1 class="text-3xl font-bold mb-4">Assignment (Day 38): Delayed Welcome Message</h1>
+            <div class="assignment-box">
+                <h3 class="text-xl font-semibold mb-4">Challenge Yourself!</h3>
+                <p>Modify your `index.html` and `script.js` to display the dynamic welcome message after a short delay.</p>
+                <ul class="list-disc list-inside ml-4">
+                    <li>Recall your `&lt;p id="welcome-message"&gt;&lt;/p&gt;` from Day 24/28.</li>
+                    <li>In `script.js`, wrap the logic that generates and sets the `welcome-message.textContent` inside a function (e.g., `updateWelcomeMessage()`).</li>
+                    <li>Call `updateWelcomeMessage()` using `setTimeout` after a 1-second delay.</li>
+                    <li>**Bonus:** Add a temporary "Loading..." message to the `welcome-message` paragraph before the `setTimeout` is triggered, and then replace it with the actual greeting.</li>
+                </ul>
+                <p class="mt-4">This simulates a common pattern where content loads after a brief wait.</p>
+            </div>
+        </div>
+
+        <!-- Day 39: Fetch API (Introduction) -->
+        <div class="slide" id="slide158">
+            <h1 class="text-3xl font-bold mb-4">Day 39: Getting Data from the Internet with Fetch API!</h1>
+            <h2 class="text-2xl font-semibold mb-6">Making HTTP Requests (GET)</h2>
+            <img src="https://placehold.co/600x300/2d3748/e2e8f0?text=Fetch+API+Concept" alt="Fetch API Concept" class="w-full h-auto mb-4">
+            <p>The **Fetch API** is a modern, powerful, and flexible way to make network requests (like getting data from a server or an API) in JavaScript. It returns a `Promise`, which is a concept we'll explore more deeply later, but for now, think of it as a placeholder for a value that will be available in the future.</p>
+            <ul class="list-disc list-inside ml-4">
+                <li>`fetch(url)`: Initiates a network request to the specified URL.</li>
+                <li>`.then()`: A method used with Promises to handle the successful result of an asynchronous operation. It takes a callback function.</li>
+                <li>`.catch()`: A method used with Promises to handle any errors that occur during the asynchronous operation.</li>
+                <li>`response.json()`: A method on the `Response` object that parses the response body as JSON. This also returns a Promise.</li>
+            </ul>
+            <pre><code>
+fetch('https://jsonplaceholder.typicode.com/todos/1') // Example public API
+    .then(response => response.json()) // Parse the response as JSON
+    .then(data => {
+        console.log("Fetched data:", data);
+        console.log("Title:", data.title);
+    })
+    .catch(error => {
+        console.error("Error fetching data:", error);
+    });
+            </code></pre>
+            <p class="text-sm text-gray-400 mt-2">This is a simplified example. `fetch` can also handle POST, PUT, DELETE requests and send data.</p>
+        </div>
+
+        <div class="slide" id="slide159">
+            <h1 class="text-3xl font-bold mb-4">Day 39: Displaying Fetched Data on the Page</h1>
+            <h2 class="text-2xl font-semibold mb-6">Putting API Data into Your HTML</h2>
+            <img src="https://placehold.co/600x300/2d3748/e2e8f0?text=Display+API+Data" alt="Display API Data" class="w-full h-auto mb-4">
+            <p>Once you fetch data, you'll often want to display it dynamically on your webpage.</p>
+            <pre><code>
+&lt;!-- In your HTML --&gt;
+&lt;div id="user-info"&gt;
+    &lt;p&gt;Loading user data...&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;!-- In your JavaScript --&gt;
+const userInfoDiv = document.getElementById('user-info');
+
+fetch('https://jsonplaceholder.typicode.com/users/1')
+    .then(response => response.json())
+    .then(user => {
+        userInfoDiv.innerHTML = `
+            &lt;h2&gt;${user.name}&lt;/h2&gt;
+            &lt;p&gt;Email: ${user.email}&lt;/p&gt;
+            &lt;p&gt;Phone: ${user.phone}&lt;/p&gt;
+        `;
+    })
+    .catch(error => {
+        userInfoDiv.textContent = "Failed to load user data.";
+        console.error("Error:", error);
+    });
+            </code></pre>
+            <p class="text-sm text-gray-400 mt-2">Notice the use of **template literals** (backticks ` `` `) for easily embedding variables into strings with `${variable}`.</p>
+        </div>
+
+        <div class="slide" id="slide160">
+            <h1 class="text-3xl font-bold mb-4">Exercise (Day 39): Fetching a Random Fact</h1>
+            <div class="exercise-box">
+                <h3 class="text-xl font-semibold mb-4">Your Turn!</h3>
+                <p>Create a new HTML file `random-fact.html` and link it to `script.js`.</p>
+                <ol class="list-decimal list-inside ml-4">
+                    <li>In `random-fact.html`, add a `&lt;h1&gt;Random Fact&lt;/h1&gt;` and a `&lt;p id="fact-display"&gt;Loading fact...&lt;/p&gt;`.</li>
+                    <li>In `script.js`:
+                        <ul class="list-disc list-inside ml-8">
+                            <li>Select the `fact-display` paragraph.</li>
+                            <li>Use `fetch('https://uselessfacts.jsph.pl/random.json?language=en')` to get a random fact.</li>
+                            <li>In the first `.then()`, parse the response as JSON.</li>
+                            <li>In the second `.then(data => { ... })`, set the `textContent` of `fact-display` to `data.text`.</li>
+                            <li>Add a `.catch()` block to log any errors to the console and update `fact-display` to "Failed to load fact.".</li>
+                        </ul>
+                    </li>
+                    <li>Save and test. Refresh the page to get a new fact!</li>
+                </ol>
+                <p class="mt-4"><strong>Peer-Learning Moment:</strong> Discuss how this is different from the `setTimeout` simulation from yesterday.</p>
+            </div>
+        </div>
+
+        <div class="slide" id="slide161">
+            <h1 class="text-3xl font-bold mb-4">Assignment (Day 39): Portfolio Dynamic Quote/Message</h1>
+            <div class="assignment-box">
+                <h3 class="text-xl font-semibold mb-4">Challenge Yourself!</h3>
+                <p>Add a dynamic quote or message to your portfolio's `index.html` using the Fetch API.</p>
+                <ul class="list-disc list-inside ml-4">
+                    <li>In `index.html`, add a `&lt;blockquote id="quote-display"&gt;Loading an inspiring quote...&lt;/blockquote&gt;` in your main content area.</li>
+                    <li>In `script.js`:
+                        <ul class="list-disc list-inside ml-8">
+                            <li>Select the `quote-display` blockquote.</li>
+                            <li>Use `fetch('https://api.quotable.io/random')` to get a random quote.</li>
+                            <li>Parse the response as JSON.</li>
+                            <li>In the final `.then(quoteData => { ... })`, update the `innerHTML` of `quote-display` to display the quote and its author.
+                                <pre><code>
+quoteDisplay.innerHTML = `
+    "${quoteData.content}"
+    &lt;footer&gt;— ${quoteData.author}&lt;/footer&gt;
+`;
+                                </code></pre>
+                            </li>
+                            <li>Add a `.catch()` block for error handling.</li>
+                        </ul>
+                    </li>
+                    <li>Save and test.</li>
+                </ul>
+                <p class="mt-4">You're now interacting with real-world data sources!</p>
+            </div>
+        </div>
+
+        <!-- Day 40: JavaScript Review & Advanced Portfolio Features -->
+        <div class="slide" id="slide162">
+            <h1 class="text-3xl font-bold mb-4">Day 40: JavaScript Review & Advanced Portfolio Features!</h1>
+            <h2 class="text-2xl font-semibold mb-6">Consolidate Your Advanced JavaScript Knowledge</h2>
+            <img src="https://placehold.co/600x300/2d3748/e2e8f0?text=JS+Advanced+Review" alt="JS Advanced Review" class="w-full h-auto mb-4">
+            <p>You've just completed another major milestone, diving deep into JavaScript's capabilities! Today is dedicated to reviewing these powerful concepts and integrating them into your personal portfolio website.</p>
+            <ul class="list-disc list-inside ml-4">
+                <li>Arrays (creation, access, modification, `push`, `pop`, `length`)</li>
+                <li>Objects (key-value pairs, access with dot/bracket notation, nested objects)</li>
+                <li>Iteration (`for...of` for arrays, `for...in` for objects, `forEach`, `map`)</li>
+                <li>DOM Manipulation (Creating: `createElement`, `appendChild`, `insertBefore`; Removing: `removeChild`, `remove`)</li>
+                <li>Forms & Input Handling (`.value`, `change` event, `submit` event, `event.preventDefault()`, basic validation)</li>
+                <li>Timers (`setTimeout`, `setInterval`, `clearInterval`)</li>
+                <li>Error Handling (`try...catch`, common error types)</li>
+                <li>Asynchronous JavaScript (Concept of non-blocking, callbacks)</li>
+                <li>Fetch API (Making GET requests, `.then()`, `.catch()`, `response.json()`, displaying data)</li>
+            </ul>
+        </div>
+
+        <div class="slide" id="slide163">
+            <h1 class="text-3xl font-bold mb-4">Day 40: Portfolio Advanced Features Checkpoint</h1>
+            <h2 class="text-2xl font-semibold mb-6">Your Portfolio: More Dynamic Than Ever!</h2>
+            <img src="https://placehold.co/600x300/2d3748/e2e8f0?text=Portfolio+Advanced+Goals" alt="Portfolio Advanced Goals" class="w-full h-auto mb-4">
+            <p>Your main goal today is to integrate the advanced JavaScript features you've learned into your personal portfolio website. Focus on:</p>
+            <ul class="list-disc list-inside ml-4">
+                <li>**Dynamic Skills List:** Ensure your `mySkills` array is correctly displayed on your "About Me" page.</li>
+                <li>**Dynamic Project Cards:** Verify that all your `myProjects` are correctly rendered on your "Projects" page, including titles, descriptions, and images.</li>
+                <li>**Project Adder Functionality:** Make sure your "Add Project" form on `projects.html` successfully creates and displays new project cards.</li>
+                <li>**Robust Contact Form:** Ensure your `contact.html` form has client-side validation with user-friendly error messages (using `try...catch` and updating an error display element).</li>
+                <li>**Image Carousel/Dynamic Content:** Confirm your image carousel or dynamic quote/message on `index.html` is working as expected.</li>
+                <li>**Error Handling Everywhere:** Consider where else you might add `try...catch` blocks for robustness.</li>
+            </ul>
+        </div>
+
+        <div class="slide" id="slide164">
+            <h1 class="text-3xl font-bold mb-4">Exercise (Day 40): Peer Showcase & Advanced Debugging</h1>
+            <div class="exercise-box">
+                <h3 class="text-xl font-semibold mb-4">Your Turn!</h3>
+                <p>It's time for another peer review, focusing on your new JavaScript features!</p>
+                <ol class="list-decimal list-inside ml-4">
+                    <li>**Pair Up:** Get with a partner.</li>
+                    <li>**Showcase:** Each person demonstrates the advanced interactive features they've added to their portfolio. Explain the JavaScript code, especially how you're handling data (arrays/objects), creating/removing elements, and making API calls.</li>
+                    <li>**Feedback & Debugging:**
+                        <ul class="list-disc list-inside ml-8">
+                            <li>Test all interactive elements, including adding new projects, submitting forms, and observing dynamic content.</li>
+                            <li>Look at the console for any errors or unexpected behavior.</li>
+                            <li>Discuss the flow of asynchronous operations.</li>
+                            <li>Help each other troubleshoot any issues, using the browser's developer tools.</li>
+                        </ul>
+                    </li>
+                </ol>
+                <p class="mt-4">This collaborative debugging is essential for complex features!</p>
+            </div>
+        </div>
+
+        <div class="slide" id="slide165">
+            <h1 class="text-3xl font-bold mb-4">Assignment (Day 40): Portfolio Feature Refinement</h1>
+            <div class="assignment-box">
+                <h3 class="text-xl font-semibold mb-4">Challenge Yourself!</h3>
+                <p>Based on today's review and your own observations, refine the advanced interactive features on your portfolio.</p>
+                <ul class="list-disc list-inside ml-4">
+                    <li>Ensure all dynamic content (skills, projects, quotes) loads and displays correctly.</li>
+                    <li>Make sure your forms provide clear feedback (success/error messages) to the user.</li>
+                    <li>Add a "Clear All Projects" button to your `projects.html` that removes all dynamically added project cards.</li>
+                    <li>**Prepare for the next phase:** We'll be exploring more advanced JavaScript concepts like Promises, `async/await`, and object-oriented programming, along with introducing responsive design techniques.</li>
+                </ul>
+                <p class="mt-4">You're building a truly impressive and interactive portfolio!</p>
+            </div>
+        </div>
 
         <!-- Navigation Buttons -->
         <div class="footer-nav">
